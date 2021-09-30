@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSASSI8</title>
+
+</head>
+<body>
+    
+    <script>
+        function partte(){
+
+           for(var i=1;i<=5;i++){
+               for(var k=1;k<=(5-i);k++){
+                   document.write("&nbsp;");
+               }
+
+               for(var j=1;j<=i;j++){
+                   document.write("* ");
+               }
+               document.write("<br>");
+
+           }
+
+
+        } partte();
+            
+    </script>
+    <hr>
+
+    <script>
+        var num=5;
+
+        for(var i=1;i<=num;i++){
+
+            for(var k=i;k<=num;k++){
+                document.write("&nbsp;&nbsp;&nbsp");
+            }
+
+            for(var j=1;j<=i;j++){
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+
+
+    </script>
+
+    <hr>
+    <script>
+        var num=5;
+
+        /*for(var i=1;i<=num;i++){
+
+            for(var k=i;k<=num;k++){
+                document.write("&nbsp;&nbsp;&nbsp");
+            }
+
+            for(var j=1;j<=i;j++){
+                document.write(j+" ");
+            }
+            document.write("<br>");
+        }*/
+
+        var i,j,k,space,a=1;
+        space=5-1;
+        for(i=1;i<=5;i++){
+            for(k=1;k<=space;k++){
+                document.write("&nbsp;&nbsp;&nbsp");
+                
+            }
+            for(j=a;j>=1;j--){
+                document.write(j+" ");
+            }
+            space--;
+            a++;
+            document.write("<br>");
+        }
+        
+
+
+    </script>
+    <hr>
+
+
+</body>
+</html>

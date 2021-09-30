@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+            <script>
+                document.write("Red<br>");
+                    var products = [
+                                {name:"Pen", cost : 30, color:"Red"},
+                                { name : "Duster", cost : 25, color : "Black"},
+                                { name : "Marker", cost : 10, color : "Blue"},
+                                { name : "Tape", cost : 40, color : "White"}
+                                ];
+                                //console.log(products);
+
+                            for(let i=0;i<products.length;i++){
+                                if(products[i].color=="Red"){
+
+                                    document.write(`${products[i].name},${products[i].cost},${products[i].color}`);
+                                    
+                                    
+                                    console.log(products[i].color);
+                                    
+                                }
+                            }
+
+                            var result=products.sort(function(a,b){return b.cost-a.cost});
+                            console.log(result);
+
+            </script>
+            <hr>
+            <script>
+                        var marks = [40, 60, 30 , 70, 55, 10, 85, 90, 100]
+
+                        var result=marks.reduce((total,Old)=>{
+
+                       return total+Old });
+                       document.write(result+"<br>");
+
+                       
+
+                       var score1=marks.map(Math.sqrt);
+
+                       document.write(score1+"<br>");
+
+            </script>
+</body>
+</html>

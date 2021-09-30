@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form25/08/2021</title>
+    <link rel="stylesheet" href="help.css">
+
+    
+</head>
+<body>
+    <div>
+    <fieldset>
+
+        <legend> Booking Details</legend>
+
+    
+        <label for="movie">Movie:</label>
+
+        <select>
+            <option>...</option>
+            <option id="1">Avenger</option>
+            <option id="2">Age Of Ultron</option>
+            <option id="3">Avenge:Infinty War</option>
+            <option id="4">Avenger:Endgame</option>
+            <option id="5">The Core</option>
+            
+        </select>
+        <br>
+
+        <label for="movie">Theaters:</label>
+
+        <select>
+            <option>...</option>
+            <option id="1">I-Max</option>
+            <option id="2">PVR Cinema</option>
+            <option id="3">City Pride</option>
+            <option id="4">Laxmi</option>
+            <option id="5">Swastik</option>
+            
+        </select>
+<br>
+
+<label for="Date">Date:</label> <input type="date">
+        <br>
+
+        <label for="movie">E-Mail:</label>
+
+        <input type="email" value="" name="email" placeholder="Enter Email">
+
+        <br>
+        <label for="movie">Ticket:</label>
+
+        <input type="number" placeholder="No.of Ticket" id="noof">
+        <br>
+        <p style="margin-bottom:10px;"></p>
+    
+        <label  id="total">Total Price:&#8377; </label>
+        <span id="price"></span>
+
+        <p style="margin-bottom:10px;"></p>
+
+        <button type="button" value="Book ticket" onclick="myFunction()">Book Ticket</button>
+
+
+    </fieldset>
+    <p style="margin-bottom:10px;"></p>
+    
+    Per ticket price: &#8377;100/-<br>
+
+    <p style="margin-bottom:10px;"></p>
+    
+    Discounts: 10% discount if number of booked show>=10;
+
+
+
+    </div>
+
+
+
+
+
+    <script>
+
+        function myFunction(){
+
+            var b=document.getElementById("price");
+            var c= document.getElementById("noof").value;
+
+               // b.innerHTML=c*100;
+            
+                if(c>=10){
+                    b.innerHTML=c*(100-10);
+                }else{
+                    b.innerHTML=c*100;
+    
+                }
+
+        }
+    </script>
+</body>
+</html>

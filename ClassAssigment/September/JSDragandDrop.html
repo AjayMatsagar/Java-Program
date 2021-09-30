@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop29/09/2021</title>
+    <style>
+    
+
+        img{
+            width:100px;
+            height:100px;
+            padding: 30px;
+        }
+        .main, .image{
+            display: flex;
+            text-align: center;
+           
+        }
+        .main div{
+            width: 100px;
+            height: 100px;
+            padding: 30px; 
+            margin: 30px;
+            border: 1px solid black;
+            background-color: chartreuse;     
+        }
+
+        .image div{
+            width: 100px;
+            height: 100px;
+            padding: 30px; 
+            margin: 30px;
+            border: 1px solid black;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+            <div class="image">
+            
+              <div> <img src="/images/dog.jpg" alt="dog" draggable="true" ondragstart="dogDrag(event)" id="img1"></div>
+            <div> <img src="/images/pig.png" alt="pig" draggable="true" ondragstart="pigDrag(event)" id="img2"></div>
+             <div> <img src="/images/rabit.png" alt="rabit" draggable="true" ondragstart="rabitDrag(event)" id="img3"></div>
+            <div><img src="/images/elephant.jpg" alt="elephant"draggable="true" ondragstart="eleDrag(event)" id="img4"></div>
+                        
+            </div>
+            <div class="main">
+                <div id="first" ondrop="drop1(event)" ondragover="dragover1(event)"></div>
+                <div id="second" ondrop="drop2(event)" ondragover="dragover2(event)"></div>
+                <div id="third" ondrop="drop3(event)" ondragover="dragover3(event)"></div>
+                <div id="four" ondrop="drop4(event)" ondragover="dragover4(event)"></div>
+            </div>
+
+
+
+                    <script>
+
+                        // Dog Drang and Drop...
+                                    var dog=document.getElementById("first");
+                                    var pig=document.getElementById("second");
+                                    var rabit=document.getElementById("third");
+                                    var ele=document.getElementById("four");
+                             
+                                    // dog.addEventListener('dogDrag', function(ev){
+
+                                    //     ev.dataTransfer.setData("text",ev.currentTarget.id);
+                                    // });
+                             
+                                    function dogDrag(ev){
+                                    ev.dataTransfer.setData("text",ev.currentTarget.id);
+
+                                }  function dragover1(ev){
+                                        ev.preventDefault();
+                                    }
+                                    function drop1(ev){
+                                            if(ev.id==dog.currentTarget){
+                                        var data1=ev.dataTransfer.getData("text");
+                                        // ev.currentTarget.appendChild(document.getElementById(data1)); 
+                                 ev.currentTarget.appendChild(document.getElementById(data1)); 
+                                //dog.currentTarget= ev.currentTarget.id
+                                    }else{
+
+                                    }
+                                }
+                                
+                                    
+                                //      // Pig Drang and Drop...
+                                // function pigDrag(ev){
+                                //     ev.dataTransfer.setData("text",ev.currentTarget.id);
+
+                                // }  
+                                // function dragover2(ev){
+                                //         ev.preventDefault();
+                                //     }
+                                //     function drop2(ev){
+                                //         var data=ev.dataTransfer.getData("text");
+                                //   ev.currentTarget.appendChild(document.getElementById(data));
+
+                                //     }
+                                //      // Robat Drang and Drop...
+                                //      function rabitDrag(ev){
+                                //     ev.dataTransfer.setData("text",ev.currentTarget.id);
+
+                                // }  function dragover3(ev){
+                                //         ev.preventDefault();
+                                //     }
+                                //     function drop3(ev){
+                                //         var data=ev.dataTransfer.getData("text");
+                                //   ev.currentTarget.appendChild(document.getElementById(data));
+
+                                //     }
+
+                                //     //Elephant Drag and Drop....
+                                
+                                //     function eleDrag(ev){
+                                //     ev.dataTransfer.setData("text",ev.currentTarget.id);
+
+                                // }  function dragover4(ev){
+                                //         ev.preventDefault();
+                                //     }
+                                //     function drop4(ev){
+                                //         var data=ev.dataTransfer.getData("text");
+                                //   ev.currentTarget.appendChild(document.getElementById(data));
+
+                                //     }
+                    </script>
+</body>
+</html>

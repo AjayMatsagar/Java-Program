@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSPriceTable17/09/2021</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<style>
+    body{
+        margin: 20px;
+        background-color: aquamarine;
+    }
+   table {
+    border: 2px solid black;
+    border-collapse:collapse ;
+    width: 600px;
+    border-radius: 10px;
+    height: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+
+   }
+   th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 2px;
+    width: 20px;
+    text-align: center;
+       
+   }
+   button{
+       border: none;
+       background-color:aquamarine;
+   }
+   .btn{
+       border: 1px solid black;
+       width: 100px;
+        height: 30px;
+        margin: 10px;
+        border-radius: 5px;
+       background-color: lightblue;
+    
+   }
+  .heading{
+      text-align: center;
+      position: relative;
+      left: 100px;
+  }
+  .secondDiv,.thirdDiv{
+      display: none;
+  }
+     .inputdiv{
+         margin: 20px;
+         margin-left: 50px;
+         
+     } 
+     input{
+        width: 100px;
+        height: 30px;
+     }
+     .emoji{
+         position: relative;
+        left: 1000px;
+        top: 100px;
+        font-size: 30px;
+     }
+   .container{
+       display: flex;
+       flex-direction: row;
+       margin: 50px;
+   }
+</style>
+<body>
+    <div class="container">
+        <div class="tablMain">
+            <table>
+                <tr>
+                    <th>Sr.no</th>
+                    <th>Input</th>
+                    <th>Price</th>
+                    <th colspan="3">Quantity</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>T-Shirts</td>
+                    <td>299</td>
+                    <td> <span id="showQuantity"></span></td>
+                    <td><button type="button" onclick=" addQuantity()">+</button></td>
+                    <td><button type="button" onclick=" subQuantity()">-</button></td>
+                    <td><span id="total"></span> </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td> Shirts</td>
+                    <td>599</td>
+                    <td> <span id="showQuantity2"></span></td>
+                    <td><button type="button" onclick=" addQuantity1()">+</button></td>
+                    <td><button type="button" onclick="subQuantity2()">-</button></td>
+                    <td><span id="total2"></span> </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td> Jeans</td>
+                    <td>899</td>
+                    <td> <span id="showQuantity3"></span></td>
+                    <td><button type="button" onclick="addQuantity3()">+</button></td>
+                    <td><button type="button" onclick="subQuantity3()">-</button></td>
+                    <td><span id="total3"></span> </td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td> Jacket</td>
+                    <td>1200</td>
+                    <td> <span id="showQuantity4"></span></td>
+                    <td><button type="button" onclick=" addQuantity4()">+</button></td>
+                    <td><button type="button" onclick="subQuantity4()">-</button></td>
+                    <td><span id="total4"></span> </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Grand Total</td>
+                    <td colspan="5"><span id="grandTotal"></span></td>
+                </tr>
+            </table>
+            <br><br>
+            <button type="button" class="btn" onclick="checkOut()">Checkout</button>
+
+        </div>
+
+              
+            <div class="secondDiv">
+                <div class="heading">
+                <h2>Select Your Method Of Payment</h2>
+
+                <button type="button" class="btn" onclick="checkCash()">Cash</button>
+                <button type="button" class="btn"onclick="">Card</button>
+                    <br> <br>
+                    <div class="thirdDiv">
+                                <div class="inputdiv">
+                        <input type="number" min=0 id="sprice">
+    
+                        <button type="button" class="btn" onclick="checkBalance()">Cash</button>
+                        <p id="shoeMs" style="color: rgb(201, 48, 48);"></p>
+                                </div>
+                        
+                        </div>
+                    </div>
+            </div>
+
+
+                            
+                        </div>
+           
+             
+
+                        <div class="emoji">
+                           <span id="myspan" style="font-size: 20px;">Please Rate This App </span>  <br>
+                            <i class="fas fa-angry"id="emoji1" onclick="emojiAngry()"></i>
+                            <i class="fas fa-frown"id="emoji2" onclick="emojifrown()"></i>
+                            <i class="fas fa-meh" id="emoji3" onclick="emojiMeh()"></i>
+                            <i class="fas fa-grin-beam" id="emoji4" onclick="emojiBeam()"></i>
+                            <i class="fas fa-grin-hearts" id="emoji5" onclick="emojiHearts()"></i>
+                        </div>
+
+    
+
+    <script>
+        //function for T-shirts    
+        var grandTotal1=document.getElementById("grandTotal"); 
+         var count=1;
+         var tshirts=0;
+            function addQuantity(){
+                //var count=1;
+                var showQun=document.getElementById("showQuantity");
+                var total=document.getElementById("total");
+
+                showQun.innerHTML=count++;
+                total.innerHTML=299*showQun.innerHTML;
+                tshirts=299*showQun.innerHTML;
+                grandTotal();     
+            }
+                
+            function subQuantity(){
+                var showQun=document.getElementById("showQuantity");
+                var total=document.getElementById("total");
+                if(showQun.innerHTML>1){
+                showQun.innerHTML-=1;
+                 total.innerHTML=299*showQun.innerHTML;
+                
+                  tshirts=299*showQun.innerHTML;
+                 
+                }
+                grandTotal();  
+                
+            }
+                //function for shirts
+                var count1=1;
+                var shirts=0;
+            function addQuantity1(){
+                var showQun=document.getElementById("showQuantity2");
+                var total=document.getElementById("total2");
+
+                showQun.innerHTML=count1++;
+               total.innerHTML=599*showQun.innerHTML;  
+                shirts=599*showQun.innerHTML;
+               
+                grandTotal();  
+            }
+            function subQuantity2(){
+                var showQun=document.getElementById("showQuantity2");
+                var total=document.getElementById("total2");
+                if(showQun.innerHTML>1){
+                showQun.innerHTML-=1;
+                total.innerHTML=599*showQun.innerHTML;
+                
+                    shirts=599*showQun.innerHTML;
+                }
+                grandTotal();  
+            }
+
+                //function for Jeans
+            var count2=1;
+            var jeans=0;
+            function addQuantity3(){
+                var showQun=document.getElementById("showQuantity3");
+                var total=document.getElementById("total3");
+
+                showQun.innerHTML=count2++;
+                total.innerHTML=899*showQun.innerHTML;
+               jeans=899*showQun.innerHTML;
+               grandTotal();  
+              
+            }
+
+            function subQuantity3(){
+                var showQun=document.getElementById("showQuantity3");
+                var total=document.getElementById("total3");
+                if(showQun.innerHTML>1){
+                showQun.innerHTML-=1;
+                total.innerHTML=899*showQun.innerHTML;
+                jeans=899*showQun.innerHTML;
+                }
+                grandTotal();  
+            }
+                //function for Jacket
+            var count3=1;
+            var jacket=0;
+            function addQuantity4(){
+                var showQun=document.getElementById("showQuantity4");
+                var total=document.getElementById("total4");
+
+                showQun.innerHTML=count3++;
+                total.innerHTML=1200*showQun.innerHTML;
+                jacket=1200*showQun.innerHTML;
+                grandTotal();  
+            }
+
+            function subQuantity4(){
+                var showQun=document.getElementById("showQuantity4");
+                var total=document.getElementById("total4");
+                if(showQun.innerHTML>1){
+                showQun.innerHTML-=1;
+                total.innerHTML=1200*showQun.innerHTML;
+                jacket=1200*showQun.innerHTML;
+                }
+                grandTotal();
+            }
+
+             function grandTotal(){
+
+            grandTotal1.textContent=tshirts+shirts+jeans+jacket;
+             }
+             function checkOut(){
+               var div = document.querySelector(".secondDiv");
+               div.setAttribute("style","display:block");
+               
+               console.log(div);
+                 
+             }
+             function checkCash(){
+                var div = document.querySelector(".thirdDiv");
+               div.setAttribute("style","display:flex");   
+             }
+
+             function checkBalance(){
+                 var sprice=document.getElementById("sprice");
+                 var showMs=document.getElementById("shoeMs");
+
+                 if(sprice.value!=grandTotal1.textContent){
+                    let differnt=(grandTotal1.textContent-sprice.value);
+                    showMs.textContent="Please Add Rs." +differnt+ " Amount!";
+                   
+                 }
+                 else{
+                     showMs.textContent="Payment Done!"
+                 }
+             }
+
+
+           var e1=document.getElementById("emoji1");
+           var e2=document.getElementById("emoji2");
+            var e3=document.getElementById("emoji3");
+            var e4=document.getElementById("emoji4");
+             var e5=document.getElementById("emoji5");
+             var span =document.getElementById("myspan");
+
+             
+             function emojiAngry(){
+                //document.getElementById("emoji1").style.fontSize="40px";
+                
+                e2.style.display="none";
+                 e1.setAttribute("style","font-size:40px; color:#f56c42;");
+                 e3.style.display="none";
+                 e4.style.display="none";
+                 e5.style.display="none";
+                 span.textContent="Thank you for Your Rating.."
+                                  
+
+             }
+             function emojifrown(){
+                 e1.style.display="none";
+                 e2.setAttribute("style","font-size:50px; color:#FF5733;");
+                 e3.style.display="none";
+                 e4.style.display="none";
+                 e5.style.display="none";
+                 span.textContent="Thank you for Your Rating.."
+                                  
+             }
+             function emojiMeh(){
+                 e1.style.display="none";
+                 e3.setAttribute("style","font-size:50px; color:#33FFBD;");
+                 e2.style.display="none";
+                 e4.style.display="none";
+                 e5.style.display="none";
+                 span.textContent="Thank you for Your Rating..."
+
+             }
+                    function emojiBeam(){
+                 e1.style.display="none";
+                 e4.setAttribute("style","font-size:50px; color:#DBFF33;");
+                 e2.style.display="none";
+                 e3.style.display="none";
+                 e5.style.display="none";
+                 span.textContent="Thank you for Your Rating..."
+
+                    }
+
+                    function emojiHearts(){
+                 e1.style.display="none";
+                 e5.setAttribute("style","font-size:50px; color:#75FF33");
+                 e2.style.display="none";
+                 e4.style.display="none";
+                 e3.style.display="none";
+                 span.textContent="Thank you for Your Rating..."
+
+                    }
+    </script>
+
+    
+</body>
+</html>
+
+

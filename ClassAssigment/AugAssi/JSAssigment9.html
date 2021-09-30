@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16/08/2021</title>
+</head>
+<body>
+    <h3> Armstrong Number</h3>
+
+    <script>
+        function arm(){
+            var sum=0 ,r;
+            var num=153;
+            var temp=num;
+            while(temp!==0){
+
+                r=temp%10;
+                sum=sum+r*r*r;
+                temp=parseInt(temp/10);
+            }
+            if(num==sum){
+                document.write(num+" Number is armstrog")
+            }else{
+                document.write(num+ " Not Armstrong");
+            }
+        }arm();
+
+    </script>
+
+    <hr>
+    <h3> 1 Pattern</h3>
+    <script>
+
+    var d=function numberP(){
+
+        var i,j,k;
+        var space=4;
+        var num=5;
+
+        for(i=1;i<=num;i++){
+            
+
+            for(k=(num-i);k>=1;k--){        //for(k=1;k<=(num-i);k++)
+                document.write("&nbsp;");
+            }
+
+            for(j=1;j<=i;j++){
+                document.write(j+" ");
+            }
+            document.write("<br>");
+        }
+    }
+    d();
+</script>
+
+<hr>
+<h3>5 Pattern</h3>
+<script>
+
+    var d=()=>{
+        var i,j,k;
+        var num=5;
+            for(i=num;i>=1;i--){
+                for(j=1;j<=i;j++){
+                    document.write(i+" ");
+                }
+                document.write("<br>")
+            }
+    };d();
+</script>
+<hr>
+
+<script>
+
+    function npattern(){
+
+            var i,j,k;
+            num=6;
+            for(i=1;i<=num;i++){
+                for(j=1;j<=i;j++){
+                    document.write("&nbsp;")
+                }
+                for(k=i;k<=num;k++){
+                    document.write("* ");
+                }
+                document.write("<br>")
+            }
+    }npattern();
+</script>
+    
+</body>
+</html>

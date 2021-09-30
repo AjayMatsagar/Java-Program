@@ -1,0 +1,80 @@
+<!DOCTYPE html >
+<html lang="en" id="parent">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM02/09/2021</title>
+</head>
+<body>
+
+    <div id="myid">
+        <h1 id="myid1">
+            Hello H1
+            <!--This is Comments-->
+            <em>Pune</em><span> Hello Pune</span>
+        </h1>
+     </div>
+     <p class="para">first para</p>
+     <p class="para">Second Para</pclass></p>
+     <p id="mypara">Last para</p>
+    
+     <script>
+         console.log("---Element Selctor---")
+         var res=document.querySelector("p");
+         console.log(res);
+
+         var dom1=document.querySelector("myid,h1");
+         console.log(dom1);
+
+         console.log("--Iterate through  Tag Name--");
+
+         var quer_class=document.querySelectorAll("p");
+         for(let i=0;i<quer_class.length;i++){
+             console.log(quer_class[i]);
+         }
+
+         console.log("---Class Selector---");
+
+         var dom2=document.querySelector("myid,myid1,em");
+         console.log(dom2);
+
+         console.log("---querySelctorAll() Method---");
+
+         var dd=document.querySelectorAll("h1,em");
+         console.log(dd);
+
+         console.log("---LiveElement---");
+
+         const liveElement=document.getElementsByClassName("para");
+
+         console.log(liveElement);
+
+         const norlive=document.querySelectorAll(".para");
+        // console.log("notLive Element:"+norlive);
+
+         console.log("Childran / childNodes");
+
+         var rs=document.getElementById("myid1");
+         console.log(rs.childNodes);
+         console.log(rs.children.length);
+
+         console.log("..Accessing Element using Looping..");
+         cnlen=rs.childNodes.length;
+         for(let i=0;i<cnlen;i++){
+             console.log(rs.childNodes[i]);
+         }
+
+         clen=rs.children.length;
+         for(let i=0;i<clen;i++){
+             console.log(rs.children[i]);
+         }
+
+
+
+
+     </script>
+
+
+</body>
+</html>

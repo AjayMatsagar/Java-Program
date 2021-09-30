@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM01/09/2021</title>
+</head>
+<body>
+    <p id="myp"> I am para<!--Thi is Comment--></p>
+
+    <h1 class="myh1">I am H1</h1>
+    <div id="mydiv">
+
+        <span class="myspan"> Hello</span>
+    </div>
+    <p class="maha1 para">I am Para2</p>
+    <h2 class="myh1">I am <h2></h2></h2>
+
+    <hr>
+    <h3> Logical Tree</h3>
+
+    <script>
+
+        document.write("----Document----<br>");
+        document.write(document.nodeName+"<br>");
+
+        document.write(document.nodeValue+"<br>");
+        document.write(document.nodeType+"<br>");
+
+
+        document.write("<hr>");
+
+        document.write("-----Element-----<br>");
+
+        var txt= document.getElementById("myp");
+
+        document.write(txt.nodeName+"<br>");
+
+        document.write(txt.nodeValue+"<br>");
+
+    document.write(txt.nodeType+"<br>");
+
+
+            document.write("<hr>");
+
+        document.write("-----Text-----<br>");
+
+        var txt= document.getElementById("myp");
+
+        document.write(txt.firstChild.nodeName+"<br>");
+
+        document.write(txt.firstChild.nodeValue+"<br>");
+
+        document.write(txt.firstChild.nodeType+"<br>");
+        document.write("<hr>");
+
+            document.write("-----Comment-----<br>");
+
+            var cmt=document.getElementById("myp");
+
+            document.write(cmt.firstChild.nextSibling.nodeName+"<br>");
+
+            document.write(cmt.firstChild.nextSibling.nodeValue+"<br>");
+            document.write(cmt.firstChild.nextSibling.nodeType+"<br>");
+
+
+    </script>
+    
+
+    <script>
+        var result=document.body.getElementsByTagName("*");
+        console.log(result);
+    </script>
+    <hr>
+
+    <h3>Select element by id</h3>
+    <script>
+                    var rr=document.getElementById("myp");
+                    console.log(rr);
+                    document.write(rr+"<br>");
+
+                    var rd=document.getElementById("mydiv");
+                    console.log(rd);
+                    document.write(rd)
+    </script>
+
+<hr>
+    <h3>Select element by Tag name</h3>
+    <script>
+
+        var dom=document.body.getElementsByTagName("*");
+        console.log(dom+"<br>");
+        document.write(dom+"<br>");
+    </script>
+
+
+<hr>
+<h3>Select element by class name</h3>
+
+<script>
+
+        var dom2=document.getElementsByClassName("myh1");
+        console.log(dom2);
+        document.write(dom2+"<br>")
+</script>
+<hr>
+<h3>Iterate through class name</h3>
+
+<script>
+    var com=document.getElementsByClassName("myh1");
+
+    for(let i=0;i<com.length;i++){
+
+    
+        console.log(com[i]);
+        document.write(com[i]+"<br>");
+    }
+</script>
+<hr>
+<h3>Iterate through Tag Name</h3>
+
+        <script>
+
+            var dd=document.getElementsByTagName("p");
+            var tn=dd.length;
+
+                for(let i=0;i<tn;i++){
+                    var tag=document.getElementsByTagName("p")[i];
+
+                    console.log(tag);
+                    document.write(tag+"<br>");
+                }
+        </script>
+
+<hr>
+<h3>Iterate through  Collction</h3>
+
+<script>
+
+</script>
+</body>
+</html>

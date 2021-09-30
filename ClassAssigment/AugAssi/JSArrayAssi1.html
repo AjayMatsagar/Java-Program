@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18/08/2021</title>
+</head>
+
+<body>
+
+<h3>Remove Number form String</h3>
+
+<script>
+    function str(){
+
+ var st="bitc325ode";
+  var tem="";
+
+        for(var i=0;i<st.length;i++){
+
+            if(Number(st[i])) //if(st[i]==Number)
+                 {
+                continue
+                
+            }else{
+            tem+=st[i];
+            }
+        }
+
+        document.write(tem);
+
+
+    } str();
+</script>
+
+<hr>
+<h3> Display Array Ascending and Dscending Order</h3>
+
+<script>
+    document.write("Ascending Order<br>")
+
+        function asec(){
+
+            var arr=[91,32,23,83,55];
+            var temp=0;
+
+
+            for(var i=0;i<arr.length;i++){
+
+                for(var j=i+1;j<arr.length;j++){
+
+                    if(arr[i]>arr[j]){
+                        temp=arr[i];
+                        arr[i]=arr[j]
+
+                        arr[j]=temp;
+
+                    }
+                }
+            }
+
+            document.write("<br>");
+
+           for(i=0;i<arr.length;i++){
+                document.write(arr[i]+" ");
+            }
+                document.write("<br>")
+
+            for(j=arr.length-1;j>=0;j--){
+                document.write(arr[j]+" ")
+            }
+        }asec();
+
+</script>
+<hr>
+<p> Dscending Order</p>
+
+    <script>
+        function asec(){
+
+var arr=[91,32,23,83,55];
+var temp=0;
+
+
+for(var i=0;i<arr.length;i++){
+
+    for(var j=i+1;j<arr.length;j++){
+
+        if(arr[i]<arr[j]){
+            temp=arr[i];
+            arr[i]=arr[j]
+
+            arr[j]=temp;
+
+        }
+    }
+}
+
+            document.write("<br>");
+
+                for(i=0;i<arr.length;i++){
+                  document.write(arr[i]+" ");
+                }
+                }asec();
+    </script>
+
+    <hr>
+    <h3> Return Length and Display</h3>
+
+        <script>
+                var arr1=["Sachin","Virat","Ashish","Mahindra"];
+                var count=0;
+
+                for(var i=0;i<arr1.length;i++){
+               
+          //  document.write("Length of Array:"+arr1.length+"<br>");
+            document.write(arr1[i]+"<br>");
+                }
+                document.write("Length of Array:"+arr1.length+"<br>");
+
+                document.write("Index of Ashish:"+arr1.indexOf("Ashish")+"<br>");
+
+                document.write("Add two Element<br>")
+                arr1.push("Kumar");
+                arr1.push("Nayti");
+
+                arr1.shift();
+                arr1.shift();
+
+                /*for(var i=0;i<arr1.length;i++){
+            
+                 document.write(arr1[i]+"<br>");
+                     }*/document.write(arr1);
+
+        
+        </script>
+
+            
+
+    
+        </body>
+</html>

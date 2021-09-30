@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSTODOList</title>
+</head>
+<style>
+        fieldset{
+            width: 300px;
+            border-radius: 0 20px;
+            border-color: #e676ae;
+     
+        }
+
+        div{
+            display: grid;
+            justify-content: center; 
+            border-radius: 0 30px;
+            
+        }
+
+        input{
+            margin-top: 10px;
+            border-color: cyan;
+            height: 15px;
+        }
+
+        button{
+            border-radius: 0 10px;
+            width: 60px;
+            background-color: white;
+            color: rgb(255, 0, 0);
+            height: 20px;
+            border-color: #e676ae;
+
+        }
+
+            button:hover{
+                background-color: red;
+                color: white;
+            
+            }
+      
+</style>
+<body>
+<div>
+    <fieldset>
+
+        <legend> TODO LIST </legend>
+
+       
+
+                <input type="text" id="addvalue"> 
+                <button type="button" onclick="myFunction()">Add</button>
+             
+                <ul id="showValue">
+
+                </ul>
+       
+   
+</fieldset>
+</div>
+
+        <script>
+            function myFunction(){
+
+                var getValue=document.getElementById("addvalue");
+                
+
+                var ul=document.getElementById("showValue");
+                var todo=document.createElement("li");
+
+                 todo.textContent=getValue.value;
+                 ul.appendChild(todo);
+                //console.log(ul);
+                  getValue.value=" ";
+                  
+            }
+        </script>
+        <hr>
+        <script>
+
+            var n1, n2=1,n3=4.0;
+
+            n1=n2==n3;
+            console.log(n1);
+
+
+                     console.log(typeof(n1));
+        </script>
+    
+</body>
+</html>

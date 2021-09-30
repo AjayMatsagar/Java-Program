@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>like&dislike</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<style>
+    .like{
+        font-size: 20px;
+        padding: 20px;
+    }
+        .container{
+            margin: 30px;
+            border: 1px solid black;
+            width: 300px;
+            padding: 10px;
+        }
+        textarea{
+            width: 250px;
+            height:150px;
+        }
+</style>
+<body>
+
+    <div class="container">
+            <div class="form">
+    <form>
+
+                <lable for="name">Name:</lable><br>
+                <input type="text" id="fname"value=""><br><br>
+
+                <lable for="name">Blog Content:</lable><br>
+                    <textarea id="area">
+
+                    </textarea>
+                    <br><br>
+
+                    <button type="button" id="mybtn"> Submit </button>
+    </form>
+    </div>
+
+                <div class="like">
+                    <span id="mysapn" style="font-size: 15px;"> </span><br>
+
+                    <i class="fas fa-thumbs-up" id="like" onclick="likeUp()"></i> <span id=likeNumber></span>
+                    &nbsp;
+                    <i class="fas fa-thumbs-down" id="dlike"onclick="dislikeDown()"></i><span id="dislikeNum"></span>
+                </div>
+    </div>
+
+                <script>
+                    var count=1;
+                    function likeUp(){
+                        var show_span=document.getElementById("mysapn");
+                        show_span.textContent="Thank You Have a Nice Day..."
+                        var like=document.getElementById("like");
+                        var like_no=document.getElementById("likeNumber");
+                        like.setAttribute("style","color:blue");
+                        like_no.textContent=count++;
+                    }
+                        var dcount=1;
+                        function dislikeDown(){
+                         var show_span=document.getElementById("mysapn");
+                        show_span.textContent="We Will Work On It.Thank You."
+                        var dlike=document.getElementById("dlike");
+                        var dlike_no=document.getElementById("dislikeNum");
+                        dlike.setAttribute("style","color:red");
+                        dlike_no.textContent=dcount++;
+
+                        }
+
+                </script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSInerM04/09/2021 </title>
+</head>
+<body>
+
+    <div id="div1">
+        <p>Hello Para</p>
+    </div>
+
+    <div id="div2">
+        <h1>Hello H1</h1>
+
+        <h2 id="myh2"> Hello from h2</h2>
+    </div>
+
+    <script>
+        var parent=document.getElementById("div1");
+
+        var parent2=document.getElementById("div2");
+
+        var ref=document.getElementById("myh2");
+
+    // console.log(parent.firstElementChild);
+        var inserEle=parent.firstElementChild;
+        console.log(inserEle);
+        console.log(inserEle.nextSibling);
+
+       // var firstShi=parent2.insertBefore(inserEle,ref);
+      parent2.insertBefore(inserEle,null);
+       // ref.insertAdjacentElement('afterEnd',inserEle);
+    </script>
+
+    <hr>
+
+        <h3> Adjacent Method</h3>
+
+        <div id="ndiv1">
+
+            <p> <b>Hello para2</b></p>
+        </div>
+
+            <script>
+                    console.log("insertAdjacentElement Method")
+
+                    var nparent=document.getElementById("ndiv1");
+
+                    var h=nparent.firstElementChild;
+                    console.log(h);
+                    var newEle=document.createElement("span");
+
+                    newEle.textContent="This is new Span";
+
+                 //   h.insertAdjacentElement('beforeBegin',newEle);
+                  // h.insertAdjacentElement('beforeEnd',newEle);
+                     // h.insertAdjacentElement('afterBegin',newEle);
+                     //  h.insertAdjacentElement('afterEnd',newEle)
+                     
+
+                     console.log("insertAdjacentHtml");
+
+                     var newHTML="<p> This is new HTML Para</p>"
+                     //   h.insertAdjacentHTML('beforeBegin',newHTML);
+
+                    //     h.insertAdjacentHTML('beforeEnd',newHTML;
+                    //     h.insertAdjacentHTML('afterBegin',newHTML);
+                    //    h.insertAdjacentHTML('afterEnd',newHTML)
+
+
+                    
+
+                    console.log("insertAdjacentText");
+
+                   var txt="This is new Text";
+
+                      h.insertAdjacentText('beforeBegin',txt);
+                       h.insertAdjacentText('beforeEnd',txt);
+                        h.insertAdjacentText('afterBegin',txt);
+                       h.insertAdjacentText('afterEnd',txt);
+                     
+                    
+
+
+            </script>
+    
+</body>
+</html>

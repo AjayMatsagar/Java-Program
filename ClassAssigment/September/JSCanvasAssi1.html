@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas20/09/2021</title>
+</head>
+<body>
+    
+            <canvas id="can_rect" width="400" height="400" style="border: 1px dotted;">
+
+            </canvas>
+            <canvas id="can_color" width="400" height="400" style="border: 1px dotted;">
+
+            </canvas>
+            <canvas id="can_rainbow" width="400" height="400" style="border: 1px dotted;">
+
+            </canvas><br>
+            <canvas id="can_text" width="400" height="400" style="border: 1px dotted;">
+
+            </canvas>
+
+            <canvas id="can_RainBow1" width="400" height="400" style="border: 1px dotted;"></canvas>
+
+
+
+
+            <script>
+
+                function oneCanvas(){
+                var canvas=document.getElementById("can_rect");
+                var context=canvas.getContext("2d");
+
+                context.beginPath();
+                context.rect(20,20,340,250);
+                context.stroke();
+                context.fillStyle="blue";
+                context.fill();
+                context.closePath();
+
+                    context.beginPath();
+                    context.rect(45,45,290,200);
+                    context.stroke();
+                    context.fillStyle="red";
+                    context.fill();
+                    context.closePath();
+
+                    context.beginPath();
+                    context.rect(65,65,250,160);
+                    context.stroke();
+                    context.fillStyle="lightgreen";
+                    context.fill();
+                    context.closePath();
+
+                    context.beginPath();
+                    context.rect(90,110,200,70);
+                    context.stroke();
+                    context.fillStyle="black";
+                    context.fill();
+                    context.closePath();
+                }
+                window.addEventListener("load",oneCanvas,false);
+
+
+                        function second(){
+                        var c=document.getElementById("can_color");
+                        var context=c.getContext("2d");
+
+                            context.beginPath();
+                            context.rect(20,20,200,150);
+                            context.stroke();
+                            context.fillStyle="blue";
+                            context.fill();
+                            context.closePath();
+
+                            context.beginPath();
+                            context.rect(40,40,200,150);
+                            context.stroke();
+                            context.globalAlpha=0.4;
+                            context.fillStyle="green";
+                            context.fill();
+                            context.closePath();
+                            context.beginPath();
+                            context.rect(60,60,200,150);
+                            context.globalAlpha=0.4;
+                            context.stroke();
+                            context.fillStyle="pink";
+                            context.fill();
+                            context.closePath();
+                    
+                        }
+
+                        window.addEventListener("load",second,false);
+
+                        function thirdRenbo(){
+                            var r=document.getElementById("can_rainbow");
+                            var context3=r.getContext("2d");
+                            var grd=context3.createLinearGradient(0,0,0,200);
+                            grd.addColorStop(0,"red");
+                            grd.addColorStop(1,"orange");
+
+                            context3.beginPath();
+                            context3.rect(20,20,340,250);
+                            context3.stroke();
+                            context3.fillStyle=grd;
+                            context3.fill();
+
+
+                        }
+
+                        window.addEventListener("load",thirdRenbo,false);
+
+                        function createText(){
+                            var t=document.getElementById("can_text");
+                            var context4=t.getContext("2d");
+
+                            context4.font="30px Arial";
+                            context4.fillStyle="red";
+                           // context4.textAlign="center";
+                            context4.fillText("Welcome To HTML5!",10,100);
+
+                        }
+
+                        window.addEventListener("load",createText,false);
+
+                        function rainBow(){
+                       
+            var canvas=document.getElementById("can_RainBow1");
+            var context=canvas.getContext('2d');
+            var gradient=context.createRadialGradient(300,300,0,300,300,300);           
+            gradient.addColorStop("0","magenta");
+            gradient.addColorStop(".25","blue");
+            gradient.addColorStop(".50","green");
+            gradient.addColorStop(".75","yellow");
+            gradient.addColorStop("1.0","red");                
+            context.fillStyle=gradient;
+            context.fillRect(0,0,400,400);
+       
+    }
+
+                window.addEventListener("load",rainBow,false);
+            </script>
+</body>
+</html>

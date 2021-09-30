@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            width: 500px;
+            border-radius: 0 20px;
+            border-color: #e676ae;
+     
+        }
+
+        div{
+            display: grid;
+            justify-content: center; 
+            border-radius: 0 30px;
+            
+        }
+
+        input{
+            margin-top: 10px;
+            border-color: cyan;
+            height: 15px;
+        }
+
+        button{
+            border-radius: 0 10px;
+            width: 60px;
+            background-color: white;
+            color: rgb(196, 80, 80);
+            height: 20px;
+            border-color: #e676ae;
+
+        }
+
+            button:hover{
+                background-color: rgb(192, 77, 77);
+                color: white;
+            
+            }
+      
+</style>
+<body onload="onloadElement()">
+<div>
+    <fieldset>
+
+        <legend> TODO LIST </legend>
+
+       
+
+                <input type="text" id="addvalue"> 
+                <button type="button" onclick="btnAddElement()">Add</button>
+                <button type="button" onclick="btnDelete()">Delete</button>
+
+                <hr>
+                <h3>List Item</h3>
+             
+                <ul id="showValue">
+
+                </ul>
+       
+   
+                </fieldset>
+                    </div>
+
+        <script>
+           // var value=0;
+
+                        var ls=localStorage;
+                      var getValue=document.getElementById("addvalue");
+                
+
+                        var ul=document.getElementById("showValue");
+               // var todo=document.createElement("li");
+
+              
+                    var obj=1;
+                      function btnAddElement(){
+                    ls.setItem(obj,getValue.value);
+                    obj++;
+
+                    var todo=document.createElement("li");
+                               //var key=ls.getItem(i);
+                                    todo.innerHTML=getValue.value;
+                                    ul.appendChild(todo);
+
+
+                    //onloadElement();
+                    
+                   getValue.value="";
+                   // ul.replaceChildren();
+                //  onloadElement();
+                 
+                  
+            }
+
+        
+                        function onloadElement(){
+                        
+                           //var todo;//=document.createElement("li");
+                           for(let i=0;i<ls.length;i++){
+                           var todo=document.createElement("li");
+                               //var key=ls.getItem(i);
+                                    todo.innerHTML=ls.getItem(obj++);
+                                    ul.appendChild(todo);
+                                    
+                            }
+
+                            // todo.textContent=localStorage.getItem(localStorage.key(obj));
+
+                            //ul.appendChild(todo);
+
+                           //ul.replaceChildren();
+                          //  getValue.value=" ";
+
+
+                        }
+
+                        function btnDelete(){
+
+                            ls.clear();
+                            ul.remove();
+                            obj=1;   
+                                                 //  myFunction();
+                                
+                        }
+        </script>
+    
+</body>
+</html>

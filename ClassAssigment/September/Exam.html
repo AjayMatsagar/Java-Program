@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatternProgram</title>
+</head>
+<body>
+        <script>
+
+            var num=4;
+            for(let i=0;i<=num;i++){
+                for(let j=0;j<=i;j++){
+                    document.write("*");
+                }
+
+                document.write("<br>");
+            }
+            for(let i=num;i>=1;i--){
+                for(let j=1;j<=i;j++){
+                    document.write("*");
+                }        
+                document.write("<br>");
+            }
+
+        </script>
+<hr>
+        <script>
+                var num=5;
+                for(let i=0;i<num;i++){
+
+                    for(let k=(num-i);k>1;k--){
+                        document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+                    }
+
+                    for(let j=0;j<i*2-1;j++){
+                        document.write("* ");
+                         
+                    }
+                    document.write("<br>");
+                }
+        </script>
+    <hr>
+        <script>
+            var num=5;
+            for(let i=0;i<num;i++){
+                for(let k=num-i;k>=1;k--){
+                    document.write("&nbsp;&nbsp;&nbsp;");
+                   
+                }
+                for(let j=1;j<=i*2-1;j++){
+                   document.write("# ");
+                  
+                }
+                document.write("<br>");
+            }
+        </script>
+<hr>
+        <script>
+                 var num=4;
+                 var c=1;
+            for(var i=0;i<num;i++){
+                for(let k=num-i;k>=1;k--){
+                    document.write("&nbsp;&nbsp;&nbsp;");
+                   
+                }
+                for(let j=1;j<=i*2-1;j++){
+                    
+                   document.write(c++ +" ");
+                   //k++;
+                }
+                document.write("<br>");
+                
+            }
+            var c=1;
+                for(let i=1;i<=8;i++){
+                   
+                    if(i==7){
+                        continue;
+                    }
+                        else{    
+                    document.write(i +"&nbsp;");
+                        }
+                    }
+                
+                   
+          
+        </script>
+        <hr>
+        <script>
+            var n=5
+            for(let i=0;i<n;i++){
+                for(let j=0;j<n;j++){
+                    if(i===0||i===n-1){
+                        document.write("* ");
+                    }else if(j==0||j==n-1){
+                            document.write("* ")
+                        }else{
+                            document.write("&nbsp;&nbsp;&nbsp;")
+                        }       
+                }
+                document.write("<br>");
+            }
+            
+        </script>
+            
+       <hr>     
+        <script>
+            x="Hello";
+           var x2="World!";
+           document.write(x+x2);
+
+        </script>
+        <hr>
+        <script>
+            for(let i=1;i<=6;i++){
+                for(let j=1;j<=i;j++){
+                    document.write("&nbsp;")
+                }
+                for(let k=i;k<=6;k++){
+                    document.write("*  ");
+                }
+                document.write("<br>");
+            }
+        </script>
+        <script>
+            num=4;
+            for(let i=0;i<num;i++){
+                for(let k=(num-i);k>=1;k--){
+                    console.log("  ");
+                }
+                for(let j=1;j<num*2-1;j++){
+                    console.log("* ");
+                }
+                console.log("\n");
+            }
+        </script>
+</body>
+</html>

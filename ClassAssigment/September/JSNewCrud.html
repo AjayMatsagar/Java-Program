@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSCRUD27/09/2021</title>
+    <style>
+    div, body, .btn{
+        padding: 10px;
+
+    }
+    .container{
+        width: 400px;
+        border: 2px solid black;
+        position: absolute;
+       
+       
+    }
+    table{
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 300px;
+    }
+    
+    tr,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 100px;
+        height: 20px;
+    }
+    .table{
+        display:flex;
+        justify-content: center;
+        left: 500px;
+    }
+</style>
+</head>
+<body onload="loadElements()">
+                <h2>Employee Details</h2>
+        <div class="container">
+            <div>
+                Employee Code: <input type="number" min=0 id="txtEmpCode" placeholder="Use Only Update & Delete"> 
+                </div>
+                <div>
+
+                Employee Name: <input type="text" id="txtEmpName"> 
+                </div>
+                <div>
+
+                Employee Email: <input type="email" id="txtEmpEmail"> 
+                </div>
+
+            <div>
+                    <button type="button" onclick="btnAddCilck()">Add</button>
+                    <button type="button" onclick="btnDeleteClick()">Delete</button>
+                    <button type="button" onclick="btnUpdateClick()">Update</button>
+            </div>
+
+
+        </div>
+
+                        <div class="table">
+                                    <table id="table">
+
+                                    </table>
+                        </div>
+
+            <script>
+                        var txtEmpName,txtEmpCode,txtEmpEmail, list;
+                        var employeeDetails;
+                        var count=1;
+
+                        function EmployeeDetails(empid,emName,empEmail){
+                            this.empid=empid;
+                            this.emName=emName;
+                            this.empEmail=empEmail;
+                        }
+
+                        employeeDetails=[
+
+                        ];
+
+                                function onEmpload(){
+                                    list.replaceChildren();
+                                 // list.removeChild(1);
+                                    for(var i=0;i<employeeDetails.length;i++){
+
+                                        tr_emp=document.createElement("tr");
+
+                                        td_id=document.createElement("td");
+                                        td_id.textContent=employeeDetails[i].empid;
+
+                                        td_name=document.createElement("td");
+                                        td_name.textContent=employeeDetails[i].emName;
+
+                                        td_email=document.createElement("td");
+                                        td_email.textContent=employeeDetails[i].empEmail;
+
+                                        tr_emp.appendChild(td_id);
+                                        tr_emp.appendChild(td_name);
+                                        tr_emp.appendChild(td_email);
+
+                                        list.appendChild(tr_emp);
+                                    }
+                                }
+
+                                     function btnAddCilck(){
+                                         employeeDetails.push(new EmployeeDetails(txtEmpCode.value+count++,
+                                         txtEmpName.value,
+                                         txtEmpEmail.value));
+
+    
+                                         loadElements();
+                                         
+                                         txtEmpEmail.value="";
+                                         txtEmpName.value="";
+                                         txtEmpCode.value="";
+                                     }
+
+                                     function loadElements(){
+                                         txtEmpCode=document.getElementById("txtEmpCode");
+                                         txtEmpName=document.getElementById("txtEmpName");
+                                         txtEmpEmail=document.getElementById("txtEmpEmail");
+                                         list=document.getElementById("table");
+
+                                         onEmpload();
+                                     }
+
+                                        function btnUpdateClick(){
+                                            for(let i=0;i<employeeDetails.length;i++){
+                                                if(employeeDetails[i].empid==txtEmpCode.value){
+
+                                                    employeeDetails[i].emName=txtEmpName.value;
+                                                    employeeDetails[i].empEmail=txtEmpEmail.value;
+                                                    break;
+                                                }  
+                                            }
+                                            loadElements();
+                                        }
+
+                                        function btnDeleteClick(){
+                                            for(let i=0;i<employeeDetails.length;i++){
+                                                if(employeeDetails[i].empid==txtEmpCode.value){
+                                                    employeeDetails.splice(i,1);
+                                                    break;
+                                                }
+
+                                                
+                                            }
+                                            loadElements();
+                                        }
+
+                                        
+
+                                    
+            </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20/08/2021</title>
+</head>
+
+<h3> Replace Css with Javascript</h3>
+
+<script>
+
+    function replace(){
+
+    var str="We learning css";
+    document.write(str+"<br>")
+
+    document.write("Ans:"+str.replace("css","Javascript"));
+
+    }replace();
+
+</script>
+
+<hr> 
+<h3> Genrate Random Number</h3>
+
+<script>
+            var d= function arrRan(){
+            var arr=[1,2,3,4,"Red",true,5,6];
+            var tem=0;
+
+            document.write(arr.length-3+"<br>");
+
+            for(let i=0;i<arr.length;i++){
+
+                if(i==arr.length-2){
+
+                    tem=arr[i];
+
+                }
+            }
+            document.write("Second Last Number in Array:"+tem+"<br>");
+
+            
+            var rand=Math.floor(Math.random()*arr.length);
+
+            document.write("Random Number:"+arr[rand]);
+
+
+            };d();
+
+           
+
+            
+</script>
+<body>
+    
+</body>
+</html>

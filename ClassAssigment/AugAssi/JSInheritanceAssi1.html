@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24/08/2021</title>
+</head>
+<body>
+    
+    <script>
+
+        class Employee{
+            constructor(name, salary,address){
+                this.name=name;
+                this.salary=salary;
+                this.address=address;}
+
+                showEInfo(){
+                    document.write("Manager Information..<br>")
+                    return "Manager Name:"+this.name+" Salary: "+this.salary+" Address: "+this.address+
+                    '<br>';
+                
+
+            }
+
+        }
+
+                    class Manager extends Employee{
+                        constructor(name, salary,address){
+                            super(name,salary,address)
+
+                        }
+                        shoeMInfo(){
+                            return "Manger Info..."
+                        }
+                    }
+
+                    class developer extends Employee{
+
+                        constructor(name, salary,address){
+                            super(name,salary,address)
+
+                    }
+
+                    shoeDinfo(){
+                        document.write("Developer Information<br>")
+                        return "Developer Name:"+this.name+"  Salary: "+this.salary+" Address: "+this.address;
+                    }
+                }
+
+                    var s= new Manager("Ravi","450000","Chandufal");
+
+                    document.write(s.showEInfo());
+
+                    var d= new developer("Nitin","45000","BBC");
+                    document.write(d.shoeDinfo());
+    </script>
+
+    <hr>
+    <h3> Crate Class Book...</h3>
+    <script>
+
+                class Book{
+
+                    constructor(){
+                        this.Author="Chetan";
+                        this.color="Yellow";
+                        this.Page="125";
+                    }
+
+                    showDetail(){
+                        return "Author: "+this.Author+" Color: "+this.color+" Page: "+this.Page+"<br>";
+                    }  
+                }
+
+                var b= new Book();
+
+                document.write(b.showDetail());
+
+                document.write("<b>If Property</b><br>")
+
+
+                if('Page' in b){
+                    document.write("Page is Availabel...<br>");
+                }else{
+                    document.write("Doesn't Exist...<br>");
+                }
+
+                document.write("<hr>")
+
+                document.write("<b> hasOwnProperty()</b><br>")
+
+                if(b.hasOwnProperty("page")){
+                    document.write("Page Property Availabel...<br>");
+                }else{
+                    document.write("Doesn't Exist...<br>");
+
+
+                }
+
+                document.write("<hr>")
+
+                document.write("<b> typeOf()</b><br>")
+
+                if(typeof b.Page!="undefined"){
+                    document.write("Page is Define...<br>")
+                }
+                else{
+                    docuent.write("Doesn't Exist...<br>")
+                }
+
+                document.write("<hr>")
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Managment </title>
+    <link rel="stylesheet" href="budget.css">
+</head>
+<body>
+            <div class="container">
+                   
+                <div class=budget>
+                    <fieldset id="fild1">
+                        <br>
+                        <legend>Enter Your Budget </legend>
+
+                        Enter Budget <input type="number" id="bvalue" min="100" class="in1"><br><br>
+
+                        <button type="button" onclick="printBudget()">Reload</button>
+                    </fieldset>
+
+                </div>
+            
+                <h1>&#8377; Your Expenses Stories</h1>
+                <div class="tab">
+                    <table id="stvalue">
+                        <tr>
+                        <th colspan="4">Budget Table:&#8377;<span id="myspan"></span></th>
+                        </tr>
+                        <tr>
+                                <th> Badget AMT.</th>
+                                <th>Expenses Name</th>
+                                <th>Expenses Amt.</th>
+                                <th>Remaining Amt.</th>
+                        </tr>
+                       
+                    </table>
+                            
+                        </div>
+                        <br><br>
+                        
+                    <div class="expen">
+                        <fieldset id="fild2">
+                            <legend>Expenses</legend>
+                            Expenses Name<br>
+                            <input type="text" id="ename"><br>
+                            Expenses Amt.:<br>
+                            <input type="number" id="eamt">
+                            <br><br>
+                            <button type="button" onclick="displyValue()">Expenses</button>
+
+                        </fieldset>
+
+                        <fieldset id="fild3">
+                            <legend> Expenses Info</legend>
+                            <ul id="myul">
+
+                            </ul> 
+
+                        </fieldset>
+
+                    </div>
+            </div>
+
+                    <script>
+
+                            var getTname=document.getElementById("bvalue");
+                            var showTvalue=document.getElementById("myspan");
+                            var stoValue =document.getElementById("stvalue");
+                           
+                            function printBudget(){
+                                    if(getTname.value<=0){
+                                        alert("Please Enter Valid Value");
+                                    }else{
+                                showTvalue.textContent=getTname.value;
+                               // var shpEx=document.createElement("td");
+                                    //shpEx.textContent=getTname.value
+                                   getTname.setAttribute("style","none");   
+                                    }
+                            }
+
+                          var exName=document.getElementById("ename");
+                          var exAmt=document.getElementById("eamt");
+                          var sholi=document.getElementById("myul");
+                         var avaible;
+                          
+                          function displyValue(){
+                        
+                                    if(getTname.value<=0){
+                                       //if( exAmt.value<=getTname.value){
+                                        alert("No sufficient Balance...!")
+                                    }else if(exAmt.value>avaible){
+                                        alert("Your amount is higher..!")
+                                    }
+                                    else{
+
+                                   var tr_row=document.createElement("tr");
+                                 var shpEx=document.createElement("td");
+                                    shpEx.textContent=getTname.value;
+                                        tr_row.appendChild(shpEx);
+                                      
+                                 var cli=document.createElement("li");
+                          
+                                 cli.textContent=`${exName.value} :${exAmt.value}`;
+                                    sholi.appendChild(cli);
+
+                                
+                           shName=document.createElement("td");
+                           shName.textContent=exName.value;
+                          tr_row.appendChild(shName);
+
+                           sxAmt=document.createElement("td");
+                           sxAmt.textContent=exAmt.value;
+                            tr_row.appendChild(sxAmt);
+
+
+                            reAmount=document.createElement("td");
+                            reAmount.textContent=getTname.value-exAmt.value;
+                             avaible=getTname.value-exAmt.value;
+                            tr_row.appendChild(reAmount);
+                            getTname.value= getTname.value-exAmt.value;
+                            stoValue.appendChild(tr_row);
+                            exName.value="";
+                            exAmt.value="";
+                            
+                                 
+                                }
+                            }
+                            
+
+                    </script>
+
+                
+           
+</body>
+</html>

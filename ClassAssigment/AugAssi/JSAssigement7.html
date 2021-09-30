@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSASSI7</title>
+</head>
+<body>
+    
+    
+<h3>Prime Number</h3>
+<script>
+
+    function prime(num){
+        //var num=10;
+        var flag=false;
+
+        for(var i=2;i<num/2;i++){
+
+            if(num%10==0){
+                flag=true;
+               // break;
+
+            }
+
+        }
+        if(!flag){
+            document.write(num+ " :is prime number");
+        }
+        else{
+            document.write(num+ " :not a prime number");
+        }
+
+    }
+    prime(2);
+   
+
+</script>
+
+<hr>
+<h3> Calcultion Number</h3>
+<script>
+
+var b=function calc(){
+    var input=3256;
+    var cal=0;
+    var temp=0;
+            while(input>0){
+                temp=input%10;
+                cal=cal+temp;
+                input=Math.floor(input/10);
+            }
+            document.write(cal);
+        }
+        b();
+
+
+</script>
+<hr>
+<h3> Factorial using Arrow Function</h3>
+<script>
+
+    var d=()=>{
+        var num=6;
+        var fact=1;
+        for(i=1;i<=num;i++){
+            fact=fact*i;
+        }
+        document.write("Factorial of:"+num+ " is:" +fact)};
+        d();
+</script>
+<hr>
+<h3>Pattern Program</h3>
+<script>
+
+        function patter(){
+
+            for(i=1;i<=5;i++){
+
+                for(j=1;j<=i;j++){
+                    document.write(j+"  ")
+                }
+
+                document.write("<br>");
+            }
+        }
+        patter();
+</script>
+<hr>
+<h3>Variable exist or Undefine using IIFE Function</h3>
+<script>
+    (()=>{
+        var a;
+        
+
+        if(typeof(a)=="undefined"){
+            document.write("Variable is Undefine")
+        }
+        else{
+            document.write("Variable exist");
+        }
+       
+
+    })();
+</script>
+
+</body>
+</html>

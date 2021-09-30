@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SortArray28/08/2021</title>
+</head>
+<body>
+    
+    <h3> Array sort using the Sort() method</h3>
+
+    var arr=[100,1,2,3,10];<br><br>
+
+        <script>
+            function sort_arr(){
+
+
+                var arr=[100,1,2,3,10];
+
+                var temp;
+                temp=arr.sort(function(a, b){return a - b});
+                document.write("Sorting Array: ")
+
+                document.write(temp);
+
+            }sort_arr();
+        </script>
+
+        <hr>
+        <h3> Ascending Order </h3>
+
+
+                    <script>
+                        function asce(){
+                                var arr=[21,81,34,91,2];
+
+                                var i,j, temp=0;
+
+                                for(i=0;i<arr.length;i++){
+
+                                    for(j=i+1;j<arr.length;j++){
+
+                                        if(arr[i]>arr[j]){
+
+                                            temp=arr[i];
+                                            arr[i]=arr[j];
+                                            arr[j]=temp;
+                                        }
+                                    }
+                                }
+
+                                document.write(arr+"<br>");
+
+                                    document.write("<h3>Descending Order</h3>")
+                                    for(j=arr.length-1;j>0;j--){
+                                        document.write(arr[j]+",");
+                                        //document.write(arr[1]);
+                                    }
+                                    //document.write()
+                                    document.write("<br>"+arr[2]);
+                                
+                            }asce();
+
+                    </script>
+
+
+<hr>
+                        <script>
+
+
+                                
+                    document.write("<h3>Second Largest Number</h3><br>")
+
+
+                    var arr=[21,81,34,91,100,2];
+
+                    var high=0;
+                    var high1=0;
+
+                                for(var i=0;i<arr.length;i++){
+
+
+                                    if(arr[i]>high){
+
+                                        high1=high;
+                                        high=arr[i]
+                                       
+                            
+                                    }else if(arr[i]>high1){
+                                        high1=arr[i];
+
+                                    }
+                                }
+
+                                    document.write(high1);
+                                
+                        </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #user{
+            
+            display: contents;
+             
+        }
+    </style>
+  
+</head>
+<body>
+    <div id="mydiv">
+    <label name="fname">First Name</label>
+    <input type="text" name=" " id="efname"> <br><br>
+
+    <label name="name">Last Name</label>
+    <input type="text" name=" " id="elname"> <br><br>
+
+    <label name="email">E-mail</label>
+    <input type="email" name=" " id="eemail"> <br><br>
+
+    <label name="mob">Mobile</label>
+    <input type="text" name=" " id="emob"> <br><br>
+
+
+    <label name="fadd">Address</label>
+    <input type="text" name=" " id="eadd"> <br><br>
+
+    <button type="submit" onclick="getData()">Submit</button>
+
+    <button type="button" onclick="delData()">Delete</button>
+</div>
+
+        <div id="user">
+
+
+        </div>
+
+        <script>
+                var arr=[];
+                var newUser=document.getElementById("user");
+                function getData(){         
+            var name=document.getElementById("efname");
+            var lname=document.getElementById("elname");
+            var email=document.getElementById("eemail");
+            var Mobile=document.getElementById("emob");
+            var address=document.getElementById("eadd");
+
+            var newUser=document.getElementById("user");
+
+                    
+           /* var emailcheck = /^[A-Za-z_.]{10,}@[A-Za-z]{5,}[.]{1}[A-Za-z.]{2,}$/;
+
+            if(emailcheck.test(email)){
+                alert("email is right")
+
+            }else{
+                alert("wrong email ID")
+                return false;
+            }*/
+               arr.push(name.value ,lname.value,email.value,Mobile.value,address.value);
+
+                 
+
+              
+
+              for(let i=0;i<arr.length;i++){
+                    var p= document.createElement("p");
+                    p.textContent=arr[i];
+                    newUser.appendChild(p);
+                    name.value =" ";
+                    lname.value=" ";
+                    email.value=" ";
+                    Mobile.value=" ";
+                    address.value=" ";
+
+                }
+                   
+                }
+
+                function delData(){
+              newUser.removeChild(newUser.lastChild)
+                    
+
+              for(let i=0;i<arr.length;i++){
+
+                  arr.pop(arr[i]);
+              }
+                
+                }
+
+
+        </script>
+</body>
+</html>

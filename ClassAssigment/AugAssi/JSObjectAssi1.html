@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23/08/2021</title>
+
+</head>
+<body>
+
+    <h3> Factory Function using Parameter.</h3>
+
+    <script>
+            function mobile(mob_Mod){
+                return{
+                    model:mob_Mod,
+                    price:function(z){
+                        return "Price Rs."+z;
+                    }
+                };
+
+            }
+
+            var apple=mobile("IPhone");
+
+            var mi=mobile("Redmi 10 Pro")
+
+            document.write(apple.model+" "+apple.price(3000)+"<br>");
+
+            document.write(mi.model+" "+mi.price(45000));
+
+    </script>
+
+    <hr>
+    <h3> Add, Delete  Propeties Of Object..</h3>
+
+    <script>
+
+        var car= new Object();
+        car["Maruti"]=1000;
+        car["Audi"]=40000;
+        car["BMW"]=5000;
+
+        document.write("Maurti: "+car.Maruti+" Audi: "+car.Audi+" BMW: "+car.BMW+"<br>");
+        document.write("<hr>")
+
+
+        document.write("Add Prpoerty"+"<br>");
+
+
+        car.Jaguar=6000;
+        car.Thar=7000;
+
+        document.write("Jaguar: "+car.Jaguar+"<br>");
+        document.write("Mahindra Thar: "+car.Thar+"<br>");
+
+        document.write("<hr>");
+        document.write("Delete() Prpoerty"+"<br>");
+
+        delete car.Jaguar;
+        document.write("Jaguar: "+car.Jaguar+"<br>");
+        document.write("Jagura delete successfully..")
+
+
+    </script>
+
+    <hr>
+    <h3> Console.log(Sachin,3)</h3>
+
+    <script>
+
+        function sachin(){
+
+            var str="Sachin";
+
+            document.write(str+"<br>");
+            
+            var temp="";
+
+            for(var i=0;i<str.length;i++){
+
+                if(i<=2){
+                    //delete str[i];
+                    continue;
+                }else{
+                    temp+=str[i];
+                }
+            }
+            document.write(temp);
+
+
+        }sachin();
+
+       
+
+    </script>
+
+    <hr>
+
+    <h3> Addition of Array element</h3>
+    
+    <script>
+
+        var d= function arr(){
+
+            var arr=[1,2,3,4];
+            var add=0;
+
+            for(var i=0;i<arr.length;i++){
+                add+=arr[i]
+
+            }
+
+            document.write("Addition Of Array Element:"+add);
+        };d();
+    </script>
+</body>
+</html>

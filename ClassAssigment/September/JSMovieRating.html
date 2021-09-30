@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieRating07/09/2021</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+        <style>
+
+            .container{
+                
+                text-align: center;
+                width: 400px;
+                height: 350px;
+                border: 1px solid black;
+                background-color: rgb(187, 182, 182);
+                position: absolute;
+                position: fixed;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                
+            }
+            span{
+                color: red;
+            }
+            h2,h3{
+                color: cyan;
+            }
+            .far {
+                color: cyan;
+                margin-top: 30px;
+                width: 20px;
+                height: 20px;
+            } 
+            .fas{
+
+                color: cyan;
+                margin-top: 30px;
+                width: 20px;
+                height: 20px;
+            }
+
+            .far:hover{
+                font-size: 30px;
+                margin-top: 0;
+            }
+        
+
+           #myspan{
+               text-align: center;
+               height: 50px;
+               width: 300px;
+               border: 2px solid black;
+               margin: 50px;
+               display: flex;
+               justify-content: center;
+               border-radius: 10px 10px;
+               background-color: #fff;
+
+           }
+           
+        </style>
+<body>
+
+
+            <div class="container">
+                <h2><i>Welcome to <span>Movie Ratings</span></i></h2>
+                  <h3>Please Rate the <span>Movie</span></h3>
+                
+                <div class="star">
+                <i class="far fa-star" id="one" onclick="giveRate1()"></i>
+                <i class="far fa-star"id="two" onclick="giveRate2()"></i>
+                <i class="far fa-star"id="three" onclick="giveRate3()"></i>
+                <i class="far fa-star" id="four"onclick="giveRate4()"></i>
+                <i class="far fa-star" id="five"onclick="giveRate5()"></i>
+            
+                    <div id="myspan">
+                        
+                           
+                    </div>
+                    </div>
+            </div>
+
+
+            <script>
+
+                    var oneStar=document.getElementById("one");
+                    var twoStar=document.getElementById("two");
+                    var threeStar=document.getElementById("three");
+                    var fourStar=document.getElementById("four");
+                    var fiveStar=document.getElementById("five");
+
+
+                function giveRate1(){
+
+                            
+                            var promo=prompt("Please give your Feedback");
+                            console.log(promo);
+
+                            var display=document.getElementById("myspan");
+          
+                           display.textContent=promo+" and Rate is 1 Have a nice day..."
+                           oneStar.setAttribute('class',"fas fa-star");
+                           
+                        }
+
+
+                            function giveRate2(){
+
+                                var promo=prompt("Please give your Feedback");
+                                console.log(promo);
+
+                                var display=document.getElementById("myspan");
+
+                                display.textContent=promo+" and Rate is 2 Have a nice day..."
+                                oneStar.setAttribute('class',"fas fa-star");
+                                 twoStar.setAttribute('class',"fas fa-star");
+
+                                }
+
+                        function giveRate3(){
+
+                            var promo=prompt("Please give your Feedback");
+                            console.log(promo);
+
+                            var display=document.getElementById("myspan");
+        
+                            display.textContent=promo+" and Rate is 3 Have a nice day..."
+                            oneStar.setAttribute('class',"fas fa-star");
+                            twoStar.setAttribute('class',"fas fa-star");
+                            threeStar.setAttribute('class',"fas fa-star");
+                        }
+                        function giveRate4(){
+
+                            var display=document.getElementById("myspan");
+                            display.textContent="Have a Great Day..."
+                            oneStar.setAttribute('class',"fas fa-star");
+                            twoStar.setAttribute('class',"fas fa-star");
+                            threeStar.setAttribute('class',"fas fa-star");
+                            fourStar.setAttribute('class',"fas fa-star");
+                        }
+
+                        function giveRate5(){
+
+                            var display=document.getElementById("myspan");
+                            display.textContent="Have a Great Day..."
+                            oneStar.setAttribute('class',"fas fa-star");
+                            twoStar.setAttribute('class',"fas fa-star");
+                            threeStar.setAttribute('class',"fas fa-star");
+                            fourStar.setAttribute('class',"fas fa-star");
+                            fiveStar.setAttribute('class',"fas fa-star");
+
+                            }
+
+
+            </script>
+    
+</body>
+</html>

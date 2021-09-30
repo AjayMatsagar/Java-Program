@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17/08/2021</title>
+
+    </head>
+        <body>
+    <h3> LowerCase Uppercase Code</h3>
+
+    <script>
+        var str1="Bitcode";
+        //var d=str1.split();
+        var upper="";
+        var lower="";
+
+        
+        //var upper=false;
+        for(let i=0;i<str1.length;i++){
+            if(i%2==0){
+
+                upper+=str1[i].toUpperCase();
+                //lower+=str1[i].toLowerCase();
+            }else{
+                upper+=str1[i];//?str1[i]:'';
+                
+                
+              // lower+=str1[i].toUpperCase();
+            }
+
+        }
+
+        document.write(upper+"<br>");
+        var txt=String.fromCharCode(66,105,084,099,79,100,69);
+        document.write(txt);
+       
+        
+    </script>
+
+    <hr>
+    <h3> No of Occurances</h3>
+
+
+    <script>
+
+       var a="JavAscAript";
+
+       var count=0;
+       var sma=0;
+       for(var i=0;i<a.length;i++){
+
+            if(a[i]=="A"){
+                count++;
+            }
+            else if(a[i]=="a"){
+                sma++;
+            }
+       }
+
+       document.write("No of A:"+count+"<br>");
+       document.write("No of a:"+sma);
+    </script>
+
+    <hr>
+    <h3> Without slice() Method</h3>
+
+    <script>
+
+        function substr(str){
+            var strd="";
+
+          //  document.write(str.slice(0,4));
+
+          for(var i=0;i<=str.length;i++){
+
+            if(i==4){
+
+                break;
+
+            }else{
+                strd+=str[i];
+                
+            }
+
+          }
+          document.write(strd);
+
+        }
+        substr("Sachin");
+
+    </script>
+    <hr>
+    <h3> Pattern Program</h3>
+
+    <script>
+
+        var i,j,k;
+        var num=5;
+        for(i=1;i<=num;i++){
+
+            for(j=1;j<=i;j++){
+                document.write("&nbsp;")
+            }
+            for(k=i;k<=num;k++){
+                document.write("* ");
+            }
+            document.write("<br>")
+        }
+    </script>
+    
+</body>
+</html>
