@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSHoisting</title>
+</head>
+<body>
+
+    <script>
+
+        a=10;
+
+        document.write(a+"<br>");
+        var a;
+
+        print();
+
+        function print(){
+
+            i="Pune";
+
+            document.write(i+"<br>")
+            var i;
+        }
+
+    </script>
+    <hr>
+    <h2> Clouser</h2>
+        <script>
+
+            var i=10;
+            function show(){
+
+                var j=20;
+                document.write(j+"<br>")
+                document.write(i+"<br>")
+            }
+            show();
+
+            document.write(j+"<br>")
+        </script>
+<hr>
+<h2>function Clouser  </h2>
+<script>
+        var a=10;
+        function outerFun(){
+            var j="J is local vari of Outer function";
+            document.write(j+"<br>")
+
+            function innerFun(){
+                var k="K is local vari of inner function"
+                var c= a+j+k;
+                document.write(k+"<br>");
+
+                document.write(j+"<br>");
+                document.write(c+"<br>")
+
+            }
+
+            innerFun();
+            document.write(j+"<br>")
+        }
+        outerFun();
+</script>
+<hr>
+    <h3>Function Expression</h3>
+    <script>
+        var disp=function show(){
+
+            document.write("Hello World!");
+        }
+        disp();
+       // show();
+    </script>
+    <hr>
+    <h3>Anonymouse Function</h3>
+    <script>
+
+        var disp=function(){
+            document.write("Hello JS!")
+        };
+        disp();
+    </script>
+    <hr>
+    <h3> Arrow Function</h3>
+    <script>
+        var b= () =>{
+            document.write("Hello from Arrow!"+"<br>")};
+            b();
+    </script>
+     <hr>
+     <h3> IIFE Function</h3>
+    <script>
+        var c=(n)=>{return n;};
+
+        document.write(c(3)+"<br>");
+        (()=>{document.write("Hello from IIFE")})();
+</script>
+        
+</body>
+
+
+</html>

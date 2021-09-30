@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar08/09/2021</title>
+
+
+<style>
+
+        body{
+            background-color: #f5f5f5;
+            display: flex;
+            min-height: 100vh;
+           /* justify-content: center;*/
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif';
+
+        }
+        nav{
+            max-width: 70vh;
+            display: flex;
+            background-color: #151b1f;
+            padding: 20px;
+            border: 15px;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
+            margin: 180px 0;
+        }
+        .nav-item{
+            color: #A7A397;
+            text-decoration: none;
+            padding: 0 25px;
+            font-weight: 600;
+        }
+        .nav-item:hover{
+            color: #80F988;
+            transition: 0.5s;
+        }
+        @media screen and(max-width:600px) {
+            nav{
+                flex-direction: column;
+                margin: 80px 0;
+            }
+            .nav-item{
+                padding: 20px 30px;
+            }
+        }
+
+</style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="nav-item">Home</a>
+        <a href="#" class="nav-item">About</a>
+        <a href="#" class="nav-item">Team</a>
+        <a href="#" class="nav-item">Blog</a>
+        <a href="#" class="nav-item">Contact</a>
+    </nav>
+    
+</body>
+</html>

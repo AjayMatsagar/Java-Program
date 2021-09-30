@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSAssigement5</title>
+</head>
+<body>
+    <script>
+    var a="A";
+    var txt="";
+
+    switch(a)
+    {
+        case "A":
+            txt="It is Vowel";
+            break;
+
+            case "E":
+            txt="It is Vowel";
+            break;
+
+            case "I":
+            txt="It is Vowel";
+            break;
+
+            case "O":
+            txt="It is Vowel";
+            break;
+
+            case "U":
+
+            txt="It is Vowel";
+            break;
+
+            default:
+                txt="It is consonent";
+    }
+
+    document.write(txt);
+
+    </script>
+    <hr>
+    <h2> Swapping using 3rd variable</h2>
+    <script>
+        var a=30;
+        var b=20;
+        var temp;
+
+        document.write("Before swapping  a:"+a+"<br>");
+        document.write("Before swapping  b:"+b+"<br>");
+
+        temp=a;
+        a=b;
+        b=temp;
+        document.write("After swapping  a:"+a+"<br>");
+        document.write("After swapping  b:"+b);
+
+
+    </script>
+    <hr>
+    <h2> Without 3rd variable</h2>
+
+    <script>
+        var a=30;
+        var b=20;
+        document.write("Before swapping  a:"+a+"<br>");
+        document.write("Before swapping  b:"+b+"<br>");
+
+        a=a+b;
+        b=a-b;
+        a=a-b;
+        document.write("After swapping  a:"+a+"<br>");
+        document.write("After swapping  b:"+b);
+
+    </script>
+    <hr>
+    <h2> Postive Negative and Zero </h2>
+    <script>
+
+        var a=20;
+
+        if(a<0){
+            document.write("Number is negative:"+a)
+        }
+        else if(a>0){
+            document.write("Number is Positive:"+a);
+        }
+        else{
+            document.write("Number is Zero:"+a);
+        }
+
+
+    </script>
+
+        <hr>
+        <h2>  largest Number</h2>
+
+        <script>
+            a=100;
+            b=400;
+            c=300;
+
+            if(a>b && a>c){
+                document.write(a+ "Is greater<br>")
+            }
+
+            else if(b>a && b>c){
+                document.write(b + "Is greater<br>")
+
+            }
+            else{
+                document.write(c+ "Is greater<br>")
+            }
+        </script>
+
+
+
+    
+</body>
+</html>

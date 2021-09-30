@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var i="I am global variable";
+
+        function show(){
+           let j="I am local variable";
+            document.write(i+" <br>");
+
+            document.write(j+"<br>");
+        }
+        
+        show();
+        document.write(i+" <br>");
+        document.write(j+"<br>");
+
+        function disp(){
+            document.write(j+"<br>");
+        }
+        disp();
+
+        
+
+        if(true){
+            document.write(i+"<br>");
+        }
+
+    </script>
+    <hr>
+    <script>
+        let a=30;
+
+        const z=5;
+        if(true){
+
+            var i=20;
+            document.write(i+"<br>");
+
+        }
+        document.write(i+"<br>");
+        if(true){
+            let j=30;//only Acciable in block
+
+            document.write(j);
+        }
+</script>
+<hr>
+<script>
+        let b=6;
+        for(let c=1;c<=10;c++){
+            document.write(c +"<br>")
+        }
+
+        document.write(c);
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date:03/09/2021</title>
+</head>
+<body>
+
+    <h1 id="myid">
+        <!--This is comments-->
+        <span> We are Learning JS</span>
+        <em>Hello</em>
+    </h1>
+    <p id="myid1">I am Paragraph</p>
+    <p id="myid2"><span>I am a span</span>I am Paragraph</p>
+<script>
+
+        var result=document.getElementById("myid");
+        console.log(result.firstChild);//text
+        console.log(result.firstElementChild); //span
+        //result.firstChild.textContent="Hello world";
+
+        result.firstElementChild.textContent="I am Learning DOM";
+
+
+        console.log("__________Next Program_______________");
+
+        var rs=document.getElementById("myid");
+        console.log(rs.childNodes);
+
+        console.log(rs.lastChild);//text
+        console.log(rs.lastElementChild); //em
+        rs.lastChild.textContent="last Node hu mai";
+
+        console.log("_______Next Program 2_______");
+        var rd=document.getElementById("myid");
+        console.log(rd.childNodes);
+        console.log(rd.lastChild.previousSibling);
+
+        console.log(result.children); //span and em
+
+        rd.lastElementChild.previousElementSibling.textContent="I am Dell..";
+
+</script>
+
+    
+</body>
+</html>

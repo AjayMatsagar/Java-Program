@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio/video15/09/2021</title>
+
+<style>
+    video{
+        width: 450px;
+        height: 300px;
+        border: 2px solid blue;
+    }
+</style>
+<!-- <script src="Util.js"></script> -->
+</head>
+<body>
+   
+    <video id="vd1" src="example.mp4" muted="true" controls="">
+
+    </video>
+    <br><br>
+
+    <input type="button" value="Play" id="btnplay">
+    <input type="button" value="Forward" id="btnforward">
+    <input type="button" value="Rewind" id="btnrwnd">
+
+    <script>
+        var btn1,btn2,btn3,video1;
+        btn1=document.getElementById("btnplay");
+        btn2=document.getElementById("btnforward");
+        btn3=document.getElementById("btnrwnd");
+        video1=document.getElementById("vd1");
+
+        function videoPlay(){
+            if(video1.paused){
+                video1.play();
+                btn.value="Pause";
+            }else if(!video1.paused){
+                video1.pause();
+                btn1.value="Play"
+
+            }
+        }
+
+        function videoForward(){
+            var value=3;
+            video1.currentTime+=value;
+        }
+
+        function videoRwnd(){
+            var value=-3;
+            video1.currentTime+=value;
+
+        }
+
+        function fun1(){
+            btn1.value="Play";
+        }
+        // EventUtil.addHandler(video1,"ended",fun1);
+        // EventUtil.addHandler(btn1,"click",videoPlay);
+        // EventUtil.addHandler(btn2,"click",videoForward);
+        // EventUtil.addHandler(btn3,"click",videoRwnd);
+
+                video1.addEventListener("click",fun1);
+                btn1.addEventListener("click",videoPlay);
+                btn2.addEventListener("click",videoForward);
+                btn3.addEventListener("click",videoRwnd);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class
+    </title>
+</head>
+<body>
+    
+    <script>
+         class mobile{
+
+            constructor(){
+
+                this.a=12;
+                this.foo=function(){
+                    return "Instance Method..";
+                };
+
+            }
+
+            display(){
+                return "Prototype Mehtod.."}
+
+            
+         }
+
+         var samsung= new mobile();
+
+         document.write(samsung.a+"<br>");
+
+         document.write(samsung.display());
+         //document.write(samsung.foo);
+
+
+         document.write("<hr>")
+
+         class mobile2{
+
+            display(){
+                return "Prototype Member";
+            }
+         }
+         var no= new mobile2();
+    
+         document.write(no.display());
+    </script>
+
+    <hr>
+    <script>
+            class apple{
+                constructor(mod_no, color){
+
+                    this.model=mod_no;
+                    this.cle=color;
+
+                }
+                show(){
+                    return this.model+ " Price Rs.3000 "+this.cle+"<br>";
+                }
+            }
+
+            var nokia= new apple("12Pro","Gold");
+            var lg= new apple("Note10","White");
+
+            document.write(nokia.show(+"<br>"))
+            document.write(lg.show());
+
+        </script>
+        <hr>
+
+        <script>
+
+                    var apple1=function(mod,sprice){
+                        this.model=mod;
+                        var color="Gold";
+                        var price=3000;
+
+                        this.sp=sprice;
+
+                        var show= function(){
+                            return "Hello World..";
+                        };
+
+                    };
+
+                    var sam=new apple1("Galaxy",2000);
+                    var no= new apple1("NokiaPro",3000);
+
+                    document.write(no.price);
+                    document.write(no.show());
+        </script>
+<hr>
+
+            <script>
+
+                var apple3=function (mod,sprice){
+                    this.model=mod;
+                    this.color="White";
+                    var price= 30000;
+
+                    this.sp=sprice;
+
+                    this.sellingprice=function(){
+                        return(price);
+                    };
+;
+                };
+
+                var sam= new apple3("11Pro",3000);
+                var no= new apple3("Lite",4000);
+
+                document.write(no.price+"<br>");
+                document.write(no.sellingprice()+"<br>");
+
+                document.write(sam.price+"<br>");
+                document.write(sam.sellingprice());
+            </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: 1px solid black;
+            width: 400px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    First Name:<input type="text" name="fname">
+    <br><br><br>
+    Last Name:<input type="text" name="lname"><br><br>
+
+    <input type="image" src="arrow.jpg" alt="Submit" width="40" height="40">
+    </form>
+    <hr>
+    <h2>lable tag use</h2>
+
+    <form id="form1">
+        <label for="male">Male:</label>
+        <input type="radio" name="gender" value="male" id="male">
+        <input type="radio" name="gender" value="female" id="female">
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <label for="female" form="form1">Female:</label>
+
+    <hr>
+
+    <form>
+        Name:<input type="text" name="name"><br><br>
+        Course:<select>
+            <option label="HTML">Html Is Awesome</option>
+        </select>
+        <br><br>
+        <input type="submit" name="Submit" value="Submit">
+    </form>
+    
+</body>
+</html>

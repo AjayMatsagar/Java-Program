@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface</title>
+</head>
+<body>
+    <script>
+
+                class Fater{
+
+                    showFMoney(){
+                        return "Father Money..<br>";
+                    }
+
+                }
+                class Son extends Fater{
+                    showSMoney(){
+                        return "Son Money..<br>";
+                    }
+                }
+
+                class GrandSon extends Son{
+                    showGMoney(){
+                        return "GrandSon money...<br>"
+                    };
+                }
+
+                var t= new GrandSon();
+                document.write(t.showGMoney());
+                document.write(t.showFMoney());
+                document.write(t.showSMoney());
+
+                document.write("<hr>")
+
+                var f=new Fater();
+                document.write(f.showFMoney());
+                //document.write(f.showGMoney());
+                document.write("<hr>");
+                var s=new Son();
+                document.write(s.showSMoney());
+    </script>
+
+    <hr>
+            <script>
+                class Father1{
+                    constructor(money){
+                        this.Fmoney=money;
+                    }
+
+                    showFMoney(){
+                            return this.Fmoney+" Father Money <br>";
+                    }
+                }
+
+
+                class Son1 extends Father1{
+                    constructor(money){
+                        super(money);
+
+                        this.a=12;
+
+                    }
+                    showSMoney(){
+                        return "Son money <br>";
+                    }
+                }
+                        var s= new Son1(5000);
+                        document.write(s.showFMoney());
+                        document.write(s.showSMoney());
+            </script>
+</body>
+</html>

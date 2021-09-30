@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>For Loops in Array </h3>
+
+    <script>
+        var a=["Rahul","Ravi",56,"Ken"];
+
+        for(let i=0;i<=2;i++){
+            document.write(a[i]+"<br>");
+
+        }
+
+        document.write("<hr>")
+        for(let i=0;i<a.length;i++){
+            document.write(a[i]+"<br>");
+        }
+    </script>
+    <hr>
+    <h3>ForEach Loop in Array</h3>
+    <script>
+          
+          var a=["Rahul","Ravi",56,"Ken"];
+
+          a.forEach(function (value,index){
+          document.write(value+" "+index+"<br>")});
+    </script>
+
+<hr>
+<h3>ForOf Loop in Array</h3>
+
+    <script>
+         var a=["Rahul","Ravi",56,"Ken"];
+
+         for(let c of a){
+             document.write(c+"<br>");
+         }
+        
+    </script>
+    <hr>
+    <h3>Access value from User</h3>
+    <script>
+
+        /*var element=prompt("Enter number of elements:");
+        var a=[];
+
+        for(var i=0;i<=element;i++){
+            a[i]=prompt("Enter Name:");
+        }
+
+        for(var value of a){
+            document.write(value+"<br>");
+        }*/
+
+
+    </script>
+
+<hr>
+<h3>Array Methods Push,Pop</h3>
+
+<script>
+
+    var week=["Sunday","Manday","Tuesday","Wensday","Thursday",
+    "Friday","Saturday"];
+
+    for(var i=0;i<week.length;i++){
+
+        document.write(i+" "+ week[i]+"<br>");
+    }
+    
+    document.write("<hr>");
+
+    document.write(week.reverse()+"<br>");
+
+    document.write("<br>");
+    document.write("<hr>")
+
+    document.write(week.pop()+"<br>");
+
+    document.write("<hr>")
+
+    document.write("Push<br>")
+
+    document.write(week.push(3,5));
+
+    document.write("<hr>")
+
+
+    document.write("Shift<br>")
+
+    document.write(week.shift());
+
+    document.write("<hr>")
+
+
+    document.write("Unshift<br>");
+
+    document.write(week.unshift());
+    
+
+
+
+
+   
+
+
+
+</script>
+
+    
+</body>
+</html>

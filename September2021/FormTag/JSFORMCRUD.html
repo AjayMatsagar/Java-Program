@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSCRUD25/09/2021</title>
+    <style>
+        div, body{
+            padding: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+        #shoppingList{
+            border: 2px solid black;
+            margin: 30px 0 0 0 0;
+            width: 400px;
+        }
+    
+    </style>
+</head>
+<body onload="loadElement()">
+    <h1>Shopping List</h1>
+    <hr>
+    <div id="shoppingList">
+        <div>
+            <label for="txtItemId">Enter item Id</label>
+            <input type="text" id="txtItemId">
+
+        </div>
+        <div>
+            <label for="txtItemName">Enter Item Name</label>
+            <input type="text" id="txtItemName">
+        </div>
+
+        <div>
+            <lable for="txtItemCost">Enter Item Cost:</lable>
+            <input type="number" id="txtItemCost" min=0>
+        </div>
+        <div>
+            <label for="txtItemQuantity">Enter Item Quantity</label>
+            <input type="number" id="txtItemQuantity" min=0>
+        </div>
+        <div>
+            <button type="button" onclick="btnNewClick()">New</button>
+            <button type="button" onclick="btnSaveClick()">Add</button>
+            <button type="button" onclick="btnUpdateClick()">Update</button>
+            <button type="button" onclick="btnDeleteClick()">Delete</button>
+
+        </div>
+        <div>
+                <ul id="list">
+
+                </ul>
+        </div>
+
+    </div>
+
+            <script>
+                    var txtItemId, txtItemName,txtItemCost,txtItemQuantity,list;
+                    var shoppingItems;
+                    function ShoppingItem(itemId,itemName,itemCost,itemQuantity){
+                        this.itemId=itemId;
+                        this.itemName=itemName;
+                        this.itemCost=itemCost;
+                        this.itemQuantity=itemQuantity;
+                    
+
+                    }
+
+                    shoppingItems=[
+                        new ShoppingItem(10,"Marker",50,5),
+                        new ShoppingItem(20,"Cellphone",1000,1)
+                    ]
+                    function loadItem(){
+                            str="";
+                            for(var i=0;i<shoppingItems.length;i++){
+                                str+="<li>"+shoppingItems[i].itemId+ " X "+shoppingItems[i].itemName+
+                                    " X "+shoppingItems[i].itemCost+ " X "+shoppingItems[i].itemQuantity+ "</li>"
+                            }
+                            list.innerHTML=str;    
+                    }
+
+                    function btnNewClick(){
+                        txtItemId.value="";
+                        txtItemName.value="";
+                        txtItemCost.value="";
+                        txtItemQuantity.value="";
+                        
+                    }
+
+                    function btnSaveClick(){
+                        shoppingItems.push(new ShoppingItem(txtItemId.value,txtItemName.value,txtItemCost.value,
+                        txtItemQuantity.value));
+                        loadElement();
+                    }
+
+                    function loadElement(){
+                        txtItemCost=document.getElementById("txtItemCost");
+                        txtItemId=document.getElementById("txtItemId");
+                        txtItemName=document.getElementById("txtItemName");
+                        txtItemQuantity=document.getElementById("txtItemQuantity");
+                        list=document.getElementById("list");
+                        loadItem();
+                    }
+                    function btnUpdateClick(){
+                        for(var i=0;i<shoppingItems.length;i++){
+
+                            if(shoppingItems[i].itemId==txtItemId.value){
+                                shoppingItems[i].itemName=txtItemName.value;
+                                shoppingItems[i].itemName=txtItemCost.value;
+                                shoppingItems[i].itemQuantity=txtItemQuantity.value;
+                                break;
+                            }
+                        }
+                        loadElement();
+                    }
+
+                        function btnDeleteClick(){
+                            for(var i=0;i<shoppingItems.length;i++){
+                                if(shoppingItems[i].itemId==txtItemId.value){
+                                    shoppingItems.splice(i,1)
+                                    break;
+                                }
+                            }
+                            loadElement();
+                        }
+            </script>
+
+</body>
+</html>

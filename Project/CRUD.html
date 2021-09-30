@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id='form'>
+        ID:<input type="text" name='' id="empId"><br><br>
+
+    Name:<input type="text" name='' id="empname"><br><br>
+
+    Age:<input type="number" name='' id="empage"><br><br>
+
+    Salary:<input type="text" name="" id="empsalary"><br><br>
+
+    <button type="submit" id="button">Add</button>
+
+    
+</form>
+
+<div class="user" id="user">
+
+
+
+
+</div>
+        <script>
+                    var id,name,age,salary;
+                 document.getElementById('form').addEventListener('submit',(e)=>{
+                 id=document.getElementById("empId").value;
+                 name=document.getElementById("empname").value;
+
+                 age=document.getElementById("empage").value;
+
+                 salary=document.getElementById("empsalary").value;
+                createUser(id,name,age,salary);
+
+                e.preventDefault();
+            },true);
+
+
+            var users=[];
+
+            function createUser(id,name,age,salary){
+
+                var user={
+                    id:id,
+                    name:name,
+                    age:age,
+                    salary:salary
+                    
+                }
+                let user_ser=JSON.stringify(user);
+                console.log(user_ser);
+
+               /* localStorage.setItem("user",user_ser);
+                console.log(localStorage);
+                readUser();*/
+                users.push(user);
+                console.log(users);
+               readUser();
+               document.getElementById('form').reset();
+            
+            }
+
+            function readUser(){
+
+                var usrhtml=document.getElementById('user');
+                usrhtml.innerHTML= '';
+
+                for(var i=0;i<users.length;i++){
+                    usrhtml.innerHTML+= `<p>ID:${users[i].id}</p>
+                    <p>Name:${users[i].name}</p>
+                    <p>Age:${users[i].age}</p>
+                    <p> Salary:${users[i].salary}</p>
+                    <button class="edit" onClick="updateInfo()">
+                        Edit</button>
+                        <button class="remove" onclick="deleteUser('${i}')">Delete
+                            </button>`
+
+                }
+               
+                }
+                        function deleteUser(i){
+
+                         users.splice(i,1);
+                             readUser();
+                        }
+            
+                        function updateInfo(){
+                            for(let i=0;i<users.length;i++){
+                                if(users[i].id==id.value){
+                                    users[i].name=name.value;
+                                    users[i].age=age.value;
+                                    users[i].salary=salary.value;
+                                }
+
+                            }
+                            readUser();
+
+
+
+                        }
+
+
+        </script>
+
+</body>
+</html> 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="400" height="400">
+<!-- <g transform="translate(60,0) rotate(30) scale(0.75)"
+id="ShapGroup">
+        <rect x="10" y="20" width="100" height="80" style="fill:rgb(0,0,255);
+        stroke-width:3; stroke:rgb(0,0,0)"/>
+
+        <circle cx="120" cy="80" r="40" stroke="green" stroke-width="2"
+        fill="yellow"/>
+
+        </g> -->
+        <defs>
+            <g id="ShapGroup">
+                <rect x="10" y="20" width="100" height="80" style="fill:rgb(98, 0, 255);
+                stroke-width:3; stroke:rgb(0,0,0)"/>
+                <circle cx="120" cy="60" r="44" stroke="green" stroke-width="2"
+                fill="yellow"/>
+
+            </g>
+        </defs>
+        <use xlink:href="#ShapGroup" transform="translate(60,0) scale(0.5)"/>
+        <use xlink:href="#ShapGroup" transform="translate(120,80) scale(0.4)"/>
+        <use xlink:href="#ShapGroup" transform="translate(20,60) scale(0.25)"/>
+        <use xlink:href="#ShapGroup" transform="translate(90,90) scale(0.25)"/>
+        <use xlink:href="#ShapGroup" transform="translate(30,150) scale(0.8)"/>
+        <!--Use lets you resuse the same content multiple times-->
+
+        
+    </svg>
+</body>
+</html>

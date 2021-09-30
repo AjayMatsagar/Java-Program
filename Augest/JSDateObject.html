@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSDate20/08</title>
+</head>
+<body bgcolor="lightblue">
+    <h3> Date Object</h3>
+    <script>
+
+        var tarik=new Date();
+
+                document.write(tarik);
+
+                document.write("<hr>")
+
+                var tarik1= new Date(676687687);
+                var tarik2=new Date(8640000);
+
+                document.write(tarik1+"<br>");
+                document.write(tarik2+"<br>");
+
+                document.write("<hr>")
+
+                var t=new Date(2018,4,25,9,45,35,0);
+
+                var t1= new Date(2018,4,25,9,45,35);
+                var t3=new Date(2018,4,25,9,45);
+
+                var t4= new Date(2018,4,25,9);
+                var t5=new Date(2018,4,25);
+
+                var t6= new Date(2018,4);
+                var t7= new Date(2018);
+
+                document.write(t+"<br>");
+                document.write(t1+"<br>");
+                document.write(t3+"<br>");
+
+                document.write(t4+"<br>");
+                document.write(t5+"<br>");
+                document.write(t6+"<br>");
+
+                document.write(t7+"<br>");
+
+                document.write("<hr>")
+
+                var tarik3= new Date("may 12,2018,10:16:05");
+                document.write(tarik3+"<br>");
+
+                document.write("<hr>");
+
+                document.write("<h3> Short and Long Date</h3>")
+
+
+                var r=new Date("may 1 2018 10:16:05");
+                document.write(r+"<br>");
+
+                document.write("<hr>");
+
+                var t= new Date("2017-05");
+                document.write(t+"<br>");
+
+                document.write("<hr>");
+
+                var h= new Date("2018");
+                document.write(h+"<br>");
+
+
+                document.write("<hr>");
+
+                var f= new Date("2018-06-21T12:00:00Z");
+                document.write(f+"<br>");
+
+
+                document.write("<hr>");
+
+                var t6= new Date("06/25/2018");
+                document.write(t6+"<br>");
+
+                document.write("<hr>");
+
+    document.write("<h3> Long Date</h3>")
+
+                var b= new Date("march 25 2018")
+                document.write(b+"<br>");
+
+            
+    </script>
+<hr>
+        <h3> Date Formating</h3>
+
+    <script>
+        var tarik=new Date();
+
+        document.write(tarik+"<br>");
+
+        tarik.setHours(21);
+
+        document.write(tarik+"<br>");
+
+        tarik.setMinutes(30);
+        document.write(tarik+"<br>");
+
+        tarik.setSeconds(40);
+        document.write(tarik+"<br>");
+
+        tarik.setDate(21);
+        document.write(tarik+"<br>");
+
+        tarik.setMonth(6);
+        document.write(tarik+"<br>");
+
+        tarik.setFullYear(2023);
+        document.write(tarik+"<br>");
+
+        tarik.setFullYear(2022,3,15);
+        document.write(tarik+"<br>");
+</script>
+<hr>
+<h3> Set Date</h3>
+
+<script>
+        var tarik=new Date();
+
+        document.write(tarik+"<br>");
+
+        document.write("Hourse:"+tarik.getHours()+"<br>");
+
+        document.write("Minate:"+tarik.getMinutes()+"<br>");
+
+        document.write("Seconds:"+tarik.getSeconds()+"<br>");
+
+        document.write("Date:"+tarik.getDate()+"<br>");
+
+        document.write("Month:"+tarik.getMonth()+"<br>");
+
+        document.write("Year:"+tarik.getFullYear()+"<br>");
+
+        document.write("Day:"+tarik.getDay()+"<br>");
+
+
+</script>
+<hr>
+<h3> Date using function</h3>
+
+<script>
+
+
+            var tarik= new Date();
+            document.write(tarik+"<br>");
+            var month=tarik.getMonth();
+
+            var day =tarik.getDay();
+
+            document.write(getMonthName(month)+"<br>");
+            document.write(getDayName(day)+"<br>")
+
+
+
+            function getMonthName(monthnumber){
+
+                var monthname=["January","February","March","April","May","June",
+                                "July","August","September","October","November","December"];
+
+                                return monthname[monthnumber];
+
+
+            }//getMonthName();
+
+            function getDayName(daynumber){
+
+                var dayname=["Sunday","Monday","Tuesday","Wednsday","Thursday","Friday","Saturday"];
+                return dayname[daynumber];
+            }
+
+        </script>
+</body>
+</html>

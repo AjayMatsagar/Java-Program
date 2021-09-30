@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry
+         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown 
+         printer took a galley of 
+        type and scrambled it to make a type specimen book it has?
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+         when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          It has survived not only five centuries, but also the leap into electronic typesetting, 
+          remaining essentially unchanged.</p><br><br>
+          <button type="button" id="btn">Print</button>
+
+          <script>
+              function printDOC(){
+                  window.print();
+
+              }
+
+              document.getElementById("btn").addEventListener("click",printDOC);
+          </script>
+          <hr>
+
+         
+
+
+          <h1>Focus and blur</h1>
+
+          <button type="button" id="openbtn">Open Window</button>
+          <button type="button" id="focusbtn">Focus</button>
+          <button type="button" id="blurbtn">Blur</button>
+
+          <script>
+              var newWindow;
+              function openWin(){
+                  newWindow=window.open("","_blank","width=300,height=200");
+              }
+
+              function focusWin(){
+                  newWindow.focus();
+              }
+              function blurWin(){
+
+                  newWindow.blur();
+              }
+
+              document.getElementById("openbtn").addEventListener("click",openWin);
+
+              document.getElementById("focusbtn").addEventListener("click",focusWin);
+
+              document.getElementById("blurbtn").addEventListener("click",blurWin);
+          </script>
+
+          <hr>
+
+          <h1>Moving Window</h1>
+          <button type="button" id="openbtn1">Open Window</button>
+          <button type="button" id="movebtn">Move Window</button>
+
+          <script>
+              var newWin;
+
+                function openWin1(){
+                    newWin=window.open("","newWin","width=300, height=200");
+
+                    newWin.document.write("New Window Hoon Main");
+
+                }
+
+                function moveWin(){
+                    //newWin.moveBy(200,200);
+                    newWin.moveTO(200,200);
+                    newWin.focus();
+                }
+
+                document.getElementById("openbtn1").addEventListener("click",openWin1);
+                document.getElementById("movebtn").addEventListener("click",moveWin);
+          </script>
+
+          <hr>
+          <h2>Resize Window</h2>
+
+          <button type="button" id="openbtn2">Open Window</button>
+          <button type="button" id="resizebtn">Resize Window</button>
+
+          <script>
+
+              var resiWind;
+
+              function openWind3(){
+
+                resiWind=window.open("","resiWin","width=300,height=200");
+                resiWind.document.write("Resize window Hu mai");
+              }
+
+                function reWindow(){
+
+                    resiWind.resizeBy(100,100);
+                }
+                document.getElementById("openbtn2").addEventListener("click",openWind3);
+                document.getElementById("movebtn").addEventListener("click",reWindow);
+
+          </script>
+
+</body>
+</html>

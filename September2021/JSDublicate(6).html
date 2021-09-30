@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date:06/09/2021</title>
+</head>
+<body>
+    <ul id="myul">
+        <li>Java</li>
+        <li>C++</li>
+        <li>Python</li>
+        <li>Javscript</li>
+    </ul>
+    <h1 id="myh1">Hello</h1>
+
+    <script>
+
+        var ul=document.getElementById("myul");
+        var u=ul.cloneNode(true);
+
+        console.log(u);
+
+        document.body.appendChild(u);
+
+        /*var newD=document.createElement("div");
+
+       var a= newD.appendChild(u);
+
+        console.log(a);
+        document.write(a);*/
+
+          var dd=document.getElementById("myh1");
+          console.log(dd.firstChild.length);  //length of text
+
+          console.log(dd.firstChild.data);//text cantain data.
+
+
+       
+
+    </script>
+</body>
+</html>

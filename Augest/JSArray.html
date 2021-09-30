@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSArrayClass</title>
+</head>
+<body>
+    <h3>JS Array </h3>
+    <script>
+        var stu=["Ram","Raj","Ravi"];
+
+        document.write(stu+"<br>");
+        document.write(typeof(stu));
+
+    </script>
+    <hr>
+    <h3> Array using literal Method</h3>
+
+    <script>
+        var arr=[];
+        arr[0]="Rahul";
+        arr[1]="Ram";
+        arr[2]=56;
+        arr[3]="Jay";
+        arr[4]="XVU700"
+
+        document.write(arr);
+
+        document.write("<hr>");
+
+        var a=10,b=20,c=30;
+        var arr=[a,b,c];
+
+        var ar1=["Ajay","Ravi"];
+        document.write(arr+"<br>");
+
+        document.write(ar1);
+
+    </script>
+
+    <hr>
+    <h3> Array using Constructor Method</h3>
+
+    <script>
+        var arr=new Array();
+        arr[0]="Rahul";
+        arr[1]="Ram";
+        arr[2]=56;
+        arr[3]="Jay";
+        arr[4]="XVU700"
+
+        document.write(arr);
+
+        document.write("<hr>");
+
+        var arr= new Array(10);
+        var arr1=[10];
+        document.write(arr+"<br>");
+        document.write(arr1[0]);
+        
+
+    </script>
+    <hr>
+    <h3> Array Element</h3>
+
+    <script>
+        var arr=[];
+         arr[0]="Rahul";
+         arr[1]="Ram";
+         arr[2]=56;
+         arr[3]="Jay";
+         arr[24]="Extra.."
+
+         document.write(arr);
+    </script>
+<hr>
+<h3>Modify Array</h3>
+<script>
+
+ var arr=["Ram","Raj","Ajay"];
+    document.write(arr+"<br>");
+
+    var arr1=arr;
+
+    arr[0]="Tina";
+
+    document.write(arr+"<br>");
+    document.write(arr1)
+
+</script>
+
+    <hr>
+    <h3> Deleting Operation on Array</h3>
+
+    <script>
+        var d=["Ram","Raj","Kumar","Dharam"];
+
+        document.write(d.length+"<br>");
+
+        delete d[2];
+
+        document.write(d+"<br>");
+
+        document.write("Length:"+d.length+"<br>");
+
+        document.write(d[2]+"<br>")
+    </script>
+
+    <hr>
+    <h3> </h3>
+</body>
+</html>

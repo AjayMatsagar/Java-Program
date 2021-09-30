@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input23/09/2021</title>
+    <style>
+        form{
+            border: 1px solid black;
+            width: 400px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>  
+    <form>
+        Name: <input type="text" name="name"><br><br>
+
+        Password:<input type="password" name="Password"><br><br>
+        City:<input type="text" name="city"><br><br>
+        Upload File:<input type="file" name="file" accept="image/*"><br><br>
+
+        <input type="submit" name="submit">
+    </form>
+<br><br><hr>
+    <form autocomplete="off" action="gotoform.php" accept-charset="UTF-8">
+        Name: <input type="text" name="name" autocomplete=""><br><br>
+
+        City:<input type="text" name="pass"><br><br>
+        Password:<input type="password" name="Password"><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    <br><br><hr>
+    <form id="form1">
+        Name: <input type="text" name="name"><br><br>
+        Password:<input type="password" name="pass"><br><br>
+        City:<input type="text" name="City"><br><br>
+        <input type="submit" name="submit" id=""><br><br>   
+    </form>
+    State:<input type="text" name="City"><br><br>
+</body>
+</html>

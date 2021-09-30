@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event_Method31/08/2021</title>
+
+
+    <style>
+        #one{
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+        }
+
+        #two{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+        }
+
+        #three{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        input{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1> Event Method</h1>
+    <div id="one" data-name="1">1
+
+        <div id="two" data-name="2">2
+            <div id="three" data-name="3">3
+
+            </div>
+        </div>
+    </div>
+    
+    <script>
+
+        function div1(e){
+        this.style.backgroundColor="red";
+
+        }
+        function div2(e){
+         this.style.backgroundColor="blue";
+            //e.stopPropagation();
+           // e.stopImmediatePropagation();
+        }
+
+        function div2_2(e){
+            this.style.width="250px";
+             //e.stopPropagation();
+             e.stopImmediatePropagation();
+        }
+
+        function div3(e){
+            this.backgroundColor="green";
+             //e.stopPropagation();
+        }
+        var divOne=document.getElementById("one");
+
+        var divTwo=document.getElementById("two");
+        var divThree=document.getElementById("three");
+
+        divOne.addEventListener("click",div1,false);
+        divTwo.addEventListener("click",div2,false);
+        divTwo.addEventListener("click",div2_2,false);
+
+        divThree.addEventListener("click",div3,false);
+    </script>
+    <hr>
+
+    <h3>preventDefault() Method</h3>
+
+    <div id="mydiv" style="width: 200px; height: 200px;
+    background-color: burlywood;">
+
+    <a id="mylink" href="https://www.programiz.com/javascript/recursion"></a>
+    </div>
+
+    <script>
+
+        function stopLink(e){
+
+            //e.preventDefault();
+            e.stopPropagation();
+        }
+
+        function div1(e){
+            this.style.backgroundColor="orange";
+        }
+
+        var d=document.getElementById("mydiv");
+        var i=document.getElementById("mylink");
+
+        d.addEventListener("click",div1,false);
+        i.addEventListener("click",stopLink,false);
+    </script>
+    
+</body>
+
+<hr>
+<h3> onFocus Event</h3>
+
+        <input type="text" onfocus="efocus();" onblur="eblur();" id="text"> 
+
+        <script>
+                function efocus(){
+
+                    document.getElementById('text').style.borderColor="lightblue";
+                }
+
+                function eblur(){
+
+                    document.getElementById('text').style.borderColor="cyan";
+                }
+
+        </script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appendChild()Function</title>
+</head>
+<body onload="myfunction1()">
+
+    <h1> appendChild() Function </h1>
+
+    <div class="nitin"></div>
+
+    <button type="submit" onclick="myfunction()">Try it</button>
+
+    <script>
+
+    function myfunction(){
+      var a=  document.getElementsByClassName("nitin");
+
+      a[0].innerHTML="<h1>Nitin</h1>"
+            }
+    </script>
+
+    <hr>
+
+    <div id ="ic"> </div>
+    <button type="submit" onclick="myfunction1()">Try it</button>
+
+    <script>
+
+        function myfunction1(){
+
+        var x= document.createElement("h1");
+
+        x.innerHTML="Nitin is developer";
+
+        document.getElementById("ic").appendChild(x);
+
+        }
+
+    </script>
+    <hr>
+    <h1>Memorization</h1>
+
+    <script>
+
+const clumsysquare = num =>{
+  let result = 0;
+  for (let i = 1; i <= num; i++) {
+    for (let j = 1; j <= num; j++) {
+      result ++;
+    }
+  }
+  return result;
+}
+console.log(clumsysquare(4));
+console.log(clumsysquare(10));
+console.log(clumsysquare(12));
+console.log(clumsysquare(17));
+console.log(clumsysquare(20));
+    </script>
+
+    
+   
+    
+</body>
+</html>

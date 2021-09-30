@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <ul id="std">
+
+
+        </ul>
+</body>
+
+<script>
+var students=[
+    {name:"Ravi",subject:"JS"},
+    {name:"Krupa",subject:"Android"}
+];
+
+    function enrollStudent(student,callback){
+        setTimeout(function(){
+            students.push(student);
+            console.log("Enrolled...");
+            callback();
+        },1000);
+    }
+
+            function getStudent(){
+                setTimeout(function(student){
+                    let str="";
+                    students.forEach(function(student){
+                        str+=`<li>${student.name}:${student.subject}</li>`
+                    });
+                    document.getElementById("std").innerHTML=str;
+                    console.log("Fetched..!")
+                },3000);
+            }
+
+            var newStudent={name:"Ajay",subject:"Python"};
+            var newStudent1={name:"Suraj",subject:"Python"};
+            
+            enrollStudent(newStudent,getStudent);
+
+</script>
+</html>

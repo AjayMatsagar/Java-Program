@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExper26/08/2021</title>
+</head>
+<body>
+    
+    <h3> Regular Expression</h3>
+    <script>
+
+        var str="Hello world world Hello Hello";
+        document.write(str.search("hello")+"<br>");
+
+        document.write(str.replace("Hello","hello")+"<br>");
+
+        document.write(str.search(/hello/i)+"<br>");
+        document.write(str.replace(/hello/i,"hello")+"<br>");
+        document.write(str.replace(/hello/ig,"hello")+"<br>");
+
+    </script>
+
+
+<hr>
+        <h3>Regulae Expression Using function</h3>
+
+        <script>
+
+            function is_name(str){
+                var regexp= /^[a-zA-Z@.]{3,30}$/;
+
+                if(regexp.test(str)){
+
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            console.log(is_name("Sachin"))
+            document.write("Check on console"+"<br>")
+
+            
+        </script>
+
+        <hr>
+        <h3> Number RegExper</h3>
+
+       <button onclick="myFunction()">Try it</button>
+
+       <p id="demo"></p>
+       <script>
+
+           function myFunction(){
+
+           var str="Hello 34 hjhg jgjjks hjj";
+
+            var patt1=/\d/g;
+            var result=str.match(patt1);
+
+
+            document.getElementById("demo").innerHTML=result;
+           }
+       </script>
+
+       <hr>
+       <h3> Match</h3>
+
+
+       <button onclick="match()">Match</button>
+
+    
+       <script>
+
+           function match(){
+
+
+            var str="It is time To rhyme a thyme A poem I must write";
+
+            var res=str.match(/me/g);
+            document.write(res);
+           }
+       </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="myh2">Hello World!</h2>
+
+    <script>
+
+            var h=document.getElementById("myh2");
+                var length=h.firstChild.length;
+
+                console.log(length);
+                document.write("Length of String:"+length+"<br>");
+
+               document.write(h.firstChild.data+"<br>");  //old data
+
+               //setting new Data
+             /*  let nwD=h.firstChild.data="I am new Data of h2";
+               document.write(nwD+"<br>");
+
+               //appendData Method
+               var nwAp=h.firstChild.appendData("india");
+               document.write(nwAp+"<br>");*/
+
+               //DeleteMETHOD;
+
+        //    var delD= h.firstChild.deleteData(0,7);
+          //  console.log(delD);
+
+            //insetData;
+            document.write("<hr>");
+
+            let newH=document.getElementById("myh2");
+
+           // newH.firstChild.insertData(3,"bye");
+
+           // console.log(newH.firstChild);
+
+            //replacedata
+
+            var re=newH.firstChild.replaceData(0,4,"bye");
+            console.log(re);
+
+            console.log("________________________________");
+
+            //SplitText;
+
+          /* var rightSide=newH.firstChild.splitText(2);
+            console.log(rightSide);*/
+
+            //substringData
+
+            var nere=newH.firstChild.substringData(0,3);
+
+            console.log(nere);
+
+
+    </script>
+</body>
+</html>

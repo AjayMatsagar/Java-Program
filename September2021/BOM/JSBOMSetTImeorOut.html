@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTime09/09/2021</title>
+</head>
+<body>
+    
+        <p id="myp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptas laboriosam tempore 
+         qui iure excepturi fugit cupiditate natus atque ipsa! Nisi repellat excepturi qui vero 
+         reprehenderit eaque placeat vitae voluptates.</p>
+
+         <button type="button" id="btn">Clear Time!</button>
+
+         <script>
+             //setTimeOUT Method
+           /*  function changeCSS(){
+
+                 document.getElementById("myp").style="color:red"
+
+             }
+             setTimeout(changeCSS,5000);*/
+           /*  setTimeout(function changeCSS(){
+                 document.getElementById("myp").style="Color:cyan"
+             },2000)*/
+             
+
+           /* setTimeout(()=>{
+                document.getElementById("myp").style="Color:cyan;font-size:50px;"
+            },2000);*/
+
+            var timerID=setTimeout(()=>{
+                document.getElementById("myp").style="Color:blue;"
+            },5000);
+
+
+            function clrtime(){
+
+               clearTimeout(timerID);
+            }
+
+             document.getElementById("btn").addEventListener("click",clrtime);
+
+
+
+            
+         </script>
+</body>
+</html>

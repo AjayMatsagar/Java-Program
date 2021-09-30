@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" id="myid">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> ParentNode vs parentElements</h3>
+
+    <h1> We are Learning JS</h1>
+
+    <p id="myid1">I am Paragraph</p>
+
+    <script>
+
+        var result=document.getElementById("myid");
+        var rs1=document.getElementById("myid1");
+        console.log("Document Node");
+        console.log(result.parentNode); //#document
+        console.log(result.parentElement); //null
+
+
+        console.log("Paragraph Node ");
+
+        console.log(rs1.parentNode);  
+        console.log(rs1.parentElement);  
+    </script>
+
+    <hr>
+    <h3>childNode</h3>
+
+</body>
+</html>

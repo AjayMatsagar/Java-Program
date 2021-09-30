@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class19/08</title>
+</head>
+<body>
+
+    <script>
+
+        var arr=["Rahul","Sonam","Sumit","Raj","Rohan"];
+
+        document.write(arr+"<br>")
+
+        document.write("use SLice() Method<br>");
+
+        document.write(arr.slice(0,3));
+
+        document.write("<hr>")
+        document.write("Use Splice() Method<br>");
+
+        document.write(arr.splice(2,2)+"<br>");
+        document.write(arr.splice(0,5)+"<br>");
+        
+
+        arr.splice(2,0,"Dell")
+
+        document.write(arr+"<br>");
+
+        document.write(arr.splice(2,1,"Dell","Hp")+"<br>");
+
+       
+
+
+        
+    </script>
+    <hr>
+    <h3> Array to String</h3>
+
+    <script>
+        var arr=["Rahul","Sonam","Sumit","Raj","Rohan"];
+        arr.toString();
+
+        document.write(arr);
+    </script>
+     <hr>
+     <h3> Array fill() Method</h3>
+
+     <script>
+         var app=["Rahul","Ravi","Kiran","Goldi"];
+         document.write(app+"<br>")
+
+         app.fill("Don");
+
+         document.write(app+"<br>");
+
+
+         app.fill("Don",1,3);
+         document.write(app+"<br>");
+
+         var new_app=new Array(3).fill("Jay");
+         document.write(new_app);
+     </script>
+    
+</body>
+</html>

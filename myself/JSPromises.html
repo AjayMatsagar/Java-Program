@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises29/08/2021</title>
+</head>
+<body>
+
+    <h3> First promise program</h3>
+    <p>Check on Console</p>
+    <script>
+
+        const count=1;
+        let countvalue= new Promise(function(resolve,reject){
+           if(count){
+               resolve("There is count value.");
+           } else{
+               reject("There is no count value.")
+           }
+        });
+        console.log(countvalue);
+
+    </script>
+    <hr>
+    <h3>Chanining the Promises with than()</h3>
+    
+    <script>
+
+            let countvalue1=new Promise(function(resolve,reject){
+
+                resolve("Promise resolved..")
+            });
+
+            countvalue1
+            .then(function successValue(result){
+                console.log(result);
+            })
+            .then(function successValue1(){
+                console.log("You can call multiple function this way..")
+            });
+    </script>
+
+    <hr>
+    <h3>JS Promises finally() method</h3>
+
+    <script>
+            let coub= new Promise(function (resolve,reject){
+                resolve(`Promise resolved`);
+            });
+
+            coub.finally(
+                function greet(){
+                    console.log("This code is executed..")
+                }
+            );
+
+    </script>
+    <hr>
+    <h3> Promises async function with await keyword..</h3>
+
+    <script>
+
+        let app= new Promise(function(resolve,reject){
+            setTimeout(function(){
+                resolve("Promise resolved")},4000);
+        });
+
+        async function syncFunc(){
+            let result= await app;
+
+            console.log(result);
+            console.log("Hello");
+        }syncFunc();
+    </script>
+    <hr>
+    <h3>Promises Error Handling</h3>
+
+    <script>
+        let promise= new Promise(function(resolve,reject){
+            setTimeout(function(){
+                resolve("Promise resolved in try")},4000)
+        });
+
+        async function asyncFun(){
+            try{
+                let result=await promise;
+                console.log(result);
+            }
+            catch(error){
+                console.log(error);
+            }
+        }
+        asyncFun();
+    </script>
+
+</body>
+</html>

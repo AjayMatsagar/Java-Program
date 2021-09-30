@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM1/09/2021</title>
+</head>
+<body>
+    <h1 id="myid"> We are Learning JS<!--This is comment-->
+    </h1>
+
+
+    <p id="myid1">I am Paragraph</p>
+
+    <script>
+
+            document.write("-----Document-----<br>");
+
+            document.write(document.nodeName+"<br>")
+            document.write(document.nodeValue+"<br>");
+
+            document.write(document.nodeType+"<br>");
+
+            console.log(document.nodeName);
+
+            console.log(document.nodeValue);
+            console.log(document.nodeType);
+
+
+
+            document.write("<br>");
+
+            document.write("-----Element-----<br>");
+
+          var txt= document.getElementById("myid");
+
+            document.write(txt.nodeName+"<br>");
+
+            document.write(txt.nodeValue+"<br>");
+
+            document.write(txt.nodeType+"<br>");
+
+            console.log(txt.nodeName);
+            console.log(txt.nodeValue);
+            console.log(txt.nodeType);
+
+
+
+            document.write("<br>");
+
+            document.write("-----Text-----<br>");
+
+          var txt= document.getElementById("myid");
+
+            document.write(txt.firstChild.nodeName+"<br>");
+
+            document.write(txt.firstChild.nodeValue+"<br>");
+
+            document.write(txt.firstChild.nodeType+"<br>");
+
+            console.log(txt.firstChild.nodeName);
+            console.log(txt.firstChild.nodeValue);
+            console.log(txt.firstChild.nodeType);
+
+            document.write("<br>");
+
+            document.write("-----Comment-----<br>");
+
+            var cmt=document.getElementById("myid");
+
+            document.write(cmt.firstChild.nextSibling.nodeName+"<br>");
+
+            document.write(cmt.firstChild.nextSibling.nodeValue+"<br>");
+            document.write(cmt.firstChild.nextSibling.nodeType+"<br>");
+
+
+
+
+
+            document.getElementById("myid1").firstChild.nodeType="This is new Value"
+
+
+    </script>
+    <hr>
+
+    <h3> Tree</h3>
+
+    <h1 id="head"></h1>
+
+    <h2>Hello World</h2>
+
+    <p id="para">Hello</p>
+    <p id="find"> Bye</p>
+
+    <script>
+        var result=document.getElementById("para");
+        document.write(result);
+        console.log(result);
+    </script>
+
+    <hr>
+
+    <h1> we are Learning JS</h1>
+    <h1> Hello World</h1>
+    <h2>Now</h2>
+    <p id="para">Hello</p>
+    <p id="find">Bye</p>
+
+    <div>  
+        <p> 1st p inside div</p>
+        <p> 2nd p inside div</p>
+    </div>
+
+
+    <script>
+
+        var result=document.getElementsByTagName("p");
+
+        document.write(result);
+        console.log(result);
+    </script>
+    <hr>
+
+             <p id="para">Hello</p>
+             <p id="find">Bye</p>
+
+                     <div>  
+                               <p> 1st p inside div</p>
+                                  <p> 2nd p inside div</p>
+                    </div>
+
+                    <script>
+
+                        var result=document.getElementsByTagName("*")
+
+                        document.write(result);
+
+
+                        var result1= document.body.getElementsByTagName("*");
+
+                        document.write(result1);
+                    </script>
+    
+</body>
+</html>

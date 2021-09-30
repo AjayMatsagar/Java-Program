@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Session Stroage</h2>
+
+            <p><button onclick="clickCounter()" type="button">click me!</button></p>
+
+            <div id="result"></div>
+            <p>Click the button to see the counter increases</p>
+            <p>Close the browser tab or(window) and try again, and the counter will continue
+                 to count(is not restart)</p>
+
+                 <script>
+                     function clickCounter(){
+                         if(typeof(Storage)!=="undefined"){
+                             if(sessionStorage.clickcount){
+                            sessionStorage.clickcount=Number(sessionStorage.clickcount)+1;
+
+
+                         }else{
+                             sessionStorage.clickcount=1;
+
+                         }
+                         document.getElementById("result").innerHTML="you have clicked the button"+sessionStorage.clickcount+ "time(s).";
+                     }else{
+                       // document.getElementById("result").innerHTML="you have clicked the button"+sessionStorage.clickcount+ "time(s).";
+
+                     }
+                    }
+                 </script>
+</body>
+</html>

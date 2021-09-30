@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h2>Event Bubling</h2>
+
+        <!--Event bubbling is a method of event propagation in the
+             HTML DOM API when an event is in an element inside another element,
+              and both elements have registered a handle to that event.-->
+
+                <div id="parent"><button id="parent">
+                    <h2>Parent</h2>
+                </button>
+                <button id="child">
+                    <p id="child">Child</p>
+                </button>
+            </div><br>
+
+
+            <script>
+                document.getElementById(
+            "child").addEventListener("click", function () {
+                    alert("You clicked the Child element!");
+                }, false);
+
+                document.getElementById(
+            "parent").addEventListener("click", function () {
+                    alert("You clicked the parent element!");
+                }, false);
+            </script>
+
+</body>
+</html>

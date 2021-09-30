@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSNumber19/08</title>
+</head>
+<body>
+    <h3> JS Number </h3>
+    <script>
+        var number=21;
+        document.write(number+"<br>");
+
+        document.write(Number.MAX_VALUE+"<br>");
+
+        document.write(Number.MIN_VALUE+"<br>");
+
+
+        /*var date=parseInt(prompt("Enter a number.."));
+
+        if(date<1 || date>31){
+
+            date=Number.NaN;
+            document.write("Enterd value is:"+date);
+        }
+            else{
+                document.write("Enterd date is:"+date);
+            
+        }*/
+
+    </script>
+    <hr>
+    <script>
+
+                var a=10;
+                var b=5;
+                var c=5e3;
+                var d=34e-5;
+                var x= new Number(100);
+
+                document.write(typeof(a)+":");
+                document.write(a+"<br>")
+
+                document.write(typeof(b)+":");
+                document.write(b+"<br>")
+
+                document.write(typeof(c)+":");
+                document.write(c+"<br>")
+
+                document.write(typeof(d)+":");
+                document.write(d+"<br>")
+
+                document.write(typeof(x)+":");
+                document.write(x+"<br>")
+
+                var e="100";
+                document.write(typeof(e)+":");
+                document.write(e+"<br>");
+
+    </script>
+    <hr>
+    <h3>Operation On Number</h3>
+
+    <script>
+                var a="50";
+                var b=10;
+                var c=10;
+                var d="Hello";
+
+                document.write(b+c+"<br>");
+
+                document.write(a+b+"<br>");
+
+                document.write(b+a+"<br>");
+
+                document.write(b+d+"<br>");
+
+                document.write(d+b+"<br>");
+
+                document.write(c-b+"<br>");
+
+                document.write(c-b+"<br>");
+                document.write(a-b+"<br>");
+
+                document.write(b-a+"<br>");
+                document.write(b-a+"<br>");
+
+                document.write(b-d+"<br>");
+
+                document.write(d-b+"<br>");
+
+                document.write("<hr>");
+                document.write("<h3> Typeof() method</h3><br>")
+
+                document.write(typeof(b+c)+"<br>");
+
+                document.write(typeof(a+b)+"<br>");
+
+                document.write(typeof(b+a)+"<br>");
+
+                document.write(typeof(b+d)+"<br>");
+
+                document.write(typeof(c-d)+"<br>");
+
+                document.write(typeof(a-b)+"<br>");
+
+                document.write(typeof(b-a)+"<br>");
+                document.write(typeof(b-d)+"<br>");
+
+                document.write(typeof(d-b)+"<br>");
+
+    </script>
+
+    <hr>
+    <h3> Nan Methods</h3>
+
+    <script>
+                var a="50";
+                var b=10;
+                var c=20;
+                var d="Hello";
+
+                document.write(d/b+"<br>");
+
+                if(isNaN(d)){
+                    document.write(`Not number`+"<br>");
+                }else{
+
+                    document.write( `number`);
+                }
+
+                if(NaN==NaN){
+                    document.write("Equal..");
+                }else{
+
+                    document.write("Not Equal")
+                }
+
+    </script>
+</body>
+</html>

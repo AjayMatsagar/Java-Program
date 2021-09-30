@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form24/09/2021</title>
+    <style>
+        form{
+            border: 1px solid black;
+            width: 400px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Required Filed</h2>
+    <form>
+        Name:<input type="text" name="name" required><br><br>
+        Password:<input type="password" name="pass" ><br><br>
+
+        City:<input type="text" name="city" required><br><br>
+        <input type="submit" value="Submit">
+
+
+    </form>
+
+    <br><br><hr>
+<h2>Custome Validition</h2>
+    <form>
+            Number:<input type="number" min=10 max=50 oninvalid="setCustomValidity('age should be greater than 10 and less than 50')">
+
+            <br><br>
+            <button type="submit">Submit</button>
+    </form>
+    <br><br><hr>  
+    
+    <h2>optgroup and Option </h2>
+    <form>
+        Name:<input type="text" name="name"><br><br>
+        Course:<select>
+            <optgroup label="Programming"></optgroup>
+            <option value="Java">Java Programming</option>
+            <option value="C">C Programming</option>
+            <option value="C#">C# Programming</option>
+            <option value="C++">C++ Programming</option>
+
+            <optgroup label="Web Designing"></optgroup>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="Javascript">JS</option>
+            <option value="PHP">PHP</option>
+        </select>
+
+        <br><br>
+        <input type="submit" value="Sumbit">
+    </form>
+    <br><br><hr>
+        <h2> Multiple Option Selection</h2>
+            <form>
+
+                Name:<input type="text" name="name"><br><br>
+                Course:<select name="courselist" autofocus size="5" multiple>
+                    <option value="">None</option>
+                    <option value="Java">Java Programming</option>
+                    <option value="C">C Programming</option>
+                    <option value="C#"> C Shrap</option>
+                    <option value="C++">HTML</option>
+                    <option value="C++">CSS</option>
+                    <option value="C++">JS</option>
+
+                </select>
+                <br><br>
+                <input type="submit" value="Submit">
+                <input type="email" name="email" multiple=""><br><br>
+
+                <input type="submit" value="submit"><br><br>
+                <input type="file" name="file" multiple=""><br><br>
+                <input type="submit" value="submit"><br><br>
+            </form>
+</body>
+</html>

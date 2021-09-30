@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> We are Learning JS </h1>
+    <h1 class="para myclass">Hello World</h1>
+
+    <h2>Now</h2>
+    <p class="para">Hello<span class="myspan">Pune</span><em>World</em><span>JS</span></p>
+
+    <div id="show">
+        <p>1st p inside div</p>
+        <p class="para">2nd p inside div</p>
+    </div>
+    <p id="show1">I am Paragraph</p>
+    <hr>
+
+
+    <script>
+
+                document.write("---Element Selector---<br>");
+
+                var rs=document.querySelectorAll("p");
+                   // console.log(rs);
+                   var rs1=document.querySelectorAll("p,h1,title");
+                  // console.log(rs1);
+
+                   document.write("---ID Selctor---<br>");
+
+                   var rss=document.querySelectorAll("#show1");
+                  // console.log(rss);
+                   var rss1=document.querySelectorAll("#show1,#show");
+                   //console.log(rss1);
+
+                   document.write("---Class Selctor---<br>");
+
+                   var res1=document.querySelectorAll(".para");
+                   console.log(res1);
+
+                   var res2=document.querySelectorAll(".para, .myclass");
+                   console.log(res2);
+
+
+                   document.write("--Attribute Seletor---");
+
+                   var re2= document.querySelectorAll("div[id='show']");
+
+                   console.log(re2);
+
+
+
+
+    </script>
+</body>
+</html>

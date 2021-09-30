@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSCreate03/09/2021</title>
+</head>
+<body>
+    <h3>Create Element</h3>
+    <div id="myid">
+        <h1>We are Learning JS</h1>
+
+    </div>
+<script>
+            //creating a new h2 element
+            console.log("_____createElement______");
+            var nENODE=document.createElement("h2");
+            console.log(nENODE);
+            var cText=document.createTextNode("Hello Dell");
+            nENODE.appendChild(cText);
+           console.log("______createText______");
+
+           var nTnode=document.createTextNode("Text Created by JS");
+
+           console.log(nTnode);
+
+           console.log("______Create Comment______");
+
+           var nCmt=document.createComment("I am Comments");
+           console.log(nCmt);
+
+           console.log("________appendChild_______");
+
+           var nENODE=document.createElement("h2");
+           targetNode=document.getElementById("myid");
+           nENODE=document.createTextNode("Hello From JS");
+
+           targetNode.appendChild(nENODE);
+           console.log(targetNode);
+      // document.write(targetNode);
+
+           console.log("_____Next______");
+
+            var nTnode1=document.createTextNode("Text Created JS");
+
+            var target=document.getElementById("myid");
+
+            target.appendChild(nTnode1);
+            console.log(target);
+
+            console.log("____Comment in JS_____");
+
+            var nCnode=document.createComment("Comment From JS");
+
+            var tar=document.getElementById("myid");
+
+            tar.appendChild(nCnode);
+            console.log(tar);
+
+            console.log("____Creatre All Append to Div_____");
+
+            var nEno=document.createElement("h2");
+
+            //creating text node..
+            var textN=document.createTextNode("Text Created All")
+            //crating Comments
+            var commentN=document.createComment("I am comments from all");
+
+            var divTar=document.getElementById("myid");
+
+            divTar.appendChild(textN);
+            divTar.appendChild(commentN);
+            console.log(divTar);
+         // document.write(divTar);
+            
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myul">
+            <li> item1</li>
+            <li id="item_2">item2</li>
+            <li>item 3</li>
+            <li> item 4</li>
+    </ul>
+    <script>
+
+                var u=document.getElementById("myul");
+
+                var i=document.getElementById("item_2");
+
+                    //deleteNode;
+                   /* var delnode=u.removeChild(i);
+                    console.log(delnode);*/
+
+
+                   // var delnode1=u.removeChild(u.childNodes[1]);// remove speific element
+
+                    var  del=u.removeChild(u.childNodes[2]); //remove without specifying parentNode
+
+    </script>
+
+    <hr>
+
+        <h3> replaceChild Method</h3>
+
+        <ul id="nmyul">
+            <li> item1</li>
+            <li id="nitem_2">item2</li>
+            <li>item 3</li>
+            <li> item 4</li>
+    </ul>
+
+    <span id="myspan">Span</span>
+
+    <script>
+            var u1=document.getElementById("nmyul");
+
+            var i1=document.getElementById("nitem_2");
+
+            var newChild=document.createElement("li");
+            newChild.textContent="item N";
+
+           // var replaceNode=u1.replaceChild(newChild,i1);
+
+
+            //repalcinf with existing node
+
+            var pan=document.getElementById("myspan");
+
+            u1.replaceChild(pan,i1);
+    </script>
+
+            
+</body>
+</html>

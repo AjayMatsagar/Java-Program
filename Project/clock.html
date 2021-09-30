@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            body{
+                font-family:'Expletus Sans' cursive;
+                height: 100vh;
+                width: 100%;
+                display: grid;
+                place-items: center;
+                background-color: #DEDEDE;
+            }
+            .light{
+                --background:#F5F5F5;
+            }
+            .dark{
+                --background:#464646;
+            }
+            .mainBox{
+                width: 300px;
+                height: 550px;
+                box-shadow: 0px 0px 9px rgba(0,0,0,0.25);
+                background-color: var(--background);
+                padding: 20px;
+                border: 20px;
+                border-radius: 20px;
+            }
+            .battery{
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+            }
+            .battery.fa-battery-half{
+                    color: #C9C9C9;
+            }
+            .battery span{
+                font-size: 14px;
+                margin-left: 5px;
+                color:#E67253 ;
+                border-radius:50%;
+            }
+            .clockBox{
+                position: relative;
+                height: 220px;
+                width:220px;
+                margin: 10px auto;
+                background-color: #E67253;
+                border-radius: 50%;
+            }
+            .clockBox::before{
+                content: '';
+                position: absolute;
+                height: 200px;
+                width: 200px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                border-radius: 50%;
+                background-color: var(--background);
+                box-shadow: inset 0px 0px 0px rgba(0,0,0,0.301);
+            }
+            .clockBox::after{
+                content: '';
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                border-radius: 50%;
+                background-color: #C9C9C9;
+            }
+            .min,
+            .hr,
+            .sec{
+                position: absolute;
+                transform: rotate(0 deg);
+                transform-origin: bottom center;
+            }
+            .min{
+                height: 100px;
+                width: 4px;
+                background-color: #C9C9C9;
+                margin: auto;
+                top: 5%;
+                left: 49%;
+                border-radius: 2px;
+            }
+            .hr{
+                height: 70px;
+                width: 5px;
+                background-color: #C9C9C9;
+                margin: auto;
+                top:18%;
+                left: 49%;
+                border-radius: 2px;
+            }
+            .sec{
+            height: 110px;
+            width: 2px;
+            background-color: #C9C9C9;
+            margin: auto;
+            top:0%;
+            left: 49.5%;
+            border-radius: 2px;  
+            }
+            .med{
+                position: absolute;
+                left: 50%;
+                bottom: 20px;
+                transform: translate(-50%);
+                color: #E67253;
+            }
+            .info{
+                margin-top: 50px;
+                text-align: center;
+            }
+            .temp{
+                color: #E67253;
+                font-size: 20px;
+
+            }
+            .basic{
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+            }
+            .basic .city{
+                font-size: 25px;
+                color: #C9C9C9;
+            }
+            .basic .date{
+                font-size: 14px;
+                color: #E67253;
+            }
+            .mode{
+                margin-top: 70px;
+                font-size: 20px;
+                color: #E67253;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                background: transparent;
+            }
+ </style>
+<body>
+    
+        <div class="mainBox light">
+            <div class="battery">
+                <span class="percentage"></span>
+                <i class="fa fa-battery-half"></i>
+            </div>
+            <div class="clockBox">
+                <div class="hr"></div>
+                <div class="min"></div>
+                <div class="sec"></div>
+                <div class="med">am</div>
+            </div>
+            <div class="info">
+                <div class="temp">
+                    <span class="degree">22&#xb0;</span>
+                    <!-- <i class="fas fa-sun"> -->
+                </div>
+
+                <div class="basic">
+                    <span class="city">New Delhi</span>
+                    <span class="date">Sunday,March 10</span>
+
+                </div>
+                <button class="mode">
+                    <i class="far fa-sun"></i>
+                </button>
+            </div>
+            
+<i class="fas fa-moon"></i>
+        </div>
+
+        <script>
+            const mod=document.querySelector('.mode');
+            mod.addEventListener('click',()=>{
+                document.querySelector('.maiBox').classList.toggle('dark');
+                document.querySelector('.far fa-sun').classList.toggle("fas fa-moon");
+
+            });
+            setInterval(()=>{
+                navigator.getBattery().then(function (battery){
+                    var level=battery.level;
+                    document.querySelector('.percentage').innerHTML=(level*100)+'%';
+                });
+
+                const date=new Date();
+                const hourse=date.getHours();
+                const minutes=date.getMinutes();
+                const seconds=date.getSeconds();
+                const hour=30*hour+minutes/2;
+                const minute=6*minutes;
+                const second=6*seconds;
+                if(hourse>=12){
+                    var period='pm';
+
+                }else{
+                    var period='am';
+                }
+                document.querySelector(".med").innerHTML=period;
+                document.querySelector(".hr").style.transform= `rotate(${hour}deg)`;
+                document.querySelector(".min").style.transform= `rotate(${minute}deg)`;
+                document.querySelector(".sec").style.transform= `rotate(${second}deg)`;
+            },1000);
+
+            
+        </script>
+</body>
+</html>

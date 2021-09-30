@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventMethod3/31/08/2021</title>
+</head>
+<body>
+
+    <h3>Welcome to my website </h3>
+
+   <p id="demo" onmouseover="onMouse();" onmouseout="onMouseOut();">This is paragraph</p> 
+
+   <script>
+
+            function onMouse(){
+               document.getElementById('demo').style.backgroundColor="cyan";
+
+            }
+
+            function onMouseOut(){
+
+                document.getElementById('demo').style.backgroundColor="";
+
+            }
+   </script>
+
+   <hr>
+   <p>Focus the IFrame first (e.g. by clicking in it), then try pressing some keys.</p>
+            <p id="log"></p>
+   <script>
+
+                            document.addEventListener('keydown', logKey);
+
+                                    function logKey(e) {
+                                 log.textContent += ` ${e.code}`;
+                                    }
+
+
+  
+
+   </script>
+
+                <script>
+
+                                document.addEventListener('keyup', (event) => {
+                                var name = event.key;
+                                 var code = event.code;
+  
+                                alert(`Key pressed ${name} \r\n Key code value: ${code}`);
+                                    }, false);
+                </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSCSS07/09/2021</title>
+</head>
+<body>
+    <p id="myp" style="background-color: darkgray;color:black ;">Paragraph</p>
+
+    <p id="myp2" style="background-color: darkgray;color:black ;">Paragraph</p>
+
+    <p id="myp3" style="background-color: darkgray;color:black ;">Paragraph</p>
+
+        <script>
+            var p=document.getElementById("myp");
+            var cs=p.style;
+            console.log(cs);
+
+            //cssText returns or sets the next of the elements inline style declaration only
+
+            console.log(cs.cssText);
+            console.log(p);
+
+            //sets
+            cs.cssText="color:cyan; border:1px solid blue";
+            console.log(p);
+            console.log("________________________________");
+
+        </script>
+
+        <script>
+
+                var p2=document.getElementById("myp2");
+                var cs=p2.style;
+
+                //it gets the number of explicitly set styles on the HTML elements.
+                console.log(cs.length);
+                console.log(p2);
+                console.log(cs.item(1));
+
+                var propvalue=cs.getPropertyValue('color'); //balck;
+                console.log(propvalue);
+
+                //remove Property
+
+                cs.removeProperty("color");
+                console.log(p2);
+
+                //setProperty;
+                cs.setProperty('font-size','50px');
+                console.log(p2);
+
+                //getPropertyPrioruty
+                var propPriorty=cs.getPropertyPriority('color');
+                console.log (propPriorty);
+
+                console.log("________________________________");
+
+        </script>
+
+        <script>
+
+                  
+        </script>
+</body>
+
+
+</html>

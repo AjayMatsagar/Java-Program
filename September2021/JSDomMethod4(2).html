@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myid">
+        <!--This is Comment-->We are Learning JS<span>Hello</span> </h1>
+        <p id="myid1">I am Paragraph</p>
+        <p id="myid2">
+            <span>I am span</span>I am Paragraph
+        </p>
+        
+
+        <script>
+
+            var res=document.getElementById("myid");
+
+            //it includes text node,comments node amd any white Spaces ,tab,comments node and enter etc
+
+            console.log(res.childNodes);
+            console.log(res.children.length);
+
+            console.log("Access all using loop with length Property");
+
+            //find Length
+            var cnlen=res.childNodes.length;
+            console.log(cnlen);
+
+            var clen=res.children.length;
+            console.log(clen);
+
+            //for loop for childNode
+            console.log("For Loop for childNode")
+
+            for(let i=0;i<cnlen;i++){
+                console.log(res.childNodes[i]);
+
+            }
+            console.log("for loop for childran")
+
+            for(let i=0;i<clen;i++){
+                console.log(res.children[i]);
+            }
+        </script>
+</body>
+</html>

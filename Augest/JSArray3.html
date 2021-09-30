@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Array concat() Methods</h3>
+
+    <script>
+        var a=["Tata","Audi","BMW","Volvo"];
+
+        var new_a=a.concat("Jaguar","RangeRover");
+
+            document.write(a+"<br>")
+
+        document.write(new_a+ "<br>");
+
+        document.write("<hr>");
+
+        document.write("Concat Two Array<br>");
+
+        var b=["Kumar","Ravi"];
+        var new_b=a.concat(b);
+
+        document.write(new_b+"<br>");
+
+        document.write("<hr>");
+
+        document.write("Concat Three Array<br>");
+
+        var a=["Tata","Audi","BMW","Volvo"];
+
+        var b=["Kumar","Ravi"];
+        var c=["Ajay","Mahesh"];
+        new_c=c.concat(a,b);
+
+        document.write(new_c+"<br>")
+
+    </script>
+
+    <hr>
+    <h3> Array Join() Method</h3>
+
+    <script>
+
+        var arr=["BMW","Audi","AMW"];
+        var new_Arr=arr.join(" /"); //using "/"
+
+        document.write(new_Arr+"<br>");
+
+        document.write("<hr>")
+        var arr=["BMW","Audi","AMW"];
+        var new_Arr=arr.join(" or ");//Using Or
+
+        document.write(new_Arr+"<br>");
+
+        document.write("<hr>")
+
+        var arr=["BMW","Audi","AMW"];
+        var new_Arr=arr.join("  "); //using Space
+
+        document.write(new_Arr+"<br>");
+
+        document.write("<hr>")
+    </script>
+
+    <h3> Array.isArray() Method</h3>
+
+    <script>
+        var arr=["Rahul","Sonam","Sumit","Raj"];
+         var result1=Array.isArray(["Rose","Lotus"]);
+
+         var result2=Array.isArray("IAmString");// false as not an array
+
+         var result3=Array.isArray(arr);
+         document.write(result1+"<br>");
+
+         document.write(result2+"<br>");
+         document.write(result3+"<br>");
+
+
+    </script>
+    <hr>
+
+    <h3> Array indexOf() Method</h3>
+
+    <script>
+        var arr=["Rahul","Sonam","Sumit","Raj"];
+
+        var p1=arr.indexOf("Raj");
+        var p2=arr.indexOf("Raj",2);
+        var p3=arr.indexOf("Priti");
+
+        document.write(p1+"<br>"+p2+"<br>"+p3+"<br>");
+    </script>
+
+        <hr> 
+        <h3> Array Splice() Method</h3>
+        <script>
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.splice(2,0,"Lemon","Kiwi");
+
+        document.write(fruits);
+
+            document.write("<hr>");
+            document.write("<h3> Array Slice() Method</h3><br>");
+
+            const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+            let citr=fruits1.slice(2);
+
+            document.write(citr);
+        
+
+                </script>
+</body>
+</html>

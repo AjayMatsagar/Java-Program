@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>First letter Capital</h2>
+    <script>
+
+            var sentence="pass the football";
+            sentence.toLowerCase
+            var capitlistring= (str)=>str[0].toUpperCase()+str.slice(1).toLowerCase();
+            var capitWords= (str)=>str.split(" ").map(capitlistring).join(" ");
+
+            document.write(capitWords(sentence));
+                 
+    </script>
+
+    <hr>
+    <h2>Calculating number of days</h2>
+
+            <script>
+               date1 = new Date("07/15/2015");  
+                 date2 = new Date("07/30/2015");  
+
+                var noTime=date2.getTime()-date1.getTime();
+
+                var noDays=noTime/(1000 * 60 * 60 * 24);  
+
+               // document.write(noDays);
+               document.write("No of Days between date: "+noDays);
+
+            </script>
+            <hr>
+            <h2> String into Number</h2>
+
+            <script>
+
+               var str="125str";
+
+                var ston = parseInt(str);
+                document.write(ston);
+            </script>
+
+            <hr>
+            <h2>Check if an array contains any items</h2>
+
+            <script>
+                   var arr=[];
+                   // var arr2=[1,8,9];
+                   
+                 var res= (arr.length>0)?"Value":"Empty";
+                 document.write(res);
+                  /* if(arr.length>0){
+                       document.write("Array cantains Value");
+                   }else{
+                       document.write("Empty");
+                   }*/
+
+                
+            </script>
+            <hr>
+            <h2> Different ways of merging multiple arrays</h2>
+
+                <script>
+                   document.write("<h3>1.Using Spred Opertor</h3><br>");
+
+                    var arr1=[1,2,3];
+                    var arr2=[4,5,6];
+                        arr1=[...arr1,...arr2];                    
+                        document.write(arr1+"<br>");
+
+                        document.write("<h3>2.Concat</h3><br>");
+
+                            var arr3=[1,2,3];
+                             var arr4=[4,5,6];
+
+                             var n=arr3.concat(arr4);
+                                document.write(n+"<br>");
+
+                          document.write("<h3>3.Push</h3><br>");
+                          var array1=[1,2,3,4];
+                          var array2=[5,6,7,8];
+
+                          array1.push(array2);
+                          document.write(array1);
+
+                </script>
+                <hr>
+                <h2> Sort an array containing numbers</h2>
+
+                <script>
+                            function asc(){
+                        var srr=[5,8,4,2,3,9,1];
+                        document.write("Using Sort Method<br>")
+                        var n=srr.sort(function(a,b){return a-b});
+                        document.write(n+"<br>")
+
+                        var temp;
+
+                                var i,j;
+                                for(i=0;i<srr.length;i++){
+
+                                    for(j=i+1;j<srr.length;j++){
+
+                                        if(srr[i]>srr[j]){
+                                            temp=srr[i];
+                                            srr[i]=srr[j];
+                                            srr[j]=temp;
+                                        }
+                                    }
+                                }
+                                document.write("Using loop<br>")
+                                document.write(srr);
+                        
+                                
+                            }asc()
+                     //  document.write(srr);
+                </script>
+
+                <hr>
+                <h3>Swap two Number</h3>
+
+                <script>
+                    var d= function(){
+                        var a=10;
+                        var b=20;
+                        document.write("Before a:"+a +"and b:"+b+"<br>");
+
+                        a=a+b;
+                        b=a-b;
+                        a=a-b;
+
+                        document.write("After swapping a: "+a +"and b: "+b);
+                    };
+                    d();
+                </script>
+
+</body>
+</html>

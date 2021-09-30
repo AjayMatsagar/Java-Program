@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error27/08/2021</title>
+</head>
+<body>
+    <h3> Try,Catch Block..</h3>
+
+    <script>
+
+        try{
+            //window.alert("Good Morning..");
+            document.write("Hi all");
+        }
+
+        catch(err){
+            document.write(err);
+        }
+    </script>
+    <hr>
+    
+    <input type="text" id="demo"> <button type="button" onclick="myFunction()">Test Input</button>
+    <br>
+    <p id="message"></p>
+
+    <script>
+
+        function myFunction(){
+
+            var x;
+            try{
+                var x= document.getElementById("demo").value;
+
+                if(x=="")throw "empty";
+
+                if(isNaN(x))throw "Not a Number";
+
+                x= Number(x);
+
+                if(x<5) throw "Too Low";
+
+                if(x>10) throw "Too High";
+            }
+            catch(err){
+
+                document.getElementById("message").innerHTML="Input is "+err;
+
+            }
+            if(x>5&& x<=10){
+                document.getElementById("message").innerHTML="Input is right";
+            }
+        }
+    </script>
+    <hr>
+    <h3> Event Binding</h3>
+
+            <button onclick="alert('Button Clicked');">click me!</button>
+
+            <br>
+            <br>
+            <script>
+                function show(){
+
+                    document.write("Hello Javascript Event..");
+                }
+            </script>
+
+
+<button onclick="show();"> click me!</button>
+<hr>
+
+<h3>Event handling with Javascript</h3>
+
+            <button id ="myBtn"> click me!</button>
+
+            <script>
+                var btn=document.getElementById("myBtn");
+
+                console.log(btn);
+
+                btn.onclick=function(){
+                    alert("Button clicked..")
+                };
+                
+
+            </script>
+<hr>
+<h3> One Click</h3>
+            <button id="mybtn">Touch!</button>
+
+            <script>
+
+                function disp(){
+
+                    alert ("You Click Button 1");
+                }
+
+                function displ1(){
+                    alert ("Button Clicked2..");
+                }
+
+                document.getElementById("mybtn").onclick=disp;
+                //document.getElementById("mybtn").onclick=displ1;
+
+
+
+            </script>
+
+            <hr>
+            <h3> Add Event Listner..</h3>
+            <button id="mov">clickMe!</button>
+
+            <script>
+                function show(){
+
+                    alert("Button Clicked12");
+
+                }
+
+                var btn=document.getElementById("mov");
+
+                btn.addEventListener("click",show);
+
+            </script>
+
+            <hr>
+            <h3> Two Method in one button</h3>
+
+            <button id="touch">Touch!</button>
+
+            <script>
+                function displ3(){
+                    alert("You clicked First Function...")
+                }
+                function disp4(){
+                    alert("You Clicked Second Function");
+                }
+
+                var btn1=document.getElementById("touch");
+                btn1.addEventListener("click", displ3);
+                btn1.addEventListener("click", disp4);
+
+
+
+            </script>
+
+            <hr>
+
+            <h3>3 Add event listener</h3>
+            <button id="touch1">Touch!</button>
+
+            <script>
+                function displ3(){
+                    alert("You clicked First Function...")
+                }
+               
+
+                var btn2=document.getElementById("touch1");
+            
+                btn2.addEventListener("click",disp3,true);
+                btn2.removeEventListener("click",disp3,false);
+
+        
+        
+</script>
+
+    
+</body>
+</html>

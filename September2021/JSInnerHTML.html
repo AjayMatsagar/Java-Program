@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSInner07/09/2021</title>
+</head>
+<body>
+    <div id="d">
+        <ul id="myul"> 
+            <li> item 1</li>
+            <li> item 2</li>
+            <li> item 3</li>
+            <li> item 4</li>
+        </ul>
+    </div>
+    <p id="para">Paragraph</p>
+    <div id="div1"></div>
+
+    <div id="div2">
+        <p> Hello</p>
+        <p>World</p>
+    </div>
+   
+
+    <script>
+            var u=document.getElementById("myul");
+            console.log(u);
+
+         console.log(u.innerHTML);
+           // u.innerHTML=" "; //to get replace empty string in inner html or ul
+            //console.log(u);
+
+            u.innerHTML="<li> Java</li><li>CSS</li><li>JavaScript</li>"
+            console.log(u.innerHTML);
+
+            p1=document.getElementById("para");
+            p1.textContent="Hello Para";
+
+            div1=document.getElementById("d");
+
+            console.log(div1.outerHTML);
+            u.outerHTML="";
+            console.log(u);
+
+          /*  u.outerHTML="<ul><li>Hello Para</li></ul>";
+            console.log(div1);*/
+
+            //innerHTML;
+
+            console.log(u.innerText);
+            console.log(u.childNodes);
+
+            u.innerText="This is InnerText"
+            console.log(u);
+            //outerHTML
+            console.log(u.outerHTML);
+
+            var div2=document.getElementById("div2");
+
+            console.log(div2.outerText="Pune");
+            console.log(div2);
+
+
+
+    </script>
+
+</body>
+</html>

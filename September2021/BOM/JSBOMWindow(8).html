@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM08/09/2021</title>
+</head>
+<body>
+    
+    <!-- wimdows object syntax=Object.property name-->
+
+    <h1>Difference between Outer and Inner</h1>
+
+        <script>
+
+                let a=5;
+                //outer Height
+                var oh;
+                oh=window.outerHeight;
+                console.log("Outer Height="+oh);
+                //outer width
+                var ow=window.outerWidth;
+                console.log("Outer Width="+ow);
+
+                //inner Height
+                var ih=window.innerHeight;
+                console.log("Inner Height="+ih);
+                //inner width;
+
+                var iw=window.innerWidth;
+                console.log("Inner width="+iw);
+
+
+        </script>
+            <hr>
+        <h2>Dialog Box</h2>
+
+        <script>
+                        var b=10;
+                        /*window.alert("I am alert");
+
+                        alert("Hello Alert");
+                        alert(b);
+                        alert(4+2);
+                        alert("Price="+b);*/
+
+        </script>
+
+        <script>
+          /*  if(confirm("Do You Want to Delete?")){
+                document.write("Data Deleted");
+            }else{
+                document.write("Action Cancelled");
+            }*/
+        </script>
+
+        <hr>
+        <h2>Dialog Box</h2>
+
+        <script>
+            var name= window.prompt("Enter Your Name:" ,"Example Ram");
+
+            console.log(name);
+        </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1> We are Learning JS </h1>
+    <h1 class="para myclass">Hello World</h1>
+
+    <h2>Now</h2>
+    <p class="para">Hello<span class="myspan">Pune</span><em>World</em><span>JS</span></p>
+
+    <div id="show">
+        <p>1st p inside div</p>
+        <p class="para">2nd p <span class="myspan">insdside</span>div</p>
+    </div>
+    <p id="show1">I am Paragraph</p>
+    <div id="show2">I am Something div</div>
+    <hr>
+
+    <script>
+
+            document.write("---");
+
+            var data=document.getElementById("show");
+            var result=document.querySelectorAll("span.myspan");
+           // console.log(result);
+
+            var rd=document.getElementById("show").querySelectorAll("span.myspan");
+           // console.log(rd);
+
+
+            var rs=document.querySelectorAll("#show>.para>span.myspan");
+
+            //console.log(rs);
+
+
+            var dr=document.getElementById("show").querySelectorAll("p,span,em");
+           // console.log(dr);
+    </script>
+
+    <hr>
+
+    <h3>Class selctor vs querySelector</h3>
+
+    <ul>
+        <li class="list-item">One</li>
+        <li class="list-item">Two</li>
+        <li id="three"> Three</li>
+    </ul>
+
+    <script>
+        const liveElement=document.getElementsByClassName("list-item");
+
+        console.log(liveElement);
+
+
+        const noteLiveElements=document.querySelectorAll(".list-item");
+        console.log(noteLiveElements);
+
+        console.log( liveElement.length);
+
+        console.log(noteLiveElements.length);
+
+        document.getElementById("three").className="list-item";
+        console.log("After adding liveElement");9
+
+            console.log( liveElement.length);
+
+        console.log(noteLiveElements.length);
+        console.log(liveElement);
+        console.log(noteLiveElements);
+    </script>
+
+</body>
+</html>

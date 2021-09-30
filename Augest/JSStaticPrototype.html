@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static&MethodOverloading25/08/2021</title>
+</head>
+<body>
+
+    <h3> JS Method Overloading... </h3>
+    <script>
+
+                class Father{
+                            show(){
+
+                                return "Super Class<br>";
+                            }
+
+
+                }
+
+                class Son extends Father{
+                    show(){
+                        return "Sub Class";
+                    }
+
+                }
+
+                var s= new Son();
+
+                document.write(s.show()+"<br>");
+
+                var f= new Father();
+
+                document.write(f.show())
+
+                document.write("<hr>");
+
+
+
+                document.write("<h3> Static Method</h3>");
+
+                class apple{
+
+                    static disp(){
+                        return "Static Method is here.";
+                    }
+                }
+
+                document.write(apple.disp());
+    </script>
+
+
+    <hr>
+    <h3> Prototype of Object</h3>
+    <script>
+                var Mobile= function (mode_no){
+                    this.model=mode_no;
+                    this.price=3000;
+
+                };
+
+
+                var samsung=new Mobile("Galaxy");
+
+                var nokia= new Mobile("Nokia1200");
+
+                Mobile.prototype.color="Gold";
+
+                document.write(samsung.color+"<br>");
+                document.write(nokia.color);
+
+                console.log(samsung);
+                console.log(nokia);
+            
+        </script>
+
+        <hr>
+        <h3> Object getPrototypeOf()</h3>
+                
+
+                        <p id ="myp" class="muClass1" style="color:cyan;">
+                    <script>
+
+                        console.log(Object.prototype);
+
+                        var b={};
+
+                        console.log(Object.getPrototypeOf(b));
+
+                        console.log(Object.getPrototypeOf(Object.prototype));
+
+                        var b1=new Object();
+
+                        console.log(Object.getPrototypeOf(b1));
+                        console.log(Array.prototype);
+
+
+                        var b3= new Array();
+
+                        console.log(Object.getPrototypeOf(b3));
+
+                        console.log(Object.getPrototypeOf(Array.prototype));
+
+
+                    </script>
+
+
+<hr>
+                <h3> Function </h3>
+                    <script>
+
+                        function Apple(){
+
+
+                        }
+
+                        console.log(Apple);
+
+                        var lg= new Apple();
+
+                       // console.log(Object.getPrototypeOf(lg));
+
+                        console.log(lg.__proto__===Apple.prototype);
+
+                    </script>
+                    <hr>
+                    <h3> ...Super Class...</h3>
+
+                    <script>
+                        var Apple1=function(){
+                            this.a=10;
+                        }
+
+                        Apple1.prototype.z=30;
+
+                        var Samsung=function(){
+                            Apple1.call(this);
+                            this.b=20;
+                        }
+
+                        Samsung.prototype=Object.create(Apple1.prototype);
+
+                        var s= new Samsung();
+                        document.write(s.a+"<br>");
+                        document.write(s.b+"<br>");
+                        document.write(s.z+"<br>");
+
+
+                    </script>
+</body>
+</html>

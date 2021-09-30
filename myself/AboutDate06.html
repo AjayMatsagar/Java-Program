@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>MAP() Method in Array</h2>
+   <!-- <p>map() method is callback mathod that perform the opertion on element of array<br>
+
+        map() does not execute the function for empty elements.<br>
+
+        map() does not change the original array.
+
+
+    </p>-->
+      <script>
+
+            let scores=[10,20,30,2];
+            document.write("Old Array<br>");
+            document.write(scores+"<br>");
+
+            var a=scores.map(function(score){
+                return score+10;
+
+            });
+            document.write("New Array:"+a);
+        
+      </script>
+
+      <hr>
+
+        <h2>Filter() Method</h2>
+       <!-- <p>The filter() method creates an array filled with all array elements that pass a test (provided by a function).<br>
+
+            filter() does not execute the function for empty array elements.<br>
+            
+            filter() does not change the original array.
+            
+            </p>-->
+        <script>
+                let arr=["YouTube","Nextflex","MX","AmezonePrime","Hotstar","Reel"]
+
+                document.write("Old Array:"+arr+"<br>");
+
+                var result=arr.filter(data=>data.length > 6);
+
+               document.write("New Array:"+result);
+               
+                console.log(result);
+        </script>
+
+        <hr>
+
+        <h2>Reduce() in Array</h2>
+
+        <script>
+
+                var num=[10,20,30];
+                document.write("Array: "+num+"<br>");
+
+                var sum=num.reduce(function(odd,old){
+                    return odd+old;
+
+                });
+             
+
+                document.write("Sum of Array: "+sum);
+
+        </script>
+        <hr>
+        <h2>splice() Method</h2>
+
+        <p> Syntax:(Index,Deletecount,newElement)</p>
+
+        <script>
+                var cars=["Audi","BMW","Volvo"];
+
+                document.write("Old Cars Array: "+cars+"<br>");
+
+                cars.splice(1,0,"Tata","Mahindra");
+
+                document.write("New Cars Array: "+cars);
+        </script>
+
+        <hr>
+        <h2>slice() Method</h2>
+        <p>Syntax(start,end)</p>
+
+        <script>
+
+                var cars=["Tata","Audi","BMW","Volvo","Mahindra"];
+
+                document.write("Old Array: "+cars+"<br>");
+
+                let newAr=cars.slice(1,3);
+
+                document.write("New Array: "+newAr)
+
+        </script>
+        <hr>
+        <h3> join() Method</h3>
+        <p> join method return an array as a string. It does not change the orignal array</p>
+
+        <script>
+
+                let color=["Red","Orange","Blue","Black","Grey"];
+                console.log(color);
+                document.write("Orignal Array: "+color+"<br>");
+                var ncolor=color.join();
+
+                document.write("New Array: "+ncolor);
+                console.log("__________join()___________")
+                console.log(ncolor);
+
+        </script>
+        <hr>
+
+        <h2>For of Loop</h2>
+
+        <script>
+
+                var nnumber=[1,5,6,8,20,14,28];
+                console.log("_________for of loop_________");
+
+                for(let i of nnumber){
+                    document.write(i);
+                    console.log(i);
+                  
+                }
+              
+
+        </script>
+        <hr>
+        <h2>For each Loop</h2>
+        
+        <script>
+
+            numbers=[10,50,40,60,30];
+            console.log("______________for each loop_________");
+            numbers.forEach(element => {
+                
+                document.write(element);
+                console.log(element);
+                
+            });
+        
+        </script>
+        <hr>
+        <h2> Spread Operator</h2>
+
+        <script>
+
+                let num1=[1,2,3,4];
+                let num2=[5,6,7,8];
+
+                num1=[...num1, ...num2];
+               // num1=[...num2, ...num1];
+
+                document.write(num1+"<br>");
+
+
+                function sum(x,y,z){
+                    return x+y+z;
+                }
+                let ew=[1,2,3];
+
+                let i=(sum(...ew));
+
+                document.write("Sum of Array: "+i);
+
+
+        </script>
+        <hr>
+        <h2>Rest Parameter..</h2>
+
+        <script>
+                function sum(...input){
+                    var add=0;
+
+                    for(let i of input){
+                        add+=i;
+                    }
+                    return add;
+                }
+
+                document.write(sum(1,2,3)+"<br>");
+                document.write(sum(1,2,3,4)+"<br>");
+                document.write(sum(1,2,3,4,5,6)+"<br>");
+
+        </script>
+        <hr>
+
+        <h2>find() Method</h2>
+
+        <script>
+                var num4=[1,-0.4,0.6,0,-50,60];
+                    document.write("Old Array: "+num4+"<br>");
+
+                var found=num4.find(function(element){
+                    return element<0;
+                });
+
+                document.write("Find Method: "+found);
+                
+        </script>
+
+
+        <hr>
+        <h2>Duplicate Elements</h2>
+        <script>
+
+                var dupli=[1,2,4,1,2,8];
+                let res=[...new Set(dupli)];
+                document.write(res);
+                console.log(res);
+        </script>
+
+</body>
+</html>

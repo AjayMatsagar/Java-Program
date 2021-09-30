@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get&Post23</title>
+</head>
+<body>
+    
+        <form>
+            <input type="number" min="10" max="100" step=5 id="range1">
+            <br><br>
+            <input type="button" onclick="fun1()" value="click"> &nbsp; &nbsp; &nbsp;
+            <label>Colors:</label> <input type="text" list="datalist1"
+            name="text1" placeholder="color Name">
+
+            <datalist id="datalist1">
+                <option>red</option>
+                <option>Green</option>
+                <option>Yellow</option>
+            </datalist>
+        </form>
+
+        <script>
+                    function fun1(){
+                        var num=document.getElementById("range1");
+                        if(num !==null){
+                          alert("Number not Valid");
+                        }else if(num.checkValidity()){
+                            alert("Number is Valid");
+                        }else{
+                            alert("Number not Valid");
+                        }
+
+                    }
+        </script>
+        <hr>
+
+        <form id="form2" action="JSInput(23)1.html">
+            
+            Name: <input type="text" name="name" autocomplete=""><br><br>
+
+            City:<input type="text" name="pass"><br><br>
+            <input type="submit" value="submit"><br><br>
+            <input type="submit" value="submit" formaction="JSCSS.html"><br><br>  
+        </form>
+</body>
+</html>

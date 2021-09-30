@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Crud</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        div, body, .btn{
+            padding: 10px;
+
+        }
+        .container{
+            width: 400px;
+            border: 2px solid black;
+            position: absolute;
+           
+           
+        }
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 400px;
+        }
+        
+        tr,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100px;
+            height: 20px;
+        }
+        .table{
+            display:flex;
+            justify-content: center;
+            right: 100px;
+        }
+
+        .fas{
+           text-align: center;
+           color: red;
+           border: none;
+        
+        }
+    </style>
+</head>
+<body onload="onElements()">
+
+        <div class="container">
+            <div>
+            <lable for="txtItemId">Enter Item ID </lable>
+            <input type="number" id="txtItemId" placeholder="ID Auto Increment">
+            </div>
+            <div>
+                <label for="txtItemName">Enter Iteme Name</label>
+                <input type="text" id="txtItemName" placeholder="Entre Item Name">
+            </div>
+            <div>
+                <label for="txtItemCost">Enter Item Cost</label>
+                <input type="text" id="txtItemCost" placeholder="Enter Item Cost">
+            </div>
+            <div>
+                <label for="txtItemQty">Enter Item Quantity</label>
+                <input type="text" id="txtItemQty" placeholder="Enter Item Qty.">
+
+            </div>
+
+                    <div class="btn">
+                        <button type="button" onclick="btnNewClick()">New</button>
+                        <button type="button" onclick="btnSaveClick()">Save</button>
+                        <button type="button" onclick="btnDeleteClick()">Delete</button>
+                        <button type="button" onclick="btnUpdateClick()">Update</button>
+                    </div>
+                    
+        </div>
+        <div class="table">
+            <table id="list">
+              
+                    <tr>
+                        <th colspan="4">Details</th>
+                    </tr>
+            </table>
+        </div>
+
+                <script>
+                    var txtItemID, txtItemName,txtItemCost,txtItemQty,list;
+                    var shoppingList;
+                    var count=1;
+
+
+                        function ShoppingItem(itemId, itemName,itemCost,itemQty){
+                            this.itemId=itemId;
+                            this.itemName=itemName;
+                            this.itemCost=itemCost;
+                            this.itemQty=itemQty;
+                        }
+
+                            shoppingList=[
+                            //    new ShoppingItem (1,"Iphone12Pro",12000,1),
+                            //    new ShoppingItem (2,"RedMi",29000,2)
+
+                            ];
+                            var tr_Data,td_id,td_name,td_Qty,td_btn,td_Cost,th_details;
+                                
+                            function onloadItem(){
+                                list.replaceChildren();
+                            
+                                for(var i=0;i<shoppingList.length;i++){
+                                    
+                                    
+                                    tr_data=document.createElement("tr");
+
+                                
+                                    td_id=document.createElement("td");
+
+                                    td_id.textContent=shoppingList[i].itemId;
+                                   //td_id.textContent=count;
+                                   
+                                    
+                                    td_name=document.createElement("td");
+                                    td_name.textContent=shoppingList[i].itemName;
+                                    
+
+                                    td_Cost=document.createElement("td");
+                                    td_Cost.textContent=shoppingList[i].itemCost;
+                                    
+
+                                    td_Qty=document.createElement("td");
+                                    td_Qty.textContent=shoppingList[i].itemQty;
+
+                                    td_btn=document.createElement("td");
+                                    td_btn.setAttribute("class","fas fa-trash");
+                                    td_btn.setAttribute("onclick","btnDeleteClick()");
+                           
+
+                                    tr_data.appendChild(td_id);
+                                    tr_data.appendChild(td_name);
+                                    tr_data.appendChild(td_Cost);
+                                    tr_data.appendChild(td_Qty); 
+                                    tr_data.appendChild(td_btn);
+
+                                    list.appendChild(tr_data);
+            
+                                }
+                                
+
+                            
+                                
+                            }
+
+                                 function btnNewClick(){
+                                     
+                                   txtItemQty.value="";
+                                   txtItemID.value="";
+                                   txtItemName.value="";
+                                   txtItemCost.value="";
+                                   txtItemID.focus();
+                                   
+                                }
+
+                                function btnSaveClick(){
+                                    // for(let i=0;i<list.rows.length;i++){
+                                    //     list.rows[i].pop;
+                                    
+                                    // }
+                                    shoppingList.push(new ShoppingItem(txtItemID.value+count++,
+                                    txtItemName.value,txtItemCost.value,
+                                    txtItemQty.value));
+                                    onElements();
+                                }
+                                function onElements(){
+                                    
+                                    txtItemID=document.getElementById("txtItemId");
+                                    txtItemName=document.getElementById("txtItemName");
+                                    txtItemCost=document.getElementById("txtItemCost");
+                                    txtItemQty=document.getElementById("txtItemQty");
+                                    list=document.getElementById("list");
+                                    
+
+                                    onloadItem();
+                                }
+                                function btnUpdateClick(){
+                                    // for(let i=0;i<list.rows.length;i++){
+                                    //     list.rows[i].textContent=" ";
+                                    // }
+                                   
+                                        
+                                    for(let i=0;i<shoppingList.length;i++){
+                                        if(shoppingList[i].itemId==txtItemID.value){
+                                            shoppingList[i].itemName=txtItemName.value;
+                                            shoppingList[i].itemCost=txtItemCost.value;
+                                            shoppingList[i].itemQty=txtItemQty.value;
+                                            //onElements();
+                                            break;
+                                        }
+                                       // onElements();
+                                    } 
+                                    onElements();
+                                
+                                }
+                                function btnDeleteClick(){
+                                    for(let i=0;i<list.rows.length;i++){
+                                        list.rows[i].innerHTML="";
+                                    
+                                    }
+                                
+                                    for(let i=0;i<shoppingList.length;i++){
+                                        if(shoppingList[i].itemId==txtItemID.value){
+                                            shoppingList.splice(i,1);
+                                            break;
+                                        }
+                                    }
+                                 
+                                    onElements();
+                                   
+
+                                }
+
+
+                </script>
+    
+</body>
+</html>

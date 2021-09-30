@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24/08/2021</title>
+</head>
+<body>
+
+    <script>
+        function Mobile(){
+
+            this.model="3310",
+            this.price=function(){
+                document.write(this.model+" Price Rs.3000");
+            }
+        }
+        var samsung= new Mobile();
+        samsung.price();
+
+        document.write("<hr>");
+
+        document.write("<h3> Parameterize Function</h3> <br>");
+
+        function mobile(mod_no){
+            this.model=mod_no,
+            this.price=function(){
+                document.write(this.model+"Price Rs.4000<br>");
+            }
+        }
+
+        var samsung= new mobile("Galaxy");
+        var nokia= new mobile("3310");
+        samsung.price();
+        nokia.price();
+
+
+    </script>
+    <hr>
+
+    <h3> For in loop..</h3>
+    <script>
+        function apple(model_no){
+            this.model=model_no,
+            this.color="white",
+            this.ram="5gb",
+            this.price=function(){
+
+                document.write(this.model+" price Rs.4000");
+            }
+
+        }
+
+        var samsung= new apple("Iphone5");
+
+        var nokia=new apple("Iphone6");
+
+        for(var key in nokia){
+
+           // document.write(nokia[key]);
+
+            document.write(key+" : "+nokia[key]+"<br>");
+        }
+    </script>
+    <hr>
+    <h3> Skip the function.</h3>
+    <script>
+        function apple(model_no){
+            this.model=model_no,
+            this.color="white",
+            this.ram="5gb",
+            this.price=function(){
+
+                document.write(this.model+" price Rs.4000");
+            }
+
+        }
+
+
+        var samsung= new apple("Iphone5");
+
+        var nokia=new apple("Iphone6");
+
+        for(var k in nokia){
+            if(typeof nokia[k]!=="function"){
+                document.write(nokia[k]+"<br>");
+            }
+            
+        }
+
+    </script>
+
+    <hr>
+
+
+    <script>
+
+        function mobile(mod_no){
+            this.model=mod_no,
+            this.memory=4;
+        
+        }
+        var samsung= new mobile("Galaxy");
+        var nokia= new mobile("Music_Pro");
+
+        if("RAM" in nokia){
+            document.write("Available");
+
+        }else{
+            document.write("Does'nt Exist..");
+        }
+
+
+    </script>
+
+    <hr> 
+    <h3> hasOwnProperty()</h3>
+  
+    <script>
+         function mobile(mod_no){
+            this.model=mod_no,
+            this.color="white",
+            this.ram="5gb";
+        
+        }
+        var samsung= new mobile("Galaxy");
+        var nokia= new mobile("Music_Pro");
+
+        if(nokia.hasOwnProperty('ram')){
+            document.write("Available..<br>");
+
+        }
+        else{
+            document.write("Doesnt Exist..<br>");
+        }
+
+        if( typeof nokia.ram=="undefined"){
+            document.write("Available");
+        }else{
+            document.write("Doesnt Exist..");
+        }
+
+
+    </script>
+   
+</body>
+</html>

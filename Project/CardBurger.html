@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins',sans-serif;
+            text-decoration: none;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1e1e1e;
+        }
+        .card_img{
+            position:absolute;
+            width: 260px;
+            filter: drop-shadow(5px 10px 15px rgba(8,9,13,2));
+            transform: translate(.2rem,-8.5rem);
+        }
+        .card{
+            width: 320px;
+            height: 380px;
+            background-color: #FEFFE2;
+            border-radius: 1rem;
+            padding: 4rem 2rem 0;
+           
+        }
+
+
+        .card_title{
+            font-size: 1.5rem;
+            color: #002366;
+
+        }
+        .card_data{
+            transform: translateY(4.8rem);
+        }
+        .card_price{
+            display: inline-block;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .card_decription{
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .card_button{
+            display: block;
+            width: max-content;
+            padding: 1.125rem 2rem;
+            background-color: #002366;
+            color: #fff;
+            border-radius: .5rem;
+            font-weight: 600;
+        }
+
+
+    </style>
+</head>
+<body>
+            <div class="container">
+                <div class="card">
+                    <img src="/images/12.png" class="card_img">
+                    <div class="card_data">
+                        <h1 class="card_title">Burger</h1>
+                        <span class="card_price">$99</span>
+                        <p class="card_decription">Burger description goes here.</p>
+                        <a href="#" class="card_button">order Now</a>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

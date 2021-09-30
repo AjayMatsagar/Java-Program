@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMMethod04/09/2021</title>
+</head>
+<body>
+    <h2>insertBefore() Method</h2>
+
+    <h3>Before</h3>
+
+
+    <ul>
+
+        <li>Jquery</li>
+        <li >Angular JS</li>
+        <li>React JS</li>
+        <li>D3 JS</li>
+    </ul>
+
+    <div>
+        <h1> JS Framework</h1>
+        <h3>After Manpulation </h3>
+
+        <ul id="myul">
+
+            <li>Jquery</li>
+            <li id="myang">Angular JS</li>
+            <li>React JS</li>
+            <li id="myd3">D3 JS</li>
+        </ul>
+    </div>
+    
+
+    <script>
+         var parent=document.getElementById("myul");//parent node
+         var ref=document.getElementById("myang");//accesing reference Node
+
+         //creating  new li
+
+         var newli=document.createElement("li");//create new element li
+         newli.textContent="Android JS"; //assignn the text to li
+
+         parent.insertBefore(newli,ref);//insert before the reference node
+         console.log(parent);
+    </script>
+
+    <hr>
+
+    <h2> insertAdjacent() Method</h2>
+
+    <div id="mydiv">
+        <h1 id="myh1">Heading 1 </h1>
+        <h2 id="myh2">Heading 2</h2>
+        <h3 id="myh3">Heading 3</h3>
+
+    </div>
+
+    <script>
+        var parentNode=document.getElementById("mydiv");
+
+        var h=document.getElementById("myh2");
+        var newElement=document.createElement("span");
+
+        newElement.textContent="This is Span"
+
+      //  h.insertAdjacentElement('beforeBegin',newElement); //befoere
+
+          //  h.insertAdjacentElement('afterend',newElement); //insert span after h2 element
+          h.insertAdjacentElement('afterEnd',newElement);
+
+        //  h.insertAdjacentElement('afterBegin',newElement);
+
+
+            
+        
+    </script>
+
+    <hr>
+    <h2>insertAdjacentHTML Method</h2>
+    <h1 id="nmyh2">Heading 1 </h1>
+
+    <script>
+        var head=document.getElementById("nmyh2");
+
+        console.log(head);
+
+        var myhtml="<p> Hello World </p>";
+
+      //  head.insertAdjacentHTML('beforeBegin',myhtml);
+
+        head.insertAdjacentHTML('afterend',myhtml);
+    </script>
+
+
+<hr>
+    <h2>insertAdjacentText() Method</h2>
+<div id="nmydiv">
+    <h1 id="nmyh1">Heading 1 </h1>
+    <h2 id="nnmyh2">Heading 2</h2>
+    <h3 id="nmyh3">Heading 3</h3>
+    </div>
+
+    <script>
+
+        var parentNode1=document.getElementById("nmydiv");
+
+        var newH=document.getElementById("nnmyh2");
+        var txt="Hello World..";
+
+      //  newH.insertAdjacentText('beforeBegin',txt);
+       // newH.insertAdjacentText('beforeend',txt);
+        newH.insertAdjacentText('afterBegin',txt);
+
+        //newH.insertAdjacentText('afterend',txt);
+
+    </script>
+
+   
+</body>
+
+
+</html>

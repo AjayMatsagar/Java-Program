@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoLocation24/09/2021</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>How to trace location</h1>
+	<button onclick="geoLocation()">Get Location</button>
+	<div id="output"></div>
+
+	<script type="text/javascript">
+		var x = document.getElementById('output');
+
+		function geoLocation(){
+			//alert("Hello");// for testing purpose
+			if(navigator.geolocation){
+				//x.innerHTML="Supporting!!";
+				navigator.geolocation.getCurrentPosition(showPosition, showError);
+				/*this higher order function as we r passing function showPosition as a parameter to getCurrentPosition function
+				whaterver value (or object will we get)of current location we get will b passed to showPosition function. It will be passed as an argument to showPosition in position argument as=>showPosition(position)
+				*/
+			}
+			else{
+				x.innerHTML="Not Supporting!!";
+			}	
+			//we wiil print here values we got in position object
+			function showPosition(position){
+				//x.innerHTML = "Latitude = " + position.coords.latitude;
+				//x.innerHTML = "Longitude = " + position.coords.longitude;
+				//to find location
+				//var localAPI = "http://maps.googleapis.com/maps/api/geocode/json?latlng=latval,longval&sensor=true"
+				/* We have above url. but we have to customoze it to get location dynamically .so we will provide values of latitude and longitude by concatinating in url as below
+				*/
+				var localAPI = "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude +","+position.coords.longitude+"&sensor=true";
+				//for seeing result comment x.innerHTML = "Latitude = " + position.coords.latitude; and lontitude and run
+
+				x.innerHTML=localAPI;
+				//u will get url and copy and paste that in new tab u will get json
+				//now comment x.innerHTML=localAPI;
+				//now we will send get request on this url
+				//we will b using jquery here for dis 
+				//otherwise we hav to use ajax
+
+				$.get({
+					//it takes object . we will pass url through object
+					url  : localAPI,
+					success:function(data){
+						console.log(data);
+						//if it is successful we will get data we will log it on console. we will get obect=.expand it will get 2 objects i an Array
+				x.innerHTML = data.results[0].address_components[4].long_name+",  ";
+				x.innerHTML += data.results[0].address_components[5].long_name+", ";
+				x.innerHTML += data.results[0].address_components[6].long_name;
+					}
+				});
+
+			}
+		}//end of function geoLocation
+
+		// now we will write code if it unsuccessful then how to handle
+				/*
+				we receive 4 types of errors
+				0=UNKNOWN_ERROR
+				1=PERMISSION_DENIED (means user denied to share location)
+				2=POSITION_UNAVAILABLE
+				3=TIMEOUT(API's response is time out)
+				we will use error code and will dynamically find errors
+				*/
+				function showError(error){
+		 switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    						}
+				}
+	</script>
+
+
+    
+</body>
+</html>

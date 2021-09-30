@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date:06/09/2021</title>
+</head>
+<body>
+    
+    <!--Attribute Of HTML Tag-->
+        <h3>Result on console</h3>
+        <h2 id="myh2">Hello World</h2>
+        <p id="myp" title="para" class="myclass">I am Paragraph</p>
+        <h2 id="nmyh2" class="myclass" title="heading">Hello Dell!</h2>
+
+        <p id="nmyp" class="myclass">new Paragarph</p>
+
+        <p id="newp" style="background-color: darkgray; color: red;">Paragraph</p>
+
+
+        
+
+
+        <script>
+                console.log("Accessing the Attribute")
+
+                var p=document.getElementById("myp");
+                console.log(p.id);
+                console.log(p.title);
+                console.log(p.className);
+                p.title="mypara";
+                console.log(p);
+
+                console.log("_____Change the Attribute____");
+
+                let newH=document.getElementById("nmyh2");
+
+                console.log(newH.attributes);
+                console.log(newH.attributes[0]); //index 0(id)
+
+                console.log(newH.attributes['title']);
+
+                console.log("_______getAttributes_______");
+
+                var np=document.getElementById("nmyp");
+                console.log(np);
+                let geat=np.getAttribute('id');
+                console.log(geat);
+
+                console.log("______removeAttribute______");
+
+    // let rem=np.removeAttribute('class');
+    console.log("____hasAttribute_____");
+    var tf=np.hasAttribute('title');
+    console.log(tf);
+
+                console.log("______Style Property_______");
+
+                var nnp=document.getElementById("newp");
+
+                nnp.style.backgroundColor="lightblue";
+                nnp.style.fontSize="20px";
+                nnp.style.fontStyle="italic";
+
+                //it well overwrite style so do not use this to style inline
+               // nnp.setAttribute("style","fontSize:90px");
+
+        </script>
+</body>
+</html>

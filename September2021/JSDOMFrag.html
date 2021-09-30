@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myid">
+        <h1> We are Learning JS</h1>
+        <h1> I am h1</h1>
+    </div>
+
+    <script>
+        var target= document.getElementById("myid");
+
+        var df=document.createDocumentFragment();
+
+        var hNode=document.createElement("h3");
+
+        var hPara=document.createElement("p");
+
+        hNode.textContent="H3 form JS";
+        hPara.textContent="P:Form JS";
+
+        df.appendChild(hNode);
+        df.appendChild(hPara);
+
+        //After appending .df has now two elements and text node 
+
+        //console.log(df);
+
+        target.appendChild(df);
+        console.log(target);
+       
+    </script>
+</body>
+</html>

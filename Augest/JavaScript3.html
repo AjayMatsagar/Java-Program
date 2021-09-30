@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+
+<script type="text/javascript">
+//display();
+
+document.write("First line <br>");
+display();
+
+document.write("Hello <br>");
+
+function display(){
+
+    document.write("Inside display function <br>");
+
+}
+
+display();
+document.write("Last line<br>");
+</script>
+
+<hr>
+<script>
+
+    function display(name){
+        document.write(name+"<br>");
+        document.write("Sachin= "+name.length);
+
+
+    }
+
+    display("RAVI");
+</script>
+
+<hr>
+
+<script>
+    function display(name1,name2){
+
+        document.write(name1+" to "+name2+"<br>");
+    }
+    display("Welcome","Pune");
+</script>
+<hr>
+
+<script>
+    function add(a,b,c){
+        document.write("A: "+ a + " B: " +b+ " C: "+c);
+
+        
+    }
+
+    add(10,20);
+</script>
+
+<hr>
+<script>
+    function add(a,b){
+
+        document.write("A: "+a+" B:"+b);
+    }
+    add(10,20,30);
+</script>
+
+<hr>
+
+<script>
+    function add(a,b,c=70){
+
+        document.write("A= "+a+"<br>")
+        document.write("B= "+b+"<br>")
+        document.write("C= "+c+"<br>")
+        document.write("<hr>")
+    }
+    add(10,20);
+    add(10,20,30);
+    add(10);
+</script>
+
+<hr>
+<script>
+    function add(a,b,c=null){
+
+        document.write("A= "+a+"<br>")
+        document.write("B= "+b+"<br>")
+        document.write("C= "+c+"<br>")
+        document.write("<hr>")
+    }
+    add(10,20);
+    add(10,20,30);
+    add(10);
+
+</script>
+<hr>
+<script>
+    function add(num ,a=["Hello", "World"]){
+
+        document.write("Num: "+num+ "<br>");
+        document.write("A= "+a[0]+"<br>");
+        document.write("B= "+a[1]+"<br>");
+    }
+
+add(20,[10,40]);
+add(20);
+add();
+</script>
+<hr>
+<script>
+    function display(name){
+        document.write(arguments[0]);
+    }
+    display("Hello");
+</script>
+<hr>
+<script>
+    function display(name1,name2){
+
+        arguments[0]="Hello";
+        document.write(arguments[0]+" "+arguments[1]);
+    }
+    display("hi", "world");
+</script>
+<hr>
+
+<script>
+    function display(name1,name2)
+    {
+        document.write(arguments.length);
+
+    }
+    display("hi", "Hello","world");
+
+
+</script>
+<hr>
+<script>
+    function display(name1,name2){
+
+        for(var i=0;i<arguments.length;i++){
+            document.write(arguments[i]+" ");
+        }
+    }
+
+    display("Hello" ,"world");
+</script>
+<hr>
+<script>
+    for(var i=0;i<5;i++){
+
+        for(var j=0;j<i;j++)
+        {
+        document.write("*");
+    }
+    document.write("<br>")
+}
+
+
+</script>
+<hr>
+<script>
+var count=0;
+    for(var i=10;i<=30;i++){
+
+        if(i%2==0){
+
+            document.write("Even Number: "+i);
+            document.write("<br>");
+            //document.write("Total Even:"+count);
+        }
+        else{
+            document.write("Odd number: "+i);
+            document.write("<br>");
+        }
+        
+    }
+</script>
+
+
+</body>
+</html>
