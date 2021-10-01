@@ -47,7 +47,7 @@
                         
             </div>
             <div class="main">
-                <div id="first" ondrop="drop1(event)" ondragover="dragover1(event)"></div>
+                <div class="first" ondrop="drop1(event)" ondragover="dragover1(event)"></div>
                 <div id="second" ondrop="drop2(event)" ondragover="dragover2(event)"></div>
                 <div id="third" ondrop="drop3(event)" ondragover="dragover3(event)"></div>
                 <div id="four" ondrop="drop4(event)" ondragover="dragover4(event)"></div>
@@ -75,7 +75,7 @@
                                         ev.preventDefault();
                                     }
                                     function drop1(ev){
-                                            if(ev.id==dog.currentTarget){
+                                            if(ev.currentTarget.className=="first"){
                                         var data1=ev.dataTransfer.getData("text");
                                         // ev.currentTarget.appendChild(document.getElementById(data1)); 
                                  ev.currentTarget.appendChild(document.getElementById(data1)); 
@@ -83,48 +83,50 @@
                                     }else{
 
                                     }
+
+                                  
                                 }
                                 
                                     
-                                //      // Pig Drang and Drop...
-                                // function pigDrag(ev){
-                                //     ev.dataTransfer.setData("text",ev.currentTarget.id);
+                                     // Pig Drang and Drop...
+                                function pigDrag(ev){
+                                    ev.dataTransfer.setData("text",ev.currentTarget.id);
 
-                                // }  
-                                // function dragover2(ev){
-                                //         ev.preventDefault();
-                                //     }
-                                //     function drop2(ev){
-                                //         var data=ev.dataTransfer.getData("text");
-                                //   ev.currentTarget.appendChild(document.getElementById(data));
+                                }  
+                                function dragover2(ev){
+                                        ev.preventDefault();
+                                    }
+                                    function drop2(ev){
+                                        var data=ev.dataTransfer.getData("text");
+                                  ev.currentTarget.appendChild(document.getElementById(data));
 
-                                //     }
-                                //      // Robat Drang and Drop...
-                                //      function rabitDrag(ev){
-                                //     ev.dataTransfer.setData("text",ev.currentTarget.id);
+                                    }
+                                     // Robat Drang and Drop...
+                                     function rabitDrag(ev){
+                                    ev.dataTransfer.setData("text",ev.currentTarget.id);
 
-                                // }  function dragover3(ev){
-                                //         ev.preventDefault();
-                                //     }
-                                //     function drop3(ev){
-                                //         var data=ev.dataTransfer.getData("text");
-                                //   ev.currentTarget.appendChild(document.getElementById(data));
+                                }  function dragover3(ev){
+                                        ev.preventDefault();
+                                    }
+                                    function drop3(ev){
+                                        var data=ev.dataTransfer.getData("text");
+                                  ev.currentTarget.appendChild(document.getElementById(data));
 
-                                //     }
+                                    }
 
-                                //     //Elephant Drag and Drop....
+                                    //Elephant Drag and Drop....
                                 
-                                //     function eleDrag(ev){
-                                //     ev.dataTransfer.setData("text",ev.currentTarget.id);
+                                    function eleDrag(ev){
+                                    ev.dataTransfer.setData("text",ev.currentTarget.id);
 
-                                // }  function dragover4(ev){
-                                //         ev.preventDefault();
-                                //     }
-                                //     function drop4(ev){
-                                //         var data=ev.dataTransfer.getData("text");
-                                //   ev.currentTarget.appendChild(document.getElementById(data));
+                                }  function dragover4(ev){
+                                        ev.preventDefault();
+                                    }
+                                    function drop4(ev){
+                                        var data=ev.dataTransfer.getData("text");
+                                  ev.currentTarget.appendChild(document.getElementById(data));
 
-                                //     }
+                                    }
                     </script>
 </body>
 </html>
