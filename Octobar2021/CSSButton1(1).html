@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSSButton@01/10/2021</title>
+    <title>CSS@01/10/2021</title>
+    <style>
+        .button{
+            background-color: lightcyan;
+            border: none;
+            padding: 5px 10px;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .button2{background-color: #008CBA;}
+        .button3{background-color: #f44336;}
+        .button4{background-color: #e7e7e7;}
+        .button5{background-color: #555555; color: #fff;}
+
+        .button11{
+            background-color: #4CAF50;
+            border:none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .disabled{
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+    </style>
 </head>
 <body>
-                
+                <h2>Buttons Color</h2>
+                <p>Change the background color of a button with the backgound-color property</p>
+                <button class="button" type="button"> Green</button>
+                <button class="button button2" type="button">Blue</button>
+                <button class="button button3" type="button">Red</button>
+                <button class="button button4" type="button">Grey</button>
+                <button class="button button5" type="button">Black</button>
+
+                <hr>
+                <h2>Disabled Button</h2>
+                <p>Use the opacity property to add some transparent to the buttons(make it look disabled)</p>
+                <button class="button11">Normal Button</button>
+                <buttton class="button11 disabled"> Disabled Btton</buttton>
+
+
 </body>
 </html>
