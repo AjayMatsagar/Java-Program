@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+      <style>
+         
+            .div1{
+                display: grid;
+                justify-content: center;
+            }
+            fieldset{
+                width: 300px;
+            }
+           .fas{
+                border: none;
+                background: none;
+                font-size: 15px;
+            }
+            .fa-plus-square{color: rgba(0, 0, 0, 0.938); font-size: 25px;}
+            .fa-trash{color: red;}
+           
+         
+            ul li{
+                padding: 5px;
+            }
+            button{
+                margin-top: 5px;
+                height: 20px;
+            }
+      </style>
+<body onload="onloadElement()">
+        <div class="div1">
+    <fieldset>
+
+        <legend> TODO LIST </legend>         
+
+                <input type="text" id="todo"> 
+                <button id="delbtn" class="fas fa-plus-square" type="button" onclick="addTodo()"></button>
+                
+
+                <hr>
+                <h3>List Item</h3>
+             
+                <ul id="showUL">
+
+                </ul>
+       
+   
+                </fieldset>
+                    </div>
+            <script>
+                // var txtValue=document.getElementById("todo");
+                // var ul=document.getElementById("showUL");
+
+                            var ul,txtValue;
+                        function Todo(getvalue){
+                        this.getvalue=getvalue;
+                        }
+
+                        var todoArray=[];
+
+                            function displayElement(){
+                                str="";
+                                for(i=0;i<todoArray.length;i++){
+                                        str+=`<li> ${todoArray[i].getvalue}
+                             <button id="btn1" class="fas fa-trash" onclick="deleteUser('${i}')">
+                            </button>
+                            <button id="btn2" class="fas fa-pencil" onclick="updateInfo('${i}')">
+                        </button>`
+                                }
+                                ul.innerHTML=str;
+
+                            }
+
+                                function addTodo(){
+                                    todoArray.push(new Todo(txtValue.value));
+                                    onloadElement();
+                                    txtValue.value="";
+                                }
+                                
+                                function onloadElement(){
+                                     txtValue=document.getElementById("todo");
+                                      ul=document.getElementById("showUL");
+                                     displayElement();
+                                }
+                                function deleteUser(i){
+                                    todoArray.splice(i,1);
+                                    displayElement();
+                                }
+
+                                function updateInfo(i){
+                                 
+                                          var promo= prompt("Enter new Value");
+                                            todoArray[i].getvalue=promo;
+                                    
+                                    displayElement();
+                                }
+            </script>
+</body>
+</html>
