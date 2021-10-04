@@ -131,7 +131,7 @@
 
                                     td_btn=document.createElement("td");
                                     td_btn.setAttribute("class","fas fa-trash");
-                                    td_btn.setAttribute("onclick","btnDeleteClick()");
+                                    td_btn.setAttribute("onclick","btnDeleteClick('${i}')");
                            
 
                                     tr_data.appendChild(td_id);
@@ -199,18 +199,19 @@
                                     onElements();
                                 
                                 }
-                                function btnDeleteClick(){
-                                    for(let i=0;i<list.rows.length;i++){
-                                        list.rows[i].innerHTML="";
+                                function btnDeleteClick(i){
+                                    // for(let i=0;i<list.rows.length;i++){
+                                    //     list.rows[i].innerHTML="";
                                     
-                                    }
+                                    // }
                                 
-                                    for(let i=0;i<shoppingList.length;i++){
-                                        if(shoppingList[i].itemId==txtItemID.value){
-                                            shoppingList.splice(i,1);
-                                            break;
-                                        }
-                                    }
+                                    // for(let i=0;i<shoppingList.length;i++){
+                                    //     if(shoppingList[i].itemId==txtItemID.value){
+                                    //         shoppingList.splice(i,1);
+                                    //         break;
+                                    //     }
+                                    // }
+                                    shoppingList.splice(i,1);
                                  
                                     onElements();
                                    

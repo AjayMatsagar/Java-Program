@@ -40,9 +40,9 @@
 
         <legend> TODO LIST </legend>         
 
-                <input type="text" id="todo"> 
+                <input type="text" id="todo" placeholder="Enter value..."> 
                 <button id="delbtn" class="fas fa-plus-square" type="button" onclick="addTodo()"></button>
-                
+               
 
                 <hr>
                 <h3>List Item</h3>
@@ -80,6 +80,7 @@
 
                                 function addTodo(){
                                     todoArray.push(new Todo(txtValue.value));
+                                    console.log(todoArray);
                                     onloadElement();
                                     txtValue.value="";
                                 }
