@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSRotate@04/10/2021</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background:red;
+            transition: width 2s;
+            transition: all 2s ease 1s;
+        }
+        div:hover{
+            height: 300px;
+            width: 300px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+        <p><b>Note:</b> This is example does not work in Internet Explorer 9
+        and earlier versions</p>
+
+
+        <div></div>
+        <p>Hover over the div element above, to see the transition </p>
+
+        <script>
+            function show(a){
+                console.log(a)
+                delete a;
+                console.log(a);
+                document.write(a);
+
+            }
+
+            show(2);
+        </script>
+</body>
+</html>

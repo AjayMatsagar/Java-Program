@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow@05/10/2021</title>
+    <style>
+        .shadow{
+            width: 500px;
+            height: 300px;
+            border: 1px solid;
+            padding: 12px;
+            box-shadow: -2px -3px 8px lightcyan inset, 2px 2px 8px lightcyan inset;
+        }
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            /* animation-name: example;
+            -o-animation-duration: 4s; */
+           animation-iteration-count: infinite;
+        }
+
+                    @keyframes example{
+
+                        0%{background-color: red; left: 0px; top: 0px;}
+                        25%{background-color: yellow; left: 200px;top: 0px;}
+                        50%{background-color: blue; left: 200px; top: 200px;}
+                        75%{background-color: green;left: 0px; top:200px}
+                        100%{background-color: cadetblue;left: 0px;top:0 px}
+                    }
+    </style>
+</head>
+<body>
+    <h1 style="text-shadow: -20px -5px 2px red; border: 5px solid; padding: 5px;
+    border-image: url(/images/4.png) 50 10;">
+    Hello World</h1>
+
+        <div class="shadow">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo doloremque
+                 possimus optio placeat itaque voluptatem distinctio eius voluptas et sequi,
+               .</p>
+        </div>
+        <hr>
+        <p><b>Note:</b>This example does not work in Internet Explorer 9
+        and earlier versions</p>
+        <div class="div1"></div>
+</body>
+</html>

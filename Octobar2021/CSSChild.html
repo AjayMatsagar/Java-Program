@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChildCSS</title>
+
+        <style>
+            #maindiv #childdiv{color: red;}
+        </style>
+</head>
+<body>
+    
+    <div id="maindiv">
+        <p>I am para1 and child of main div</p>
+
+            <div id="childdiv">
+                <p>This is 1st para and child of child div</p>
+                <h1> This is heading1 and child of child div</h1>
+
+            </div>
+            <h1>Second h1</h1>
+            <h2> I am heading2 of child of main div</h2>
+            <p>I am para2 and child of main div</p>
+    </div>
+    <hr>
+
+        <style>
+            #maindiv3 .pl{color:  red;}
+            p{color: green !important;}
+        </style>
+    <h2>Import KeyWord</h2>
+    <div id="maindiv3">
+        <p class="p1">This is Para</p>
+    </div>
+
+        <hr>
+        <style>
+            #maindiv4>h1{color: cyan;}
+            /* Second div;s child is not direct child of maindiv */
+        </style>
+        <div id="maindiv4">
+            <h1>Main Heading</h1>
+            <p>This is main para</p>
+            <p>This is main para</p>
+            <div>
+                <h1>Child Heading</h1>
+                <p>This is child Para</p>
+            </div>
+        </div>
+
+            <hr>
+            <style>
+                #maindiv5 p + h1{color: red;}
+            </style>
+                <div id="maindiv5">
+                    <h1>Main Headings</h1>
+                    <p>This is main para</p>
+                    <h1>After p Headings</h1>
+                    <h1>Main Headings</h1>
+                    <p>This is main para</p>
+                    <div>
+                        <h1>child Heading
+                            
+                        </h1>
+                        <p>This is child para</p>
+                    </div>
+                </div>
+</body>
+</html>

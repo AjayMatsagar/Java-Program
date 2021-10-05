@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSCard@04/10/2021</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<style>
+
+    
+  
+    .container{
+
+            background-color: rgb(79, 170, 212);
+            height: 500px;
+            width: 100%;
+           margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            border-radius: 25px;
+            
+            
+           
+    }
+        .card{
+            width: 300px;
+            height: 350px;
+            background-color: #FEFFE2;
+            justify-content: center;
+            margin-top: 80px;
+            border-radius: 10px;
+            /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
+            filter: drop-shadow(5px 10px 15px rgba(8,9,13,2));
+            margin: 70px;
+            transition: transform 330ms ease-in-out;
+        }
+        .card:hover{
+            transform: translate(50px,30px);
+        }
+     
+        img{
+            border-radius: 50%;
+            border: 1px solid black;
+            margin-top: -50px;
+            background-color: #FEFFE2;
+            text-align: center;
+        }
+        .img{
+            text-align: center;
+        }
+        p{
+    
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .icon{
+            margin-top: 30px;
+        }
+        .fab{
+           
+                    font-size: 20px;
+                    padding: 10px;
+                    margin: 5px;
+                    border-radius: 50%;
+                    color: #fff;
+        }
+        .fa-pinterest{background-color: #c93a3a; }
+        .fa-twitter-square{background-color: rgb(33, 70, 180);}
+        .fa-chrome{background-color: palevioletred;}
+
+        
+
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    .container{
+        display: flex;
+        height: auto;
+        /* width: 100%; */
+        padding: 10px;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+}
+</style>
+</head>
+<body>
+    
+    
+            <div class="container">
+                <div class="card">
+                    <div class="img">
+                        <img src="/images/12.png" width="120" height="120" alt="">
+    
+                        <h2>Pratik Wood</h2>
+                        <p>CEO/Co-Founder</p>
+                        <p>Don't be acared of the because we need
+                            restart the human foundation in truth And 
+                            I love you like Kanye loves Rick Owens
+                            bed design but back us...
+                        </p>
+
+                        <div class="icon">
+                            <i class="fab fa-pinterest"></i>
+                            <i class="fab fa-twitter-square"></i>
+                            <i class="fab fa-chrome"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="card">
+                    <div class="img">
+                        <img src="/images/12.png" width="120" height="120" alt="">
+    
+                        <h2>Pratik Wood</h2>
+                        <p>CEO/Co-Founder</p>
+                        <p>Don't be acared of the because we need
+                            restart the human foundation in truth And 
+                            I love you like Kanye loves Rick Owens
+                            bed design but back us...
+                        </p>
+
+                        <div class="icon">
+                            <i class="fab fa-pinterest"></i>
+                            <i class="fab fa-twitter-square"></i>
+                            <i class="fab fa-chrome"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="card">
+                    <div class="img">
+                        <img src="/images/12.png" width="120" height="120" alt="">
+    
+                        <h2>Pratik Wood</h2>
+                        <p>CEO/Co-Founder</p>
+                        <p>Don't be acared of the because we need
+                            restart the human foundation in truth And 
+                            I love you like Kanye loves Rick Owens
+                            bed design but back us...
+                        </p>
+
+                        <div class="icon">
+                            <i class="fab fa-pinterest"></i>
+                            <i class="fab fa-twitter-square"></i>
+                            <i class="fab fa-chrome"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+                <!-- <style>
+                    .wrapper{
+                        display: flex;
+                        width: 100;
+                        height: 500px;
+                        background-color: palevioletred;
+                        margin: 20px;
+                        position: relative;
+                        border-radius: 25px;
+                    }
+                    .div1{
+                        margin-top: 50px;
+                        height: 300px;
+                        width: 300px;
+                        background-color: green;
+                        border-radius: 25px;
+                        position: absolute;
+                        top: 40px;
+                        left: 20px;
+                        z-index: 1;
+                        
+                    }
+                    .div2{
+                        border-radius: 25px;
+                        margin-top: 50px;
+                        height: 300px;
+                        width: 300px;
+                        background-color:#fff;
+                        position: absolute;
+                        top: 60px;
+                        left: 40px;
+                        z-index: 2;
+                        
+                    }
+                    .div3{
+                        border-radius: 25px;
+                        margin-top: 50px;
+                        height: 300px;
+                        width: 300px;
+                        background-color:orange;
+                        position: absolute;
+                        top: 80px;
+                        left: 60px;
+                        z-index: 3;
+                        
+                        
+                    }
+                </style>
+
+            <div class="wrapper">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+            </div> -->
+      
+</body>
+</html>
